@@ -1,6 +1,7 @@
 
 *include baseline characteristics* 
-*age in categories, parity in cat, education in cat, BMI in cat, Medical and obstetric history: Diabetes mellitus type 2, Caesarean section, Gestational diabetes mellitus, Perinatal death, Postpartum hemorrhage, Antepartum hemorrhage, Spontaneous miscarriage, Preeclampsia 
+*age in categories, parity in cat, education in cat, BMI in cat, Medical and obstetric history: Diabetes mellitus type 2, Caesarean section, 
+Gestational diabetes mellitus, Perinatal death, Postpartum hemorrhage, Antepartum hemorrhage, Spontaneous miscarriage, Preeclampsia* 
 
 use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\data2_1001_2000.dta"
 use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\data3_2001_3000.dta"
