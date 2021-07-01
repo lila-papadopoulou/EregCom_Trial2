@@ -14,6 +14,33 @@ or fail in attendance.*
 *variables "num_": describe women who attended (value=1) or did not attend (values=0) at the specific time*
 *variables "denom_": describe women who were eligible to attend at this time-they had sceduled appointment*
 
+*calculate total number of timely visits-this is the primary outcome for comparison 2*
+egen totalattend=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
+tab totalattend   
+tab totalattend TrialArm ,  col chi 
+*note: this is referring to the totla population independently of eligibility by time-point. eg. among the total number of 14573 participats, 10856 (74.5%) did not attend timely any visit.*
+
+tab totalattend TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
+tab totalattend TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
+tab totalattend TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
+tab totalattend TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
+tab totalattend TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
+tab totalattend TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
+
+*calculate any timely attendance*
+gen anyattend01=0 if anyattend==0
+replace anyattend01=1 if anyattend!=0 & anyattend!=.
+tab anyattend01 anyattend
+
+tab anyattend01 TrialArm ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
+tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
+
+
 *describe attendance at the specific time point*
 tab num_15_17 if denom_15_17!=., mis 
 *describe attendance for the specific time point by trial arm*
@@ -62,30 +89,3 @@ tab num_35_37 TrialArm if TrialArm!="B" & TrialArm!="C" & denom_35_37!=.,  col c
 tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="D" & denom_35_37!=.,  col chi 
 tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="B" & denom_35_37!=.,  col chi 
 tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="C" & denom_35_37!=.,  col chi 
-
-*calculate total number of timely visits-this is the primary outcome for comparison 2*
-egen totalattend=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
-tab totalattend   
-tab totalattend TrialArm ,  col chi 
-*note: this is referring to the totla population independently of eligibility by time-point. eg. among the total number of 14573 participats, 10856 (74.5%) did not attend timely any visit.*
-
-tab totalattend TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-*calculate any timely attendance*
-gen anyattend01=0 if anyattend==0
-replace anyattend01=1 if anyattend!=0 & anyattend!=.
-tab anyattend01 anyattend
-
-tab anyattend01 TrialArm ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
-
