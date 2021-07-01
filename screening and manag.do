@@ -1,88 +1,37 @@
 ************SCREENING & MANAGEMENT************************************************
 ***********************************************************************************
-*anemia-screening at: before 24 weeks, 24-28 weeks, 36 weeks*
-*definition of succesfull screening and management*
-*VARIABLES OF INTEREST:T2_Oppt_anemia_00_23 T2_screeniningontime_anem_00_23 T2_screeniningontime_n_nm_00_23 T2_mansevanemia_00_23 T2_manmilmodane_00_23*
+*anemia-screening & managememt at 3 time points: before 24 weeks, 24-28 weeks, 36 weeks*
+*success is defined as (management==Successful|severe anemia==1 OR mild anemia==1) OR (timely screening==Successful|normal status==1) among women who had the opportunity to be timely screened *
 
 *time point: <24 weeks*
+*VARIABLES OF INTEREST:T2_Oppt_anemia_00_23 T2_screeniningontime_anem_00_23 T2_screeniningontime_n_nm_00_23 T2_mansevanemia_00_23 T2_manmilmodane_00_23*
 codebook T2_Oppt_anemia_00_23 T2_screeniningontime_anem_00_23 T2_screeniningontime_n_nm_00_23 T2_mansevanemia_00_23 T2_manmilmodane_00_23
 
-*sucess is defined as (management==Successful|severe anemia==1 OR mild anemia==1) OR (timely screening==Successful|normal status==1) among women who had the opportunity to be timely screened *
-
-generate success_anemia_1=0
+generate success_anemia_1=0 if T2_Oppt_anemia_00_23==succesf
 replace success_anemia_1=1 if T2_mansevanemia_00_23==2 | T2_manmilmodane_00_23==3 |T2_screeniningontime_n_nm_00_23==3
-replace success_anemia_1=. if T2_Oppt_anemia_00_23==0
+*check issue #2*
+
+*time point: 24-28 weeks*
+*VARIABLES OF INTEREST:T2_Oppt_anemia_24_28 T2_screeniningontime_anem_24_28 T2_screeniningontime_n_nm_24_28 T2_manmildmodanemia_24_28 T2_mansevanemia_24_28*
+codebook T2_Oppt_anemia_24_28 T2_screeniningontime_anem_24_28 T2_screeniningontime_n_nm_24_28 T2_manmildmodanemia_24_28 T2_mansevanemia_24_28
+
+generate success_anemia_2=0 if T2_Oppt_anemia_24_28==3
+replace success_anemia_2=1 if T2_mansevanemia_24_28==3 | T2_manmildmodanemia_24_28==3 |T2_screeniningontime_n_nm_24_28==3
+tab success_anemia_2
+
+*time point: 36 weeks*
+*VARIABLES OF INTEREST:T2_Oppt_anemia_35_37 T2_screeniningontime_anem_35_37 T2_screeniningontime_nm_35_37_1 T2_mansevanemia_35_37*
+codebook T2_Oppt_anemia_35_37 T2_screeniningontime_anem_35_37 T2_screeniningontime_nm_35_37_1 T2_mansevanemia_35_37
+
+generate success_anemia_3=0 if T2_Oppt_anemia_35_37==3
+replace success_anemia_3=1 if T2_mansevanemia_35_37==3 | T2_screeniningontime_nm_35_37_1==3
+tab success_anemia_3
 
 
+*calculate the overall success for anemia*
+gen totalsucc_anemia=0 
+replace totalsucc_anemia=1 if success_anemia_1==1 & success_anemia_2==1 & success_anemia_3==1 
 
-*screening-before 24 weeks*
-tab T2_Oppt_anemia_00_23 
-*not applicable/not succesfull*
-tab T2_screeniningontime_anem_00_23
-*63% succesfull out of all*
-tab T2_screeniningontime_n_nm_00_23
-*48% were screened and had normal values*
-tab T2_screeniningontime_n_nm_00_23 T2_screeniningontime_anem_00_23
-*%of women who had succesfull screening of anemia before 24 weeks-need to exclude the missing category*
-*false=not succesfull/ missing=not applicable/true=succesfull*
-
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable",  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_screeniningontime_anem_00_23 TrialArm if T2_screeniningontime_anem_00_23!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable",  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_screeniningontime_anem_24_28 TrialArm if T2_screeniningontime_anem_24_28!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable",  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_screeniningontime_anem_35_37 TrialArm if T2_screeniningontime_anem_35_37!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-*gestational hypertension*
-T2_bpontime_00_14 T2_bpontime_15_17 T2_bpontime_18_22 T2_bpontime_24_28 T2_bpontime_31_33 T2_bpontime_35_37
-
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable",  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_bpontime_00_14 TrialArm if T2_bpontime_00_14!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-
-tab T2_bpontime_15_17 TrialArm if T2_bpontime_15_17!="Not Applicable",  col chi 
-
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable",  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_bpontime_18_22 TrialArm if T2_bpontime_18_22!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-tab T2_bpontime_24_28 TrialArm if T2_bpontime_24_28!="Not Applicable",  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable",  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab T2_bpontime_31_33 TrialArm if T2_bpontime_31_33!="Not Applicable" &TrialArm!="A" & TrialArm!="C" ,  col chi 
-
-tab T2_bpontime_35_37 TrialArm if T2_bpontime_35_37!="Not Applicable",  col chi 
 
 ***************************
 *GDM-check these variables with Mervett*
