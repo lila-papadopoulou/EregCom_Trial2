@@ -1,6 +1,19 @@
-************SCREENING & MANAGEMENT************
+************SCREENING & MANAGEMENT************************************************
 ***********************************************************************************
-*anemia-times for screening: before 24 weeks, 24-28 weeks, 36 weeks*
+*anemia-screening at: before 24 weeks, 24-28 weeks, 36 weeks*
+*definition of succesfull screening and management*
+*VARIABLES OF INTEREST:T2_Oppt_anemia_00_23 T2_screeniningontime_anem_00_23 T2_screeniningontime_n_nm_00_23 T2_mansevanemia_00_23 T2_manmilmodane_00_23*
+
+*time point: <24 weeks*
+codebook T2_Oppt_anemia_00_23 T2_screeniningontime_anem_00_23 T2_screeniningontime_n_nm_00_23 T2_mansevanemia_00_23 T2_manmilmodane_00_23
+
+*sucess is defined as (management==Successful|severe anemia==1 OR mild anemia==1) OR (timely screening==Successful|normal status==1) among women who had the opportunity to be timely screened *
+
+generate success_anemia_1=0
+replace success_anemia_1=1 if T2_mansevanemia_00_23==2 | T2_manmilmodane_00_23==3 |T2_screeniningontime_n_nm_00_23==3
+replace success_anemia_1=. if T2_Oppt_anemia_00_23==0
+
+
 
 *screening-before 24 weeks*
 tab T2_Oppt_anemia_00_23 
