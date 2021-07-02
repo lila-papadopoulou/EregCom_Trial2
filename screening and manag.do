@@ -27,7 +27,6 @@ generate success_anemia_3=0 if T2_Oppt_anemia_35_37==3
 replace success_anemia_3=1 if T2_mansevanemia_35_37==3 | T2_screeniningontime_nm_35_37_1==3
 tab success_anemia_3
 
-
 *calculate the overall success for anemia-on the basis of the whole population*
 gen totalsucc_anemia=0 
 replace totalsucc_anemia=1 if success_anemia_1==1 & success_anemia_2==1 & success_anemia_3==1 
@@ -35,7 +34,7 @@ replace totalsucc_anemia=1 if success_anemia_1==1 & success_anemia_2==1 & succes
 *calculate the sum of success for anemia*
 egen sumsuc_anemia=rowotal (success_anemia_1 success_anemia_2 success_anemia_3) 
 tab sumsuc_anemia
-
+*see issue #3*
 
 *HYPERTENSION*
 *BP -screening & hypertensions managememt before 20 weeks:Blood pressure prior to 20 weeks’ gestation, test at the first visit
@@ -49,5 +48,19 @@ T2_Oppt_bp_24_28 T2_bpontime_24_28 T2_Oppt_bp_35_37 T2_bpontime_35_37
 codebook T2_manchronichtn_00_14 T2_manchronichtn_15_17 T2_manchronichtn_18_22 T2_manmildhtn_24_28 T2_manmodsevhtn_24_28 ///
 T2_manmildhtn_35_37 T2_manmodsevhtn_35_37
 
-generate success_anemia_1=0 if T2_Oppt_bp_00_14==2
-replace success_anemia_1=1 if T2_manchronichtn_00_14==3 | 
+*0-14 weeks*
+codebook T2_Oppt_bp_00_14 T2_bpontime_00_14 T2_manchronichtn_00_14
+generate success_htn_1=0 if T2_Oppt_bp_00_14==2
+replace success_htn_1=1 if T2_manchronichtn_00_14==3 | (T2_bpontime_00_14==3 & T2_manchronichtn_00_14==1 & T2_Oppt_bp_00_14==2)
+tab success_htn_1
+
+*15-17 weeks*
+codebook T2_Oppt_bp_15_17 T2_bpontime_15_17 T2_manchronichtn_15_17
+generate success_htn_2=0 if T2_Oppt_bp_15_17==2
+replace success_htn_2=1 if T2_manchronichtn_15_17==3 | (T2_bpontime_15_17==3 & T2_manchronichtn_15_17==1 & T2_Oppt_bp_15_17==2)
+tab success_htn_2
+
+*
+
+
+
