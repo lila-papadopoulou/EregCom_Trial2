@@ -44,7 +44,8 @@ tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 *describe attendance at the specific time point*
 tab num_15_17 if denom_15_17!=., mis 
 *describe attendance for the specific time point by trial arm*
-tab num_15_17 b_TrialArm if denom_15_17!=.,  col chi 
+tab num_15_17 b_TrialArm if denom_15_17!=.,  col chi mis
+tab num_15_17 b_TrialArm if denom_15_17!=.,  col chi
 
 *if p<0.05 check difference two-by-two to identify where is the difference*
 tab num_15_17 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D",  col chi 
@@ -56,6 +57,7 @@ tab num_15_17 b_TrialArm if b_TrialArm!="A" & Tb_TrialArm!="C",  col chi
 
 tab num_18_22 if denom_18_22!=., mis
 tab num_18_22 b_TrialArm if denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if denom_18_22!=.,  col chi mis
 tab num_18_22 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" & denom_18_22!=.,  col chi 
 tab num_18_22 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" & denom_18_22!=.,  col chi 
 tab num_18_22 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" & denom_18_22!=.,  col chi 
