@@ -17,75 +17,75 @@ or fail in attendance.*
 *calculate total number of timely visits-this is the primary outcome for comparison 2*
 egen totalattend=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
 tab totalattend   
-tab totalattend TrialArm ,  col chi 
+tab totalattend b_TrialArm ,  col chi 
 *note: this is referring to the totla population independently of eligibility by time-point. eg. among the total number of 14573 participats, 10856 (74.5%) did not attend timely any visit.*
 
-tab totalattend TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab totalattend TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi 
 
 *calculate any timely attendance*
 gen anyattend01=0 if anyattend==0
 replace anyattend01=1 if anyattend!=0 & anyattend!=.
 tab anyattend01 anyattend
 
-tab anyattend01 TrialArm ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="C" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="B" & TrialArm!="C" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="D" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="B" ,  col chi 
-tab anyattend01 TrialArm if TrialArm!="A" & TrialArm!="C" ,  col chi 
+tab anyattend01 b_TrialArm ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi 
 
 
 *describe attendance at the specific time point*
 tab num_15_17 if denom_15_17!=., mis 
 *describe attendance for the specific time point by trial arm*
-tab num_15_17 TrialArm if denom_15_17!=.,  col chi 
+tab num_15_17 b_TrialArm if denom_15_17!=.,  col chi 
 
 *if p<0.05 check difference two-by-two to identify where is the difference*
-tab num_15_17 TrialArm if TrialArm!="C" & TrialArm!="D",  col chi 
-tab num_15_17 TrialArm if TrialArm!="B" & TrialArm!="D",  col chi 
-tab num_15_17 TrialArm if TrialArm!="B" & TrialArm!="C",  col chi 
-tab num_15_17 TrialArm if TrialArm!="A" & TrialArm!="D",  col chi 
-tab num_15_17 TrialArm if TrialArm!="A" & TrialArm!="B",  col chi 
-tab num_15_17 TrialArm if TrialArm!="A" & TrialArm!="C",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="A" & Tb_TrialArm!="C",  col chi 
 
 tab num_18_22 if denom_18_22!=., mis
-tab num_18_22 TrialArm if denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="C" & TrialArm!="D" & denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="B" & TrialArm!="D" & denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="B" & TrialArm!="C" & denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="A" & TrialArm!="D" & denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="A" & TrialArm!="B" & denom_18_22!=.,  col chi 
-tab num_18_22 TrialArm if TrialArm!="A" & TrialArm!="C" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" & denom_18_22!=.,  col chi 
+tab num_18_22 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" & denom_18_22!=.,  col chi 
   
 tab num_24_28 if denom_24_28!=., mis 
-tab num_24_28 TrialArm if denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="C" & TrialArm!="D" & denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="B" & TrialArm!="D" & denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="B" & TrialArm!="C" & denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="A" & TrialArm!="D" & denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="A" & TrialArm!="B" & denom_24_28!=.,  col chi 
-tab num_24_28 TrialArm if TrialArm!="A" & TrialArm!="C" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" & denom_24_28!=.,  col chi 
+tab num_24_28 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" & denom_24_28!=.,  col chi 
  
 tab num_31_33 if denom_31_33!=., mis
-tab num_31_33 TrialArm if denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="C" & TrialArm!="D" & denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="B" & TrialArm!="D" & denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="B" & TrialArm!="C" & denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="A" & TrialArm!="D" & denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="A" & TrialArm!="B" & denom_31_33!=.,  col chi 
-tab num_31_33 TrialArm if TrialArm!="A" & TrialArm!="C" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" & denom_31_33!=.,  col chi 
+tab num_31_33 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" & denom_31_33!=.,  col chi 
    
 tab num_35_37 if denom_35_37!=., mis  
-tab num_35_37 TrialArm if denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="C" & TrialArm!="D" & denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="B" & TrialArm!="D" & denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="B" & TrialArm!="C" & denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="D" & denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="B" & denom_35_37!=.,  col chi 
-tab num_35_37 TrialArm if TrialArm!="A" & TrialArm!="C" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" & denom_35_37!=.,  col chi 
+tab num_35_37 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" & denom_35_37!=.,  col chi 
