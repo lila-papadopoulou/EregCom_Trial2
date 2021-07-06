@@ -91,6 +91,21 @@ tab bookbmicat_n b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B",  chi
 tab bookbmicat_n b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C",  chi
 tab bookbmicat_n b_TrialArm,  col chi 
 
+*cluster size
+by str_TRIAL_2_Cluster, sort: generate cluster_size = _N / 100
+label variable cluster_size  "Cluster size" 
+gen clsize_cat=1 if cluster_size!=. 
+replace clsize_cat=2 if cluster_size!=. & cluster_size>0.99 
+replace clsize_cat=3 if cluster_size!=. & cluster_size>1.99
+tabstat cluster_size, by(clsize_cat) stats( n min max)
+tab clsize_cat b_TrialArm,  col chi mis
+tab clsize_cat b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D",  chi
+tab clsize_cat b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D",  chi
+tab clsize_cat b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C",  chi
+tab clsize_cat b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D",  chi
+tab clsize_cat b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B",  chi
+tab clsize_cat b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C",  chi
+
 *diabetes 2*
 tab bookhistdm b_TrialArm,  col chi mis
 tab bookhistdm b_TrialArm,  col chi 
