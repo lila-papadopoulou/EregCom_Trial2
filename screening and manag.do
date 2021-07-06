@@ -208,4 +208,18 @@ tab success_htn_5xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 *screening &  managememt before 24 weeks & 24-28 WEEKS*
 
 *before 24 weeks*
-codebook 
+codebook T2_Opportunity_GDM_screening_1 T2_GDMscreeningontime_1 T2_GDMscreeningontime_1A T2_GDMscreeningontime_1B T2_GDMscreeningontime_1C 
+
+generate success_gdm_1=0 if T2_Opportunity_GDM_screening_1==1
+replace success_gdm_1=1 if (T2_Opportunity_GDM_screening_1==1 & T2_GDMscreeningontime_1==3 & T2_GDMscreeningontime_1A==3) | (T2_Opportunity_GDM_screening_1==1 & T2_GDMscreeningontime_1==3 & T2_GDMscreeningontime_1A==1 & T2_GDMscreeningontime_1B==3)
+tab success_gdm_1 b_TrialArm,  col chi
+tab success_gdm_1 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_gdm_1 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_gdm_1 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_gdm_1 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_gdm_1 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_gdm_1 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*24-28 weeks*
+codebook T2_Opportunity_GDM_screening_2 T2_GDMscreeningontime_2 T2_GDMscreeningontime_2A T2_GDMscreeningontime_2B T2_GDMscreeningontime_2C 
+*see issue #4*
