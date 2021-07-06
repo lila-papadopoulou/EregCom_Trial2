@@ -140,7 +140,18 @@ tab success_htn_3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab success_htn_3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab success_htn_3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
-*T2_qidsms_Oppt_bp_18_22 T2_qidsms_bpontime_18_22 T2_qidsms_manchronichtn_18_22 T2_qidsms_Oppt_bp_24_28 T2_qidsms_bpontime_24_28 T2_qidsms_manmildhtn_24_28 T2_qidsms_manmodsevhtn_24_28 T2_qidsms_Oppt_bp_35_37 T2_qidsms_bpontime_35_37 T2_qidsms_manmildhtn_35_37 T2_qidsms_manmodsevhtn_35_37
+*extar variables for specific trial arm-18-22 weeks*
+codebook T2_qidsms_Oppt_bp_18_22 T2_qidsms_bpontime_18_22 T2_qidsms_manchronichtn_18_22
+
+generate success_htn_3xtra=0 if T2_qidsms_Oppt_bp_18_22==3
+replace success_htn_3xtra=1 if (T2_qidsms_manchronichtn_18_22==3 & T2_qidsms_Oppt_bp_18_22==3) | (T2_qidsms_bpontime_18_22==3 & T2_qidsms_manchronichtn_18_22==1 & T2_qidsms_Oppt_bp_18_22==3)
+tab success_htn_3xtra b_TrialArm,  col chi
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *24-28 weeks*
 codebook T2_Oppt_bp_24_28 T2_bpontime_24_28 T2_manmildhtn_24_28 T2_manmodsevhtn_24_28
@@ -154,11 +165,24 @@ tab success_htn_4 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab success_htn_4 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab success_htn_4 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
+*extar variables for specific trial arm-24-28 weeks*
+codebook T2_qidsms_Oppt_bp_24_28 T2_qidsms_bpontime_24_28 T2_qidsms_manmildhtn_24_28 T2_qidsms_manmodsevhtn_24_28
+
+generate success_htn_4xtra=0 if T2_qidsms_Oppt_bp_24_28==3
+replace success_htn_4xtra=1 if (T2_qidsms_manmildhtn_24_28==3 & T2_qidsms_Oppt_bp_24_28==3) |(T2_qidsms_manmodsevhtn_24_28==3 & T2_qidsms_Oppt_bp_24_28==3) | (T2_qidsms_bpontime_24_28==3 & T2_qidsms_manmildhtn_24_28==1 & T2_qidsms_manmodsevhtn_24_28==1 & T2_qidsms_Oppt_bp_24_28==3)
+tab success_htn_4xtra b_TrialArm,  col chi
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_htn_4xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
 *36 weeks*
 codebook T2_Oppt_bp_35_37 T2_bpontime_35_37 T2_manmildhtn_35_37 T2_manmodsevhtn_35_37
 
 generate success_htn_5=0 if T2_Oppt_bp_35_37==2
-replace success_htn_5=1 if (T2_manmildhtn_35_37==3 & T2_Oppt_bp_35_37==2) |(T2_manmodsevhtn_35_37==3 & T2_Oppt_bp_35_37==2) | (T2_bpontime_35_37==3 & T2_manmildhtn_35_37==1 & T2_manmodsevhtn_35_37==1 & T2_Oppt_bp_35_37==2)
+replace success_htn_5=1 if (T2_manmildhtn_35_37==2 & T2_Oppt_bp_35_37==2) |(T2_manmodsevhtn_35_37==3 & T2_Oppt_bp_35_37==2) | (T2_bpontime_35_37==3 & T2_manmildhtn_35_37==1 & T2_manmodsevhtn_35_37==1 & T2_Oppt_bp_35_37==2)
 tab success_htn_5 b_TrialArm,  col chi
 tab success_htn_5 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_5 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -167,6 +191,18 @@ tab success_htn_5 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab success_htn_5 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab success_htn_5 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
+*extar variables for specific trial arm-36 weeks*
+codebook T2_qidsms_Oppt_bp_35_37 T2_qidsms_bpontime_35_37 T2_qidsms_manmildhtn_35_37 T2_qidsms_manmodsevhtn_35_37
+
+generate success_htn_5xtra=0 if T2_qidsms_Oppt_bp_35_37==3
+replace success_htn_5xtra=1 if (T2_qidsms_manmildhtn_35_37==2 & T2_qidsms_Oppt_bp_35_37==3) |(T2_qidsms_manmodsevhtn_35_37==2 & T2_qidsms_Oppt_bp_35_37==3) | (T2_qidsms_bpontime_35_37==3 & T2_qidsms_manmildhtn_35_37==1 & T2_qidsms_manmodsevhtn_35_37==1 & T2_qidsms_Oppt_bp_35_37==3)
+tab success_htn_5xtra b_TrialArm,  col chi
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_htn_5xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 **********GEST DIABETES****
 *screening &  managememt before 24 weeks & 24-28 WEEKS*
