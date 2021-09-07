@@ -14,6 +14,49 @@ or fail in attendance.*
 *variables "num_": describe women who attended (value=1) or did not attend (values=0) at the specific time*
 *variables "denom_": describe women who were eligible to attend at this time-they had sceduled appointment*
 
+*calculate total number of opportunities*
+egen totalop=rowtotal(denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37)
+tab totalop
+tab totalop b_TrialArm ,  col chi
+tab totalop b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab totalop b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab totalop b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab totalop b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab totalop b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab totalop b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*calculate total number of timely attended ANC*
+egen totalatt=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37)
+tab totalatt b_TrialArm ,  col chi
+tab totalatt b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab totalatt b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab totalatt b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab totalatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab totalatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab totalatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*any opportunity vs. no oportunity (collapsing the subcategories into 1*
+gen anyopp=0 if totalop==0
+replace anyopp=1 if totalop!=0 & totalop!=.
+tab anyopp b_TrialArm ,  col chi
+tab anyopp b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab anyopp b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab anyopp b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*any attendance vs. no attendance (collapsing the subcategories into 1)*
+gen anyatt=0 if totalatt==0
+replace anyatt=1 if totalatt!=0 & totalatt!=.
+tab anyatt b_TrialArm ,  col chi
+tab anyatt b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab anyatt b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab anyatt b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
 *calculate total number of timely visits-this is the primary outcome for comparison 2*
 egen totalattend=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
 tab totalattend   
