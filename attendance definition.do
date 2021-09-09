@@ -26,7 +26,7 @@ tab totalop b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab totalop b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *calculate total number of timely attended ANC*
-egen totalatt=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37)
+egen totalatt=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
 tab totalatt b_TrialArm ,  col chi
 tab totalatt b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab totalatt b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -46,6 +46,17 @@ tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab anyopp b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
+*calculate total number of timely attended ANC*
+egen totalatt2=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) if anyopp!=0
+tab totalatt2 b_TrialArm ,  col chi
+tab totalatt2 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab totalatt2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab totalatt2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab totalatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab totalatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab totalatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+
 *any attendance vs. no attendance (collapsing the subcategories into 1)*
 gen anyatt=0 if totalatt==0
 replace anyatt=1 if totalatt!=0 & totalatt!=.
@@ -57,31 +68,16 @@ tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab anyatt b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
-*calculate total number of timely visits-this is the primary outcome for comparison 2*
-egen totalattend=rowtotal(num_15_17 num_18_22 num_24_28 num_31_33 num_35_37) 
-tab totalattend   
-tab totalattend b_TrialArm ,  col chi 
-*note: this is referring to the totla population independently of eligibility by time-point. eg. among the total number of 14573 participats, 10856 (74.5%) did not attend timely any visit.*
-
-tab totalattend b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
-tab totalattend b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
-tab totalattend b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
-tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
-tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
-tab totalattend b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi 
-
-*calculate any timely attendance*
-gen anyattend01=0 if anyattend==0
-replace anyattend01=1 if anyattend!=0 & anyattend!=.
-tab anyattend01 anyattend
-
-tab anyattend01 b_TrialArm ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
-tab anyattend01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi 
+*any attendance vs. no attendance (collapsing the subcategories into 1)*
+gen anyatt2=0 if totalatt==0 & anyopp!=0
+replace anyatt2=1 if totalatt!=0 & totalatt!=.
+tab anyatt2 b_TrialArm ,  col chi
+tab anyatt2 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab anyatt2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab anyatt2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab anyatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab anyatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab anyatt2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 
 *describe attendance at the specific time point*
@@ -96,7 +92,7 @@ tab num_15_17 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D",  col chi
 tab num_15_17 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C",  col chi 
 tab num_15_17 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D",  col chi 
 tab num_15_17 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B",  col chi 
-tab num_15_17 b_TrialArm if b_TrialArm!="A" & Tb_TrialArm!="C",  col chi 
+tab num_15_17 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C",  col chi 
 
 tab num_18_22 if denom_18_22!=., mis
 tab num_18_22 b_TrialArm if denom_18_22!=.,  col chi 
