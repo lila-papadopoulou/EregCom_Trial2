@@ -1,0 +1,25 @@
+*attendance*
+ use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\T2_FINAL_dataset_07092021_nodup.dta"
+ 
+keep uniqueid phase str_TRIAL_2_Cluster str_TRIAL_2_ClusSize clustername clussize cluster_size clsize_cat clussize_random clsize_cat_random lab usavailability labavailability us b_TrialArm totalatt anyopp totalop totalatt2 anyatt anyatt2 num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37
+ 
+gen att1=num_15_17 if num_15_17!=.
+gen att2=num_18_22 if num_18_22!=.
+gen att3=num_24_28 if num_24_28!=. 
+gen att4=num_31_33 if num_31_33!=.
+gen att5=num_35_37 if num_35_37!=.
+
+reshape long att, i(uniqueid) j(timepoint)
+
+gen phase_n=1 if phase=="1"
+replace phase_n=2 if phase=="2"
+replace phase_n=3 if phase=="2 Gaza"
+
+*EXAMPLE MODEL*
+*a vs b*
+gen AB=0 if b_TrialArm=="A"
+replace AB=1 if b_TrialArm=="B"
+ xi:melogit i.att i.AB i.phase_n i.us i.lab clussize_random i.timepoint if AB!=. || str_TRIAL_2_Cluster:|| uniqueid:, or
+*worked-less than a minute*
+
+*alternatively--> drop uniqueid and keep cluster as the random OR remove cluster from random efect side to vce (cluster cluster)*
