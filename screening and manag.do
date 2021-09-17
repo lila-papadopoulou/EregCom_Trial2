@@ -806,8 +806,10 @@ tab man_gdm1 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *24-28 weeks*
 codebook T2_Opportunity_GDM_scrnng_24_28 T2_GDMscreeningontime_24_28 T2_GDMscreeningontim_24_28_nrml T2_GDMscreeningntm_24_28_hghrbg T2_GDMscreeningontm_24_28_ntmbg
-gen man_gdm2=0 if T2_Opportunity_GDM_scrnng_24_28=="Successful" & T2_GDMscreeningontime_24_28=="Successful" & T2_GDMscreeningontim_24_28_nrml=="Not Successful"
-replace man_gdm1=1 if T2_Opportunity_GDM_scrnng_24_28=="Successful" & T2_GDMscreeningontime_24_28=="Successful" & T2_GDMscreeningontim_24_28_nrml=="Not Successful" & T2_GDMscreeningontm_b4_24_psrgl=="Successful"
+
+gen man_gdm2=0 if T2_Opportunity_GDM_scrnng_24_28=="Successful" & T2_GDMscreeningontime_24_28=="Successful" & (T2_GDMscreeningontm_24_28_ntmbg!="Not Applicable" | T2_GDMscreeningntm_24_28_hghrbg!="Not Applicable")
+replace man_gdm2=1 if T2_Opportunity_GDM_scrnng_24_28=="Successful" & T2_GDMscreeningontime_24_28=="Successful" & ///
+ (T2_GDMscreeningntm_24_28_hghrbg=="Successful"|T2_GDMscreeningontm_24_28_ntmbg=="Successful")
 tab man_gdm2 b_TrialArm,  col chi
 tab man_gdm2 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab man_gdm2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -816,3 +818,60 @@ tab man_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi
 tab man_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab man_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
+*screening & management at 24_28 weeks*
+gen success_gdm2=0 if T2_Opportunity_GDM_scrnng_24_28=="Successful"
+replace success_gdm2=1 if success_gdm2!=. & (T2_GDMscreeningontim_24_28_nrml=="Successful"| T2_GDMscreeningntm_24_28_hghrbg=="Successful"| T2_GDMscreeningontm_24_28_ntmbg=="Successful")
+tab success_gdm2  b_TrialArm,  col chi
+tab success_gdm2 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_gdm2 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*qidsmsm arm 24_28 weeks*
+codebook T2_qdsms_Opprtnty_GDM_scr_24_28 T2_qidsms_GDMscreeningntm_24_28 T2_qdsms_GDMscrnngntm_24_28_nrm T2_qdsms_GDMscrnngntm_24_28_hgh T2_qdsms_GDMscrnngntm_24_28_ntm
+
+gen man_gdm2xtra=0 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful" & T2_qidsms_GDMscreeningntm_24_28=="Successful" & (T2_qdsms_GDMscrnngntm_24_28_ntm!="Not Applicable" | T2_qdsms_GDMscrnngntm_24_28_hgh!="Not Applicable")
+replace man_gdm2xtra=1 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful" & T2_qidsms_GDMscreeningntm_24_28=="Successful" & ///
+ (T2_qdsms_GDMscrnngntm_24_28_hgh=="Successful"|T2_qdsms_GDMscrnngntm_24_28_ntm=="Successful")
+tab man_gdm2xtra b_TrialArm,  col chi
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab man_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+gen success_gdm2xtra=0 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful"
+replace success_gdm2xtra=1 if success_gdm2xtra!=. & (T2_qdsms_GDMscrnngntm_24_28_nrm=="Successful"| T2_qdsms_GDMscrnngntm_24_28_hgh=="Successful"| T2_qdsms_GDMscrnngntm_24_28_ntm=="Successful")
+tab success_gdm2xtra  b_TrialArm,  col chi
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_gdm2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+*after 28 weeks*
+codebook T2_Opportunty_GDM_scrnng_ftr_28 T2_GDMscreeningontm_ftr_28_nrml T2_GDMscreeningontim_ftr_28_hgh T2_GDMscreeningontime_after_28
+
+gen man_gdm3=0 if T2_Opportunty_GDM_scrnng_ftr_28=="Successful" & T2_GDMscreeningontime_after_28=="Successful" & T2_GDMscreeningontim_ftr_28_hgh!="Not Applicable"
+replace man_gdm3=1 if T2_Opportunty_GDM_scrnng_ftr_28=="Successful" & T2_GDMscreeningontime_after_28=="Successful" & T2_GDMscreeningontim_ftr_28_hgh=="Successful"
+tab man_gdm3 b_TrialArm,  col chi
+tab man_gdm3 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab man_gdm3 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab man_gdm3 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab man_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab man_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab man_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+
+gen success_gdm3=0 if T2_Opportunty_GDM_scrnng_ftr_28=="Successful"
+replace success_gdm3=1 if success_gdm3!=. & (T2_GDMscreeningontm_ftr_28_nrml=="Successful"| T2_GDMscreeningontim_ftr_28_hgh=="Successful")
+tab success_gdm3  b_TrialArm,  col chi
+tab success_gdm3 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
+tab success_gdm3 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
+tab success_gdm3 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
+tab success_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
+tab success_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
+tab success_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
