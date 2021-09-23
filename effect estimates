@@ -19,7 +19,11 @@ replace phase_n=3 if phase=="2 Gaza"
 *a vs b*
 gen AB=0 if b_TrialArm=="A"
 replace AB=1 if b_TrialArm=="B"
- xi:melogit i.att i.AB i.phase_n i.us i.lab clussize i.timepoint if AB!=. || str_TRIAL_2_Cluster:|| uniqueid:, or
+
+*quality assure the data*
+count if missing(AB)
+assert r(N) == 0
+xi:melogit i.att i.AB i.phase_n i.us i.lab clussize i.timepoint || str_TRIAL_2_Cluster:|| uniqueid:, or
 *worked-less than a minute*
 
 *alternatively--> drop uniqueid and keep cluster as the random OR remove cluster from random efect side to vce (cluster cluster)*
