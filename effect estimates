@@ -23,7 +23,12 @@ replace AB=1 if b_TrialArm=="B"
 *quality assure the data*
 count if missing(AB)
 assert r(N) == 0
-xi:melogit i.att i.AB i.phase_n i.us i.lab clussize i.timepoint || str_TRIAL_2_Cluster:|| uniqueid:, or
+xi:melogit i.att i.AB i.timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
 *worked-less than a minute*
 
+xi:melogit i.att i.AB i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster: timepoint|| uniqueid:, or
+
 *alternatively--> drop uniqueid and keep cluster as the random OR remove cluster from random efect side to vce (cluster cluster)*
+
+*check if this is necessery from the protocol-the interaction term is assesing if the assoc. between attnvs.AB varies by timepoint*
+xi:melogit i.att AB##timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
