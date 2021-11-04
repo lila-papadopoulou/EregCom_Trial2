@@ -1,5 +1,5 @@
 *baseline characteristics*
-
+tab b_TrialArm
 *woman's age at study entry*
 tab agecat b_TrialArm,   col chi
 tab agecat b_TrialArm,  mis col chi
