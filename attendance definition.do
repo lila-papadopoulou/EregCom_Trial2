@@ -1,5 +1,5 @@
 *outcome definition*
- use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\T2_FINAL_dataset_updated_nodup.dta"
+ use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta", clear
  
  *ATTENDANCE*
  *from study protocol: Comparison II: TCC arm vs control arm: The primary
