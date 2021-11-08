@@ -851,9 +851,14 @@ tab screen_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab screen_gdm3 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi 
 
 *management only*
-gen man_gdm3=0 if screen_gdm3==1 & 
-replace 
+gen man_gdm3=0 if screen_gdm3==1 &  T2_GDMscreeningontm_ftr_28_nrml=="Not Successful"
+replace man_gdm3=1 if screen_gdm3==1 &  T2_GDMscreeningontm_ftr_28_nrml=="Not Successful" & T2_GDMscreeningontim_ftr_28_hgh=="Successful"
+tab man_gdm3 b_TrialArm,  col chi
 
+gen success_gdm3=0 if T2_Opportunty_GDM_scrnng_ftr_28=="Successful"
+replace success_gdm3=1 if screen_gdm3==1 |man_gdm3==1
+replace success_gdm3=0 if man_gdm3==0
+tab success_gdm3 b_TrialArm,  col chi
 *******************************************************************************
 *total outcomes*
 *opportunities*
@@ -873,4 +878,39 @@ egen tscreen_gdm=rowtotal(screen_gdm1 screen_gdm2 screen_gdm3) if opp_gdm01==1
 gen tscreen_gdm01=0 if tscreen_gdm==0 & opp_gdm01==1
 replace tscreen_gdm01=1 if tscreen_gdm!=0 & tscreen_gdm!=. & opp_gdm01==1
 tab tscreen_gdm01 b_TrialArm,  col chi
+
+gen oppman_gdm=1 if (man_gdm1!=. |man_gdm2!=. | man_gdm3!=.)
+tab oppman_gdm
+egen tman_gdm=rowtotal(man_gdm1 man_gdm2 man_gdm3) if opp_gdm01==1 & oppman_gdm==1
+tab tman_gdm
+gen tman_gdm01=0 if tman_gdm==0 & opp_gdm01==1 & oppman_gdm==1
+replace tman_gdm01=1 if tman_gdm!=0 & opp_gdm01==1 & tman_gdm!=. & oppman_gdm==1
+tab tman_gdm01 b_TrialArm,  col chi
+
+egen tmanscreen_gdm=rowtotal(success_gdm1 success_gdm2 success_gdm3) if opp_gdm01==1 
+tab tmanscreen_gdm
+gen tmanscreen_gdm01=0 if tmanscreen_gdm==0 & opp_gdm01==1
+replace tmanscreen_gdm01=1 if tmanscreen_gdm!=0 & opp_gdm01==1 & tmanscreen_gdm!=.
+tab tmanscreen_gdm01 b_TrialArm,  col chi
+
+*************QIDSMS arm****************
+*24-28 weeks*
+codebook T2_qdsms_Opprtnty_GDM_scr_24_28 T2_qidsms_GDMscreeningntm_24_28 T2_qdsms_GDMscrnngntm_24_28_nrm T2_qdsms_GDMscrnngntm_24_28_mnh T2_qdsms_GDMscrnngntm_24_28_ntm T2_qdsms_GDMscrnngntm_24_28_mnn
+
+*screening only*
+gen screen_gdm2xtra=0 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful"
+replace screen_gdm2xtra=1 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful" & T2_qidsms_GDMscreeningntm_24_28=="Successful"
+tab screen_gdm2xtra b_TrialArm,  col chi
+
+
+*management only*
+gen man_gdm2xtra=0 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful" & T2_qidsms_GDMscreeningntm_24_28=="Successful" & T2_qdsms_GDMscrnngntm_24_28_nrm=="Not Successful"
+replace man_gdm2xtra=1 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful" & T2_qidsms_GDMscreeningntm_24_28=="Successful" & T2_qdsms_GDMscrnngntm_24_28_nrm=="Not Successful" & (T2_qdsms_GDMscrnngntm_24_28_mnh=="Successful"|T2_qdsms_GDMscrnngntm_24_28_mnn=="Successful")
+tab man_gdm2xtra b_TrialArm,  col chi
+
+*screening and management-replace with 0 those who were screened and were sick and were not managed*
+gen success_gdm2xtra=0 if T2_qdsms_Opprtnty_GDM_scr_24_28=="Successful"
+replace success_gdm2xtra=1 if screen_gdm2xtra==1 |man_gdm2xtra==1
+replace success_gdm2xtra=0 if man_gdm2xtra==0
+tab success_gdm2xtra b_TrialArm,  col chi
 
