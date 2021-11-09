@@ -543,10 +543,10 @@ tab tmanscreen_hyp
 gen tmanscreen_hyp01=0 if tmanscreen_hyp==0 & opp_hyp01==1
 replace tmanscreen_hyp01=1 if tmanscreen_hyp!=0 & opp_hyp01==1 & tmanscreen_hyp!=.
 tab tmanscreen_hyp01 b_TrialArm,  col chi
-
+*******************************************************************************************************************************
 *****QID&SMS variables*********
 *15-17 weeks*
-codebook T2_qidsms_Oppt_bp_15_17 T2_qidsms_bpontime_15_17 T2_qidsms_manchronichtn_15_17
+codebook T2_qidsms_Oppt_bp_15_17 T2_qidsms_bpontime_15_17 T2_qidsms_manmildchrnchtn_15_17
 
 *screening only*
 gen screen_hyp2xtra=0 if T2_qidsms_Oppt_bp_15_17=="Successful"
@@ -560,8 +560,8 @@ tab screen_hyp2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab screen_hyp2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *management only*
-gen man_hyp2xtra=0 if T2_qidsms_Oppt_bp_15_17=="Successful" & T2_qidsms_bpontime_15_17=="Successful" & T2_qidsms_manchronichtn_15_17!="Not Applicable"
-replace man_hyp2xtra=1 if T2_qidsms_Oppt_bp_15_17=="Successful" & T2_qidsms_bpontime_15_17=="Successful" & T2_qidsms_manchronichtn_15_17=="Successful"
+gen man_hyp2xtra=0 if T2_qidsms_Oppt_bp_15_17=="Successful" & T2_qidsms_bpontime_15_17=="Successful" & T2_qidsms_manmildchrnchtn_15_17!="Not Applicable"
+replace man_hyp2xtra=1 if T2_qidsms_Oppt_bp_15_17=="Successful" & T2_qidsms_bpontime_15_17=="Successful" & T2_qidsms_manmildchrnchtn_15_17=="Successful"
 tab man_hyp2xtra b_TrialArm,  col chi
 tab man_hyp2xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab man_hyp2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -571,7 +571,8 @@ tab man_hyp2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab man_hyp2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 generate success_htn_2xtra=0 if T2_qidsms_Oppt_bp_15_17=="Successful"
-replace success_htn_2xtra=1 if (T2_qidsms_manchronichtn_15_17=="Successful" & T2_qidsms_Oppt_bp_15_17=="Successful" & T2_qidsms_bpontime_15_17=="Successful") | (T2_qidsms_bpontime_15_17=="Successful" & T2_qidsms_manchronichtn_15_17=="Not Applicable" & T2_qidsms_Oppt_bp_15_17=="Successful")
+replace success_htn_2xtra=1 if T2_qidsms_Oppt_bp_15_17=="Successful" & (screen_hyp2xtra==1 | man_hyp2xtra==1)
+replace success_htn_2xtra=0 if man_hyp2xtra==0
 tab success_htn_2xtra b_TrialArm,  col chi
 tab success_htn_2xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_2xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -582,7 +583,7 @@ tab success_htn_2xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 
 *18-22 weeks*
-codebook T2_qidsms_Oppt_bp_18_22 T2_qidsms_bpontime_18_22 T2_qidsms_manchronichtn_18_22
+codebook T2_qidsms_Oppt_bp_18_22 T2_qidsms_bpontime_18_22 T2_qidsms_manmildchrnchtn_18_22 T2_qidsms_manmdsvchrnchtn_18_22
 
 *screening only*
 gen screen_hyp3xtra=0 if T2_qidsms_Oppt_bp_18_22=="Successful"
@@ -596,8 +597,8 @@ tab screen_hyp3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab screen_hyp3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *management only*
-gen man_hyp3xtra=0 if T2_qidsms_Oppt_bp_18_22=="Successful" & T2_qidsms_bpontime_18_22=="Successful" & T2_qidsms_manchronichtn_18_22!="Not Applicable"
-replace man_hyp3xtra=1 if T2_qidsms_Oppt_bp_18_22=="Successful" & T2_qidsms_bpontime_18_22=="Successful" & T2_qidsms_manchronichtn_18_22=="Successful"
+gen man_hyp3xtra=0 if T2_qidsms_Oppt_bp_18_22=="Successful" & T2_qidsms_bpontime_18_22=="Successful" & (T2_qidsms_manmildchrnchtn_18_22!="Not Applicable"|T2_qidsms_manmdsvchrnchtn_18_22!="Not Applicable")
+replace man_hyp3xtra=1 if T2_qidsms_Oppt_bp_18_22=="Successful" & T2_qidsms_bpontime_18_22=="Successful" & (T2_qidsms_manmildchrnchtn_18_22=="Successful"|T2_qidsms_manmdsvchrnchtn_18_22=="Successful")
 tab man_hyp3xtra b_TrialArm,  col chi
 tab man_hyp3xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab man_hyp3xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -607,7 +608,8 @@ tab man_hyp3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab man_hyp3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 generate success_htn_3xtra=0 if T2_qidsms_Oppt_bp_18_22=="Successful"
-replace success_htn_3xtra=1 if (T2_qidsms_manchronichtn_18_22=="Successful" & T2_qidsms_Oppt_bp_18_22=="Successful" & T2_qidsms_bpontime_18_22=="Successful") | (T2_qidsms_bpontime_18_22=="Successful" & T2_qidsms_manchronichtn_18_22=="Not Applicable" & T2_qidsms_Oppt_bp_18_22=="Successful")
+replace success_htn_3xtra=1 if T2_qidsms_Oppt_bp_18_22=="Successful" & (screen_hyp3xtra==1|man_hyp3xtra==1)
+replace success_htn_3xtra=0 if man_hyp3xtra==0
 tab success_htn_3xtra b_TrialArm,  col chi
 tab success_htn_3xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_3xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -615,8 +617,6 @@ tab success_htn_3xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi
 tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
 tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
 tab success_htn_3xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
-
-
 
 *24-28 weeks*
 codebook T2_qidsms_Oppt_bp_24_28 T2_qidsms_bpontime_24_28 T2_qidsms_manmildhtn_24_28 T2_qidsms_manmodsevhtn_24_28
@@ -644,9 +644,8 @@ tab man_hyp4xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *screening & management*
 generate success_htn_4xtra=0 if T2_qidsms_Oppt_bp_24_28=="Successful"
-replace success_htn_4xtra=1 if (T2_qidsms_manmildhtn_24_28=="Successful" & T2_qidsms_Oppt_bp_24_28=="Successful" & T2_qidsms_bpontime_24_28=="Successful") | ///
- (T2_qidsms_manmodsevhtn_24_28=="Successful" & T2_qidsms_Oppt_bp_24_28=="Successful" & T2_qidsms_bpontime_24_28=="Successful") | ///
- (T2_qidsms_bpontime_24_28=="Successful" &  T2_qidsms_Oppt_bp_24_28=="Successful" & (T2_qidsms_manmildhtn_24_28=="Not Applicable" | T2_qidsms_manmodsevhtn_24_28=="Not Applicable"))
+replace success_htn_4xtra=1 if T2_qidsms_Oppt_bp_24_28=="Successful" & (screen_hyp4xtra==1|man_hyp4xtra==1)
+replace success_htn_4xtra=0 if man_hyp4xtra==0
 tab success_htn_4xtra b_TrialArm,  col chi
 tab success_htn_4xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_4xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -681,9 +680,8 @@ tab man_hyp5xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *screening & management*
 generate success_htn_5xtra=0 if T2_qidsms_Oppt_bp_31_33=="Successful"
-replace success_htn_5xtra=1 if (T2_qidsms_manmildhtn_31_33=="Successful" & T2_qidsms_Oppt_bp_31_33=="Successful" & T2_qidsms_bpontime_31_33=="Successful") | ///
- (T2_qidsms_manmodsevhtn_31_33=="Successful" & T2_qidsms_Oppt_bp_31_33=="Successful" & T2_qidsms_bpontime_31_33=="Successful") | ///
- (T2_qidsms_bpontime_31_33=="Successful" &  T2_qidsms_Oppt_bp_31_33=="Successful" & (T2_qidsms_manmildhtn_31_33=="Not Applicable" | T2_qidsms_manmodsevhtn_31_33=="Not Applicable"))
+replace success_htn_5xtra=1 if T2_qidsms_Oppt_bp_31_33=="Successful" & (screen_hyp5xtra==1 |man_hyp5xtra==1)
+replace success_htn_5xtra=0 if man_hyp5xtra==0
 tab success_htn_5xtra b_TrialArm,  col chi
 tab success_htn_5xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_5xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -707,8 +705,8 @@ tab screen_hyp6xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi
 tab screen_hyp6xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *management only*
-gen man_hyp6xtra=0 if T2_qidsms_Oppt_bp_35_37=="Successful" & T2_qidsms_bpontime_35_37=="Successful" & (T2_qidsms_manmildhtn_35_37!="Not Applicable"|T2_qidsms_manmodsevhtn_35_37!="Not Applicable")
-replace man_hyp6xtra=1 if T2_qidsms_Oppt_bp_35_37=="Successful" & T2_qidsms_bpontime_35_37=="Successful" & (T2_qidsms_manmildhtn_35_37=="Successful"|T2_qidsms_manmodsevhtn_35_37=="Successful")
+gen man_hyp6xtra=0 if screen_hyp6xtra==1 & (T2_qidsms_manmildhtn_35_37!="Not Applicable"|T2_qidsms_manmodsevhtn_35_37!="Not Applicable")
+replace man_hyp6xtra=1 if screen_hyp6xtra==1 & (T2_qidsms_manmildhtn_35_37=="Successful"|T2_qidsms_manmodsevhtn_35_37=="Successful")
 tab man_hyp6xtra b_TrialArm,  col chi
 tab man_hyp6xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab man_hyp6xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -719,9 +717,8 @@ tab man_hyp6xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
 *screening & management*
 generate success_htn_6xtra=0 if T2_qidsms_Oppt_bp_35_37=="Successful"
-replace success_htn_6xtra=1 if (T2_qidsms_manmildhtn_35_37=="Successful" & T2_qidsms_Oppt_bp_35_37=="Successful" & T2_qidsms_bpontime_35_37=="Successful") | ///
- (T2_qidsms_manmodsevhtn_35_37=="Successful" & T2_qidsms_Oppt_bp_35_37=="Successful" & T2_qidsms_bpontime_35_37=="Successful") | ///
- (T2_qidsms_bpontime_35_37=="Successful" &  T2_qidsms_Oppt_bp_35_37=="Successful" & (T2_qidsms_manmildhtn_35_37=="Not Applicable" | T2_qidsms_manmodsevhtn_35_37=="Not Applicable"))
+replace success_htn_6xtra=1 if T2_qidsms_Oppt_bp_35_37=="Successful" & (screen_hyp6xtra==1 | man_hyp6xtra==1)
+replace success_htn_6xtra=0 if man_hyp6xtra==0
 tab success_htn_6xtra b_TrialArm,  col chi
 tab success_htn_6xtra b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
 tab success_htn_6xtra b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
@@ -735,12 +732,10 @@ tab success_htn_6xtra b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 local opp_hypxtra "T2_qidsms_Oppt_bp_15_17 T2_qidsms_Oppt_bp_18_22 T2_qidsms_Oppt_bp_24_28 T2_qidsms_Oppt_bp_31_33 T2_qidsms_Oppt_bp_35_37"
 foreach x of local opp_hypxtra {
                 gen new_`x'=1 if `x'=="Successful"
-                replace new_`x'=. if `x'=="Not Successful" 
-                replace new_`x'=. if `x'=="Not Applicable"
+                replace new_`x'=0 if `x'=="Not Successful" 
         }
 
-egen opp_hypxtra=rowtotal(new_T2_qidsms_Oppt_bp_15_17 new_T2_qidsms_Oppt_bp_18_22 new_T2_qidsms_Oppt_bp_24_28 new_T2_qidsms_Oppt_bp_31_33 new_T2_qidsms_Oppt_bp_35_37) 
-replace opp_hypxtra=. if new_T2_qidsms_Oppt_bp_15_17==. & new_T2_qidsms_Oppt_bp_18_22==. & new_T2_qidsms_Oppt_bp_24_28==. & new_T2_qidsms_Oppt_bp_31_33==. & new_T2_qidsms_Oppt_bp_35_37==. 
+egen opp_hypxtra=rowtotal(new_T2_qidsms_Oppt_bp_15_17 new_T2_qidsms_Oppt_bp_18_22 new_T2_qidsms_Oppt_bp_24_28 new_T2_qidsms_Oppt_bp_31_33 new_T2_qidsms_Oppt_bp_35_37)
 tab opp_hypxtra
 gen opp_hypxtra01=0 if opp_hypxtra==0
 replace opp_hypxtra01=1 if opp_hypxtra!=0 & opp_hypxtra!=.
@@ -750,38 +745,21 @@ egen tscreen_hypxtra=rowtotal(screen_hyp2xtra screen_hyp3xtra screen_hyp4xtra sc
 gen tscreen_hypxtra01=0 if tscreen_hypxtra==0 & opp_hypxtra01==1
 replace tscreen_hypxtra01=1 if tscreen_hypxtra!=0 & tscreen_hypxtra!=. & opp_hypxtra01==1
 tab tscreen_hypxtra01 b_TrialArm,  col chi
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
-tab tscreen_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
-*for management i need to exclude women who have missings in management vars*
-egen tman_hypxtra=rowtotal(man_hyp2xtra man_hyp3xtra man_hyp4xtra man_hyp5xtra man_hyp6xtra) if opp_hypxtra01==1 
-replace tman_hypxtra=. if  (man_hyp2xtra==. &  man_hyp3xtra==. & man_hyp4xtra==. & man_hyp5xtra==. & man_hyp6xtra==.)
+*managed succesfully among women who were supposed to be managed- abnormal BP values*
+gen oppman_hypxtra=1 if (man_hyp2xtra!=. | man_hyp3xtra!=. | man_hyp4xtra!=. | man_hyp5xtra!=. | man_hyp6xtra!=. )
+tab oppman_hypxtra
+egen tman_hypxtra=rowtotal(man_hyp2xtra man_hyp3xtra man_hyp4xtra man_hyp5xtra man_hyp6xtra) if opp_hypxtra01==1 & oppman_hypxtra==1
 tab tman_hypxtra
-
-gen tman_hypxtra01=0 if tman_hypxtra==0 
-replace tman_hypxtra01=1 if tman_hypxtra!=0 & tman_hypxtra!=. 
+gen tman_hypxtra01=0 if tman_hypxtra==0 & opp_hypxtra01==1 & oppman_hypxtra==1
+replace tman_hypxtra01=1 if tman_hypxtra!=0 & opp_hypxtra01==1 & tman_hypxtra!=. & oppman_hypxtra==1
 tab tman_hypxtra01 b_TrialArm,  col chi
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
-tab tman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
 
-egen tscreenman_hypxtra=rowtotal(success_htn_2xtra success_htn_3xtra success_htn_4xtra success_htn_5xtra success_htn_6xtra) if opp_hypxtra01==1
-gen tscreenman_hypxtra01=0 if tscreenman_hypxtra==0 & opp_hypxtra01==1
-replace tscreenman_hypxtra01=1 if tscreenman_hypxtra!=0 & tscreenman_hypxtra!=. & opp_hypxtra01==1
-tab tscreenman_hypxtra01 b_TrialArm,  col chi
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="C" & b_TrialArm!="D" ,  col chi 
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="D" ,  col chi 
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="B" & b_TrialArm!="C" ,  col chi 
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="D" ,  col chi 
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="B" ,  col chi 
-tab tscreenman_hypxtra01 b_TrialArm if b_TrialArm!="A" & b_TrialArm!="C" ,  col chi
+egen tmanscreen_hypxtra=rowtotal(success_htn_2xtra success_htn_3xtra success_htn_4xtra success_htn_5xtra success_htn_6xtra) if opp_hypxtra01==1 
+tab tmanscreen_hypxtra
+gen tmanscreen_hypxtra01=0 if tmanscreen_hypxtra==0 & opp_hypxtra01==1
+replace tmanscreen_hypxtra01=1 if tmanscreen_hypxtra!=0 & opp_hypxtra01==1 & tmanscreen_hypxtra!=.
+tab tmanscreen_hypxtra01 b_TrialArm,  col chi
 
 *****************************************************************************************************************************************************************************
 **********GEST DIABETES****
