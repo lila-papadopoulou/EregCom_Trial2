@@ -1,8 +1,23 @@
-*attendance*
- use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\T2_FINAL_dataset_07092021_nodup.dta"
- 
-keep uniqueid phase str_TRIAL_2_Cluster str_TRIAL_2_ClusSize clustername clussize cluster_size clsize_cat clussize_random clsize_cat_random lab usavailability labavailability us b_TrialArm totalatt anyopp totalop totalatt2 anyatt anyatt2 num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37
- 
+*1.ATTENDANCE EFFECT ESTIMATES*
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta"
+
+gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
+
+codebook uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 ///
+denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37 labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize ///
+agecat bookbmicat parity educationcat avgincomecat
+
+keep uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 ///
+denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37 labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize ///
+agecat bookbmicat parity educationcat avgincomecat
+
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance.dta", clear
+
+gen phase_n=1 if phase_x=="1"
+replace phase_n=2 if phase_x=="2"
+replace phase_n=3 if phase_x=="2 Gaza"
+
 gen att1=num_15_17 if num_15_17!=.
 gen att2=num_18_22 if num_18_22!=.
 gen att3=num_24_28 if num_24_28!=. 
@@ -10,25 +25,86 @@ gen att4=num_31_33 if num_31_33!=.
 gen att5=num_35_37 if num_35_37!=.
 
 reshape long att, i(uniqueid) j(timepoint)
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_long.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_long.dta", clear
 
-gen phase_n=1 if phase=="1"
-replace phase_n=2 if phase=="2"
-replace phase_n=3 if phase=="2 Gaza"
-
-*EXAMPLE MODEL*
-*a vs b*
+*A (0) vs. B (1)*
 gen AB=0 if b_TrialArm=="A"
 replace AB=1 if b_TrialArm=="B"
-
-*quality assure the data*
 count if missing(AB)
 assert r(N) == 0
-xi:melogit i.att i.AB i.timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
-*worked-less than a minute*
 
-xi:melogit i.att i.AB i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster: timepoint|| uniqueid:, or
+*A (0) vs. C (1)*
+gen AC=0 if b_TrialArm=="A"
+replace AC=1 if b_TrialArm=="C"
 
-*alternatively--> drop uniqueid and keep cluster as the random OR remove cluster from random efect side to vce (cluster cluster)*
+*A (0) vs. D (1)*
+gen AD=0 if b_TrialArm=="A"
+replace AD=1 if b_TrialArm=="D"
 
-*check if this is necessery from the protocol-the interaction term is assesing if the assoc. between attnvs.AB varies by timepoint*
-xi:melogit i.att AB##timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
+*B (0) vs. C (1)*
+gen BC=0 if b_TrialArm=="B"
+replace BC=1 if b_TrialArm=="C"
+
+*B (0) vs. D (1)* 
+gen BD=0 if b_TrialArm=="B"
+replace BD=1 if b_TrialArm=="D"
+
+*C (0) vs. D (1)*
+gen CD=0 if b_TrialArm=="C"
+replace CD=1 if b_TrialArm=="D"
+
+local TARMS "AB AC AD BC BD CD"
+foreach x of local TARMS {
+   xi:melogit i.att i.`x' i.timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
+        }
+
+**************************************************************************************************************
+*ANEMIA EFFECT ESTIMATES*
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta", clear
+
+gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
+
+gen phase_n=1 if phase_x=="1"
+replace phase_n=2 if phase_x=="2"
+replace phase_n=3 if phase_x=="2 Gaza"
+
+codebook uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize agecat bookbmicat ///
+parity educationcat avgincomecat screen_anemia1 screen_anemia2 screen_anemia3 screen_anemia4 screen_anemia2xtra screen_anemia4xtra man_anemia1 ///
+man_anemia2 man_anemia3 man_anemia4 man_anemia2xtra man_anemia4xtra success_anemia_1 success_anemia_2 success_anemia_3 success_anemia_4 success_anemia_2xtra phase_n ///
+success_anemia_4xtra
+
+keep uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize agecat bookbmicat ///
+parity educationcat avgincomecat screen_anemia1 screen_anemia2 screen_anemia3 screen_anemia4 screen_anemia2xtra screen_anemia4xtra man_anemia1 ///
+man_anemia2 man_anemia3 man_anemia4 man_anemia2xtra man_anemia4xtra success_anemia_1 success_anemia_2 success_anemia_3 success_anemia_4 success_anemia_2xtra phase_n ///
+success_anemia_4xtra
+
+rename screen_anemia2xtra screen_anx2
+rename screen_anemia4xtra screen_anx4
+rename man_anemia2xtra man_anx2
+rename man_anemia4xtra man_anx4
+rename success_anemia_2xtra success_anx2
+rename success_anemia_4xtra success_anx4
+
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\anemia.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\anemia.dta", clear
+
+reshape long screen_anx  man_anx success_anx screen_anemia man_anemia success_anemia_, i(uniqueid) j(timepoint)
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\anemia_long.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\anemia_long.dta", clear
+
+*SCREENING ONLY*
+
+*MANAGEMENT ONLY*
+
+
+*SCREENING & MANAGEMENT*
+
+
+*QID/SMS ARMS*
+*SCREENING ONLY*
+
+*MANAGEMENT ONLY*
+
+
+*SCREENING & MANAGEMENT*
