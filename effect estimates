@@ -1,31 +1,52 @@
 *1.ATTENDANCE EFFECT ESTIMATES*
-use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta", clear
 
+*new vars and vars to keep for this analysis*
+*cluster size*
 gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
+label var clussize "cluster size by 100s"
+codebook clussize
 
-codebook uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 ///
-denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37 labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize ///
-agecat bookbmicat parity educationcat avgincomecat
-
-keep uniqueid phase_x b_TrialArm str_TRIAL_2_Cluster num_15_17 num_18_22 num_24_28 num_31_33 num_35_37 ///
-denom_15_17 denom_18_22 denom_24_28 denom_31_33 denom_35_37 labavailability_y usavailability_y clussize str_TRIAL_2_ClusSize ///
-agecat bookbmicat parity educationcat avgincomecat
-
-save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance.dta"
-use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance.dta", clear
-
+*phase-relabel categories*
 gen phase_n=1 if phase_x=="1"
 replace phase_n=2 if phase_x=="2"
 replace phase_n=3 if phase_x=="2 Gaza"
+label var phase_n "phase"
+codebook phase_n
 
+*gen attendace vars to reshape to long"
 gen att1=num_15_17 if num_15_17!=.
 gen att2=num_18_22 if num_18_22!=.
 gen att3=num_24_28 if num_24_28!=. 
 gen att4=num_31_33 if num_31_33!=.
 gen att5=num_35_37 if num_35_37!=.
+label var att1 "attendance 15-17 weeks (numerator)"
+label var att2 "attendance 18-22 weeks (numerator)"
+label var att3 "attendance 24-28 weeks (numerator)"
+label var att4 "attendance 31-33 weeks (numerator)"
+label var att5 "attendance 35-37 weeks (numerator)"
+codebook att1-att5
+
+gen lab=labavailability_y
+label var lab "lab availability"
+gen us=usavailability_y
+label var us "ultrasound availability"
+label var agecat "participant's age at baseline-years"
+label var parity "participant's parity- nulli(0)/multi(1)"
+
+gen strata=bookorgdistricthashed 
+label var strata "district strata-based on booking info"
+codebook strata
+
+codebook uniqueid b_TrialArm  att1-att5  phase_n  str_TRIAL_2_Cluster clussize lab us agecat parity strata  
+
+keep uniqueid b_TrialArm  att1-att5  phase_n  str_TRIAL_2_Cluster clussize lab us agecat parity strata
+
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_wide.dta", replace
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_wide.dta", clear
 
 reshape long att, i(uniqueid) j(timepoint)
-save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_long.dta"
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_long.dta", replace
 use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\attendance_long.dta", clear
 
 *A (0) vs. B (1)*
@@ -54,9 +75,9 @@ replace BD=1 if b_TrialArm=="D"
 gen CD=0 if b_TrialArm=="C"
 replace CD=1 if b_TrialArm=="D"
 
-local TARMS "AB AC AD BC BD CD"
-foreach x of local TARMS {
-   xi:melogit i.att i.`x' i.timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.att i.`x' i.timepoint i.phase_n i.us i.lab clussize  i.parity i.agecat i.strata|| str_TRIAL_2_Cluster:|| uniqueid:, or
         }
 
 **************************************************************************************************************
