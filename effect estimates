@@ -77,7 +77,7 @@ replace CD=1 if b_TrialArm=="D"
 
 local comparisons "AB AC AD BC BD CD"
 foreach x of local comparisons {
-   xi:melogit i.att i.`x' i.timepoint i.phase_n i.us i.lab clussize  i.parity i.agecat || str_TRIAL_2_Cluster:|| uniqueid:, or
+   xi:melogit i.att i.`x' i.timepoint i.phase_n i.us i.lab clussize || str_TRIAL_2_Cluster:|| uniqueid:, or
         }
 
 **************************************************************************************************************
@@ -96,14 +96,6 @@ replace phase_n=2 if phase_x=="2"
 replace phase_n=3 if phase_x=="2 Gaza"
 label var phase_n "phase"
 codebook phase_n
-
-gen att5=num_35_37 if num_35_37!=.
-label var att1 "attendance 15-17 weeks (numerator)"
-label var att2 "attendance 18-22 weeks (numerator)"
-label var att3 "attendance 24-28 weeks (numerator)"
-label var att4 "attendance 31-33 weeks (numerator)"
-label var att5 "attendance 35-37 weeks (numerator)"
-codebook att1-att5
 
 gen lab=labavailability_y
 label var lab "lab availability"
@@ -165,24 +157,159 @@ replace CD=1 if b_TrialArm=="D"
 *SCREENING ONLY*
 local comparisons "AB AC AD BC BD CD"
 foreach x of local comparisons {
-   xi:melogit i.screen_anemia i.`x' i.timepoint i.phase_n i.us i.lab clussize  i.parity i.agecat || str_TRIAL_2_Cluster:|| uniqueid:, or
+   xi:melogit i.screen_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+
+*MANAGEMENT ONLY-THERE IS NO WOMAN WHO HAS BEEN MANAGED MORE THAN ONCE-makes sense, because if you are manages means you have developed the disease so you are censored from later screenings and managements*
+*ALL SUCESFULL MANAGEMENTSARE AT THE 1ST OR 2ND VISIT*
+*DO I NEED TO KEEP THE UNIQUEID AS RANDOM EFFECT?*
+
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.man_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+*not working*
+
+*SCREENING & MANAGEMENT*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.success_anemia_ i.`x' i.phase_n i.us i.lab clussize  || str_TRIAL_2_Cluster:|| uniqueid:, or
     estimates title: `x'_comparison
      estimates store `x'
            }
 estimates table _all
 
-*this model is not converging*
+*Models not converging*
+*try alternative with cluster errors*
 
-*MANAGEMENT ONLY*
-
-
-*SCREENING & MANAGEMENT*
+foreach x of local comparisons {
+   xi:melogit i.success_anemia_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+    estimates title: `x'_comparison
+     estimates store `x'
+           }
+estimates table _all
 
 
 *QID/SMS ARMS*
 *SCREENING ONLY*
-
+foreach x of local comparisons {
+   xi:melogit i.scanem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+               
 *MANAGEMENT ONLY*
-
+foreach x of local comparisons {
+   xi:melogit i.mananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+ *AB, AC, BC, BD,CD are running but ul  omitted because of collinearity and lab  predicts failure perfectly
+ *AD not running
+ *places that did not have UL and LAB did not manage any case of anemia succesfully*
+ 
 
 *SCREENING & MANAGEMENT*
+foreach x of local comparisons {
+   xi:melogit i.scmananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+               
+ **********************************************************************************************************
+ **hypertension EFFECT ESTIMATES*
+ 
+ use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta", clear
+
+*new vars and vars to keep for this analysis*
+*cluster size*
+gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
+label var clussize "cluster size by 100s"
+codebook clussize
+
+*phase-relabel categories*
+gen phase_n=1 if phase_x=="1"
+replace phase_n=2 if phase_x=="2"
+replace phase_n=3 if phase_x=="2 Gaza"
+label var phase_n "phase"
+codebook phase_n
+
+gen lab=labavailability_y
+label var lab "lab availability"
+gen us=usavailability_y
+label var us "ultrasound availability"
+
+*outcome variables*
+screen_hyp1 screen_hyp2 screen_hyp3 screen_hyp4 screen_hyp5 screen_hyp6
+man_hyp1 man_hyp2 man_hyp3 man_hyp4 man_hyp5 man_hyp6
+success_htn_1 success_htn_2 success_htn_3 success_htn_4 success_htn_5 success_htn_6
+
+screen_hyp2xtra screen_hyp3xtra screen_hyp4xtra screen_hyp5xtra screen_hyp6xtra 
+man_hyp2xtra man_hyp3xtra man_hyp4xtra man_hyp5xtra man_hyp6xtra
+success_htn_2xtra success_htn_3xtra success_htn_4xtra success_htn_5xtra success_htn_6xtra
+
+*rename HYPER vars for reshaping*
+rename screen_hyp2xtra schyp_qidsms2
+rename screen_hyp3xtra schyp_qidsms3
+rename screen_hyp4xtra schyp_qidsms4
+rename screen_hyp5xtra schyp_qidsms5
+rename screen_hyp6xtra schyp_qidsms6
+
+rename man_hyp2xtra manhyp_qidsms2
+rename man_hyp3xtra manhyp_qidsms3
+rename man_hyp4xtra manhyp_qidsms4
+rename man_hyp5xtra manhyp_qidsms5
+rename man_hyp6xtra manhyp_qidsms6
+ 
+rename success_htn_2xtra sucesshyp_qidsms2
+rename success_htn_3xtra sucesshyp_qidsms3 
+rename success_htn_4xtra sucesshyp_qidsms4
+rename success_htn_5xtra sucesshyp_qidsms5
+rename success_htn_6xtra sucesshyp_qidsms6
+
+keep uniqueid b_TrialArm phase_n  str_TRIAL_2_Cluster clussize lab us 
+screen_hyp1 screen_hyp2 screen_hyp3 screen_hyp4 screen_hyp5 screen_hyp6
+man_hyp1 man_hyp2 man_hyp3 man_hyp4 man_hyp5 man_hyp6
+success_htn_1 success_htn_2 success_htn_3 success_htn_4 success_htn_5 success_htn_6
+schyp_qidsms2 schyp_qidsms3 schyp_qidsms4 schyp_qidsms5 schyp_qidsms6
+manhyp_qidsms2 manhyp_qidsms3 manhyp_qidsms4 manhyp_qidsms5 manhyp_qidsms6
+sucesshyp_qidsms2 sucesshyp_qidsms3 sucesshyp_qidsms4 sucesshyp_qidsms5 sucesshyp_qidsms6
+
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\hyper_wide.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\hyper_wide.dta", clear
+
+reshape long screen_hyp man_hyp success_htn_ schyp_qidsms manhyp_qidsms sucesshyp_qidsms, i(uniqueid) j(timepoint)
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\hyper_long.dta", replace
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\hyper_long.dta", clear
+
+*A (0) vs. B (1)*
+gen AB=0 if b_TrialArm=="A"
+replace AB=1 if b_TrialArm=="B"
+
+*A (0) vs. C (1)*
+gen AC=0 if b_TrialArm=="A"
+replace AC=1 if b_TrialArm=="C"
+
+*A (0) vs. D (1)*
+gen AD=0 if b_TrialArm=="A"
+replace AD=1 if b_TrialArm=="D"
+
+*B (0) vs. C (1)*
+gen BC=0 if b_TrialArm=="B"
+replace BC=1 if b_TrialArm=="C"
+
+*B (0) vs. D (1)* 
+gen BD=0 if b_TrialArm=="B"
+replace BD=1 if b_TrialArm=="D"
+
+*C (0) vs. D (1)*
+gen CD=0 if b_TrialArm=="C"
+replace CD=1 if b_TrialArm=="D"
+
+*SCREENING ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.screen_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+*MANAGEMENT ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.man_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+ 
+ 
+ 
