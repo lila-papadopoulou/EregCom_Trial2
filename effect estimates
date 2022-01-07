@@ -310,6 +310,156 @@ local comparisons "AB AC AD BC BD CD"
 foreach x of local comparisons {
    xi:melogit i.man_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
+
+*Screening and MANAGEMENT*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.success_htn_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+ ******************************
+ *QID/SMS subsample*
+ *SCREENING ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.schyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+*MANAGEMENT ONLY*
+xi:melogit i.manhyp_qidsms i.AB i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+xi:melogit i.manhyp_qidsms i.AC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+xi:melogit i.manhyp_qidsms i.AD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+xi:melogit i.manhyp_qidsms i.BC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+xi:melogit i.manhyp_qidsms i.BD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+xi:melogit i.manhyp_qidsms i.CD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+
+*Screening and MANAGEMENT*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.sucesshyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+
+***********************************************************************************************************
+*GDM EFFECT ESTIMATES*
+ 
+ use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\outcomes_04112021_nodup.dta", clear
+
+*new vars and vars to keep for this analysis*
+*cluster size*
+gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
+label var clussize "cluster size by 100s"
+codebook clussize
+
+*phase-relabel categories*
+gen phase_n=1 if phase_x=="1"
+replace phase_n=2 if phase_x=="2"
+replace phase_n=3 if phase_x=="2 Gaza"
+label var phase_n "phase"
+codebook phase_n
+
+gen lab=labavailability_y
+label var lab "lab availability"
+gen us=usavailability_y
+label var us "ultrasound availability"
+
+*outcome variables*
+screen_gdm1 screen_gdm2 screen_gdm3 
+man_gdm1 man_gdm2 man_gdm3 
+success_gdm1 success_gdm2 success_gdm3
+screen_gdm2xtra man_gdm2xtra success_gdm2xtra
+
+*rename GDM vars for reshaping*
+rename screen_gdm2xtra scgdm_qidsms2
+rename man_gdm2xtra mangdm_qidsms2
+rename success_gdm2xtra sucgdm_qidsms2
+
+keep uniqueid b_TrialArm phase_n  str_TRIAL_2_Cluster clussize lab us 
+screen_gdm1 screen_gdm2 screen_gdm3 man_gdm1 man_gdm2 man_gdm3 
+success_gdm1 success_gdm2 success_gdm3  scgdm_qidsms2 mangdm_qidsms2 sucgdm_qidsms2
+
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\gdm_wide.dta"
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\gdm_wide.dta", clear
+
+reshape long screen_gdm man_gdm success_gdm scgdm_qidsms mangdm_qidsms sucgdm_qidsms, i(uniqueid) j(timepoint)
+save "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\gdm_long.dta", replace
+use "C:\Users\elpa\OneDrive - Folkehelseinstituttet\from personmap\Global Health\palestine rct\gdm_long.dta", clear
+
+*A (0) vs. B (1)*
+gen AB=0 if b_TrialArm=="A"
+replace AB=1 if b_TrialArm=="B"
+
+*A (0) vs. C (1)*
+gen AC=0 if b_TrialArm=="A"
+replace AC=1 if b_TrialArm=="C"
+
+*A (0) vs. D (1)*
+gen AD=0 if b_TrialArm=="A"
+replace AD=1 if b_TrialArm=="D"
+
+*B (0) vs. C (1)*
+gen BC=0 if b_TrialArm=="B"
+replace BC=1 if b_TrialArm=="C"
+
+*B (0) vs. D (1)* 
+gen BD=0 if b_TrialArm=="B"
+replace BD=1 if b_TrialArm=="D"
+
+*C (0) vs. D (1)*
+gen CD=0 if b_TrialArm=="C"
+replace CD=1 if b_TrialArm=="D"
+
+*SCREENING ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.screen_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+*MANAGEMENT ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.man_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+
+*Screening and MANAGEMENT*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.success_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+ ******************************
+ *QID/SMS subsample*
+ *this outcome was assesed only once-at timepoint 2*
+*SCREENING ONLY*
+local comparisons "AB AC AD BC BD CD"
+foreach x of local comparisons {
+   xi:melogit i.scgdm_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+               }
+               
+ xi:melogit i.scgdm_qidsms i.AB i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.scgdm_qidsms i.AC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.scgdm_qidsms i.AD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster) 
+ xi:melogit i.scgdm_qidsms i.BC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)  
+ xi:melogit i.scgdm_qidsms i.BD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.scgdm_qidsms i.CD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)  
+ 
+ *MANAGEMENT ONLY*
+ xi:melogit i.mangdm_qidsms i.AB i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *not enough observations, n=20* 
+ xi:melogit i.mangdm_qidsms i.AC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *not enough observation, n=24*
+ xi:melogit i.mangdm_qidsms i.AD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *not enough observation, n=24*
+ xi:melogit i.mangdm_qidsms i.BC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *n=29, phase, us, lab omitted*
+ xi:melogit i.mangdm_qidsms i.BD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *not enough observation, n=29*
+ xi:melogit i.mangdm_qidsms i.CD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ *not enough observation, n=24*
+ 
+ *MANAGEMENT & SCREENING*
+ xi:melogit i.sucgdm_qidsms i.AB i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.sucgdm_qidsms i.AC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.sucgdm_qidsms i.AD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster) 
+ xi:melogit i.sucgdm_qidsms i.BC i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)  
+ xi:melogit i.sucgdm_qidsms i.BD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
+ xi:melogit i.sucgdm_qidsms i.CD i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)  
+ 
  
  
  
