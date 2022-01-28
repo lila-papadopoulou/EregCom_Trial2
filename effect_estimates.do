@@ -1,5 +1,8 @@
 version 16.1
 
+// Set the random seed.
+set seed 1234
+
 // Check the data signature is as expected.
 datasignature
 assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
