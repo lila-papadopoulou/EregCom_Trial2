@@ -1,5 +1,9 @@
 version 16.1
 
+// Check the data signature is as expected.
+datasignature
+assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
+
 // Define a macro with the names of the outcomes.
 local outcomes attendance anemia hypertension gdm
 
