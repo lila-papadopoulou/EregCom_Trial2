@@ -1,28 +1,5 @@
 version 16.1
 
-// Set the random seed.
-set seed 1234
-
-// Check the data signature is as expected.
-datasignature
-assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
-
-// Define a macro with the names of the outcomes.
-local outcomes attendance anemia hypertension gdm
-
-// Define data labels for the outcomes.
-local attendance_data_lbl   "Attendance"
-local anemia_data_lbl       "Anemia"
-local hypertension_data_lbl "Hypertension"
-local gdm_data_lbl          "Gestational Diabetes Mellitus"
-
-// Create a frame for each outcome. Each frame is a copy of the original data.
-// Apply the data labels to the frames.
-foreach outcome of local outcomes {
-  frame copy default `outcome'
-  frame `outcome': label data "``outcome'_data_lbl'"
-}
-
 *1.ATTENDANCE EFFECT ESTIMATES*
 *vars to keep for this analysis*
 *cluster size*
