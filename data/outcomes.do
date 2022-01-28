@@ -1,5 +1,28 @@
 version 16.1
 
+// Load the data.
+use outcomes_04112021_nodup.dta
+
+// Check the data signature is as expected.
+datasignature
+assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
+
+// Define a macro with the names of the outcomes.
+local outcomes attendance anemia hypertension gdm
+
+// Define data labels for the outcomes.
+local attendance_data_lbl   "Attendance"
+local anemia_data_lbl       "Anemia"
+local hypertension_data_lbl "Hypertension"
+local gdm_data_lbl          "Gestational Diabetes Mellitus"
+
+// Create a frame for each outcome. Each frame is a copy of the original data.
+// Apply the data labels to the frames.
+foreach outcome of local outcomes {
+  frame copy default `outcome'
+  frame `outcome': label data "``outcome'_data_lbl'"
+}
+
 *1.ATTENDANCE EFFECT ESTIMATES*
 *vars to keep for this analysis*
 *cluster size*
@@ -43,7 +66,6 @@ frame attendance {
   gen AB=0 if b_TrialArm=="A"
   replace AB=1 if b_TrialArm=="B"
 
-
   *A (0) vs. C (1)*
   gen AC=0 if b_TrialArm=="A"
   replace AC=1 if b_TrialArm=="C"
@@ -63,12 +85,6 @@ frame attendance {
   *C (0) vs. D (1)*
   gen CD=0 if b_TrialArm=="C"
   replace CD=1 if b_TrialArm=="D"
-
-  *EFFECT ESTIMATES FOR OUTCOME: TIMELY ANC ATTENDANCE*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.att i.`x' i.phase_n i.us i.lab clussize || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
 }
 
 
@@ -136,37 +152,6 @@ frame anemia {
   *C (0) vs. D (1)*
   gen CD=0 if b_TrialArm=="C"
   replace CD=1 if b_TrialArm=="D"
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING & MANAGEMENT OF ANEMIA*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.success_anemia_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF ANEMIA*
-  foreach x of local comparisons {
-     xi:melogit i.screen_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  /*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA*
-  foreach x of local comparisons {
-     xi:melogit i.man_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING & MANAGEMENT OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.scmananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.scanem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.mananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }*/
 }
 
  **********************************************************************************************************
@@ -174,7 +159,6 @@ frame anemia {
 *vars to keep for this analysis*
 *cluster size*
 frame hypertension {
-
   gen clussize= str_TRIAL_2_ClusSize/100 if str_TRIAL_2_ClusSize!=.
   label var clussize "cluster size by 100s"
   codebook clussize
@@ -243,39 +227,6 @@ frame hypertension {
   *C (0) vs. D (1)*
   gen CD=0 if b_TrialArm=="C"
   replace CD=1 if b_TrialArm=="D"
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF HYPERTENSION*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.success_htn_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF HYPERTENSION*
-  foreach x of local comparisons {
-     xi:melogit i.screen_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  /*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.man_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  ******************************
-   *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.sucesshyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.schyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.manhyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }*/
 }
 
 ***********************************************************************************************************
@@ -333,39 +284,4 @@ frame gdm {
   *C (0) vs. D (1)*
   gen CD=0 if b_TrialArm=="C"
   replace CD=1 if b_TrialArm=="D"
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF GDM*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.success_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF GDM*
-  foreach x of local comparisons {
-     xi:melogit i.screen_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  /*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF GDM*
-  foreach x of local comparisons {
-     xi:melogit i.man_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  ******************************
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF GDM FOR QID/SMS OUTCOMES*
-  *this outcome was assesed only once*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.sucgdm_qidsms i.`x' i.phase_n i.us i.lab clussize,or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF GDM FOR QID/SMS OUTCOMES*
-  *this outcome was assesed only once*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.scgdm_qidsms i.`x' i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF GDM FOR QID/SMS OUTCOMES*
-  *this outcome was assesed only once*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.mangdm_qidsms i.`x' i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
-                 }*/
 }
