@@ -142,7 +142,7 @@ foreach x of local comparisons {
    xi:melogit i.screen_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
                
-*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA*
+/*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA*
 foreach x of local comparisons {
    xi:melogit i.man_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
@@ -160,7 +160,7 @@ foreach x of local comparisons {
 *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA FOR QID/SMS OUTCOMES*
 foreach x of local comparisons {
    xi:melogit i.mananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-               }
+               }*/
                
  **********************************************************************************************************
 *3. HYPERTENSION EFFECT ESTIMATES*
@@ -245,7 +245,7 @@ foreach x of local comparisons {
 foreach x of local comparisons {
    xi:melogit i.screen_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
-*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION*
+/*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION*
 local comparisons "AB AC AD BC BD CD"
 foreach x of local comparisons {
    xi:melogit i.man_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
@@ -265,7 +265,7 @@ foreach x of local comparisons {
 *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION FOR QID/SMS OUTCOMES*
 foreach x of local comparisons {
    xi:melogit i.manhyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-               }
+               }*/
 ***********************************************************************************************************
 *4. GDM EFFECT ESTIMATES*
 *vars to keep for this analysis*
@@ -330,7 +330,7 @@ foreach x of local comparisons {
 foreach x of local comparisons {
    xi:melogit i.screen_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
-*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF GDM*
+/*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF GDM*
 foreach x of local comparisons {
    xi:melogit i.man_gdm i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
                }
@@ -354,7 +354,7 @@ foreach x of local comparisons {
 local comparisons "AB AC AD BC BD CD"
 foreach x of local comparisons {
    xi:melogit i.mangdm_qidsms i.`x' i.phase_n i.us i.lab clussize, or vce(cluster str_TRIAL_2_Cluster)
-               }
+               }*/
  
  
  
