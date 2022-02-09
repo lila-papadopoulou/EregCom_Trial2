@@ -4,7 +4,7 @@ version 16.1
 // comparison, any additional fixed effects (fixed), and random effects (random).
 local fe    i.phase_n i.us i.lab clussize
 local vce   vce(cluster str_TRIAL_2_Cluster)
-local model xi: melogit i.\`y' i.\`comparison' `fe' \`fixed' \`random', or `vce'
+local model melogit \`y' i.\`comparison' `fe' \`fixed' \`random', or `vce'
 
 // Specify the comparisons.
 local comparisons   AB AC AD BC BD CD
