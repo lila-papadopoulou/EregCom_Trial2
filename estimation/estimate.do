@@ -61,45 +61,6 @@ exit // TODO: Do not run any code after this point - See the note below
 // variables to the local macros that specify the outcomes and the delete
 // the exit command and everything that follows.
 
-**********************************************************************************************************
-*3. HYPERTENSION EFFECT ESTIMATES*
-*vars to keep for this analysis*
-*cluster size*
-frame hypertension {
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF HYPERTENSION*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.success_htn_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF HYPERTENSION*
-  foreach x of local comparisons {
-     xi:melogit i.screen_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  /*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.man_hyp i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  ******************************
-   *EFFECT ESTIMATES FOR OUTCOME: SCREENING AND MANAGEMENT OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.sucesshyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.schyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF HYPERTENSION FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.manhyp_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }*/
-}
-
 ***********************************************************************************************************
 *4. GDM EFFECT ESTIMATES*
 *vars to keep for this analysis*
