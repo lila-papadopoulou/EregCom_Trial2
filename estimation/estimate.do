@@ -19,6 +19,7 @@ local hypertension_outcomes                          success_htn_     screen_hyp
 local hypertension_outcomes `hypertension_outcomes'  sucesshyp_qidsms schyp_qidsms
 local hypertension_outcomes `hypertension_outcomes'  manhyp_qidsms
 local gdm_outcomes                                   success_gdm      screen_gdm
+local gdm_outcomes          `gdm_outcomes'           man_gdm
 
 // Specify outcomes that do not require a random effect for uniqueid.
 local no_random man_anemia mananem_qidsms manhyp_qidsms
