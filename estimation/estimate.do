@@ -10,10 +10,12 @@ local model melogit \`y' i.\`comparison' `fe' \`fixed' \`random', or `vce'
 local comparisons   AB AC AD BC BD CD
 
 // Specify the data frames and their outcomes.
-local attendance_outcomes   att
-local anemia_outcomes       success_anemia_ screen_anemia man_anemia
-local hypertension_outcomes success_htn_    screen_hyp
-local gdm_outcomes          success_gdm     screen_gdm
+local attendance_outcomes                     att
+local anemia_outcomes                         success_anemia_  screen_anemia
+local anemia_outcomes       `anemia_outcomes' man_anemia       scmananem_qidsms
+local anemia_outcomes       `anemia_outcomes' scmananem_qidsms
+local hypertension_outcomes                   success_htn_     screen_hyp
+local gdm_outcomes                            success_gdm      screen_gdm
 
 // Specify outcomes that do not require a random effect for uniqueid.
 local no_random man_anemia
