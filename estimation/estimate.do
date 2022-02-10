@@ -19,15 +19,15 @@ local hypertension_outcomes                          success_htn_     screen_hyp
 local hypertension_outcomes `hypertension_outcomes'  sucesshyp_qidsms schyp_qidsms
 local hypertension_outcomes `hypertension_outcomes'  manhyp_qidsms
 local gdm_outcomes                                   success_gdm      screen_gdm
-local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qidsms scgdm_qidsms
+local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qidsms
 local gdm_outcomes          `gdm_outcomes'           scgdm_qidsms
 
 // Specify outcomes that do not require a random effect for uniqueid.
-local no_random man_anemia mananem_qidsms manhyp_qidsms scgdm_qidsms
+local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms
 
 // Specify the outcomes that should be modelled using an *additional* fixed
 // effect for timepoint.
-foreach x in man_anemia mananem_qidsms manhyp_qidsms {
+foreach x in man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm {
   local `x'_fixed i.timepoint
 }
 
