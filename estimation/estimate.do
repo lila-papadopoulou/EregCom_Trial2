@@ -57,42 +57,6 @@ exit // TODO: Do not run any code after this point - See the note below
 // variables to the local macros that specify the outcomes and the delete
 // the exit command and everything that follows.
 
-**************************************************************************************************************
-*2. ANEMIA EFFECT ESTIMATES*
-* vars to keep for this analysis*
-*cluster size*
-frame anemia {
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING & MANAGEMENT OF ANEMIA*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.success_anemia_ i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF ANEMIA*
-  foreach x of local comparisons {
-     xi:melogit i.screen_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-  }
-
-  /*EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA*
-  foreach x of local comparisons {
-     xi:melogit i.man_anemia i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING & MANAGEMENT OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.scmananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-  *EFFECT ESTIMATES FOR OUTCOME: SCREENING OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.scanem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }
-
-  *EFFECT ESTIMATES FOR OUTCOME: MANAGEMENT OF ANEMIA FOR QID/SMS OUTCOMES*
-  foreach x of local comparisons {
-     xi:melogit i.mananem_qidsms i.`x' i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-                 }*/
-}
-
 **********************************************************************************************************
 *3. HYPERTENSION EFFECT ESTIMATES*
 *vars to keep for this analysis*
