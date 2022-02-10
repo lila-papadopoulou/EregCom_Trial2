@@ -7,9 +7,6 @@ use outcomes_04112021_nodup.dta
 datasignature
 assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
 
-// Define a macro with the names of the outcomes.
-local outcomes attendance anemia hypertension gdm
-
 // Define data labels for the outcomes.
 local attendance_data_lbl   "Attendance"
 local anemia_data_lbl       "Anemia"
@@ -18,9 +15,9 @@ local gdm_data_lbl          "Gestational Diabetes Mellitus"
 
 // Create a frame for each outcome. Each frame is a copy of the original data.
 // Apply the data labels to the frames.
-foreach outcome of local outcomes {
-  frame copy default `outcome'
-  frame `outcome': label data "``outcome'_data_lbl'"
+foreach frame of global frames {
+  frame copy default `frame'
+  frame `frame': label data "``frame'_data_lbl'"
 }
 
 *1.ATTENDANCE EFFECT ESTIMATES*

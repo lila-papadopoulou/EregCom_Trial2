@@ -1,16 +1,41 @@
 version 16.1
 
-*1.ATTENDANCE EFFECT ESTIMATES*
-*vars to keep for this analysis*
-*cluster size*
-frame attendance {
-  *EFFECT ESTIMATES FOR OUTCOME: TIMELY ANC ATTENDANCE*
-  local comparisons "AB AC AD BC BD CD"
-  foreach x of local comparisons {
-     xi:melogit i.att i.`x' i.phase_n i.us i.lab clussize || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+// Specify the model.
+local fixed_effects i.phase_n i.us i.lab clussize
+local vce           vce(cluster str_TRIAL_2_Cluster)
+local model         xi: melogit i.\`y' \`comparison' `fixed_effects' || uniqueid:, or `vce'
+
+// Specify the comparisons.
+local comparisons   AB AC AD BC BD CD
+
+// Specify the data frames and their outcomes.
+local attendance_outcomes   att
+local anemia_outcomes       success_anemia_ screen_anemia
+local hypertension_outcomes success_htn_    screen_hyp
+local gdm_outcomes          success_gdm     screen_gdm
+
+// Run the analyses.
+foreach frame of global frames {
+  frame `frame' {
+    foreach y of local `frame'_outcomes {
+      disp "{hline}"
+      disp "{title:Analyzing `y' (`: data label')}" // Log the outcome.
+      foreach comparison of local comparisons {
+        `model' // Run the analysis.
+        disp "The above estimates were produced using `e(cmdline)'"
+        disp "{hline}"
+      }
+    }
   }
 }
 
+exit // TODO: Do not run any code after this point - See the note below
+
+// NOTE: The follwoing analyses are retained so that we do not lose the names
+// of the dependent variables for the models that cannot yet be fitted. When we
+// are happy with the model specification we can add the "missing" dependent
+// variables to the local macros that specify the outcomes and the delete
+// the exit command and everything that follows.
 
 **************************************************************************************************************
 *2. ANEMIA EFFECT ESTIMATES*
