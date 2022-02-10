@@ -11,7 +11,7 @@ set seed 1234
 do globals/globals
 
 // Prepare the data for analysis.
-do data/outcomes
+quietly do data/outcomes
 
 // Perform estimation.
 do estimation/estimate
