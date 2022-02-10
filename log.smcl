@@ -3,7 +3,7 @@
       name:  {res}eRegCom
        {txt}log:  {res}/Users/cjr/Repos/eReg-analysis-Lila/log.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}10 Feb 2022, 15:03:42
+ {txt}opened on:  {res}10 Feb 2022, 16:12:37
 {txt}
 {com}. 
 . // Set the random seed.
@@ -66,18 +66,18 @@
 {txt}
 {com}. local gdm_outcomes                                   success_gdm      screen_gdm
 {txt}
-{com}. local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qidsms scgdm_qidsms
+{com}. local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qidsms
 {txt}
 {com}. local gdm_outcomes          `gdm_outcomes'           scgdm_qidsms
 {txt}
 {com}. 
 . // Specify outcomes that do not require a random effect for uniqueid.
-. local no_random man_anemia mananem_qidsms manhyp_qidsms scgdm_qidsms
+. local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms
 {txt}
 {com}. 
 . // Specify the outcomes that should be modelled using an *additional* fixed
 . // effect for timepoint.
-. foreach x in man_anemia mananem_qidsms manhyp_qidsms {c -(}
+. foreach x in man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm {c -(}
 {txt}  2{com}.   local `x'_fixed i.timepoint
 {txt}  3{com}. {c )-}
 {txt}
@@ -3971,665 +3971,248 @@ The above estimates were produced using melogit screen_hyp i.CD i.phase_n i.us i
 {hline}
 {hline}
 {title:Analyzing man_hyp (Hypertension)}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-223.37861}  
-Iteration 1:{space 3}log likelihood = {res:-223.12239}  
-Iteration 2:{space 3}log likelihood = {res:-223.12223}  
-Iteration 3:{space 3}log likelihood = {res:-223.12223}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-226.06722}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-226.06722}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-223.62148}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-223.34116}  (not concave)
-Iteration 3:{space 3}log pseudolikelihood = {res:-223.22917}  (not concave)
-Iteration 4:{space 3}log pseudolikelihood = {res:-223.13953}  (not concave)
-Iteration 5:{space 3}log pseudolikelihood = {res:-223.13057}  (not concave)
-Iteration 6:{space 3}log pseudolikelihood = {res:-223.12967}  (not concave)
-Iteration 7:{space 3}log pseudolikelihood = {res:-223.12932}  (not concave)
-Iteration 8:{space 3}log pseudolikelihood = {res:-223.12917}  (not concave)
-Iteration 9:{space 3}log pseudolikelihood = {res:-223.12911}  (not concave)
-Iteration 10:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 11:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 12:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 13:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 14:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 15:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 16:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 17:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 18:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-223.12907}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-223.12907}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-223.12906}  
-Iteration 41:{space 2}log pseudolikelihood = {res:-223.12906}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-223.12906}  
-Iteration 43:{space 2}log pseudolikelihood = {res:-223.12904}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-223.12903}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-223.12881}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-223.12865}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-223.12851}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-223.12841}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-223.12807}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-223.12705}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-223.12703}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-223.12694}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-223.12682}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-223.12603}  
-Iteration 55:{space 2}log pseudolikelihood = {res:-223.12223}  (not concave)
-Iteration 56:{space 2}log pseudolikelihood = {res:-223.12223}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-127.90459}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-124.51859}  
+Iteration 2:{space 3}log pseudolikelihood = {res: -124.4587}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-124.45866}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-124.45866}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       339
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       282
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       339
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.2
-{col 63}{txt}max{col 67}={res}{col 69}         5
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    20.54
-{txt}Log pseudolikelihood = {res}-223.12223{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0022
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}    88.52
+{txt}Log pseudolikelihood = {res}-124.45866{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:55} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AB {c |}{col 14}{res}{space 2} 1.373161{col 26}{space 2} .3160666{col 37}{space 1}    1.38{col 46}{space 3}0.168{col 54}{space 4} .8745744{col 67}{space 3} 2.155988
+{space 8}1.AB {c |}{col 14}{res}{space 2} 1.864299{col 26}{space 2} .7842039{col 37}{space 1}    1.48{col 46}{space 3}0.139{col 54}{space 4} .8174545{col 67}{space 3} 4.251746
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.150927{col 26}{space 2} .2975711{col 37}{space 1}    0.54{col 46}{space 3}0.587{col 54}{space 4} .6933789{col 67}{space 3} 1.910404
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.374597{col 26}{space 2} .4616856{col 37}{space 1}    0.95{col 46}{space 3}0.343{col 54}{space 4} .7116764{col 67}{space 3} 2.655023
+{space 10}2  {c |}{col 14}{res}{space 2} 1.079202{col 26}{space 2} .4903389{col 37}{space 1}    0.17{col 46}{space 3}0.867{col 54}{space 4} .4429521{col 67}{space 3} 2.629353
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.182294{col 26}{space 2} 1.552487{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} 1.223152{col 67}{space 3} 8.279428
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.661002{col 26}{space 2} .8579878{col 37}{space 1}    0.98{col 46}{space 3}0.326{col 54}{space 4} .6035082{col 67}{space 3} 4.571481
+{space 8}Yes  {c |}{col 14}{res}{space 2} 2.651578{col 26}{space 2}  1.78445{col 37}{space 1}    1.45{col 46}{space 3}0.147{col 54}{space 4} .7090315{col 67}{space 3} 9.916155
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.472397{col 26}{space 2} .6428966{col 37}{space 1}    0.89{col 46}{space 3}0.376{col 54}{space 4} .6256947{col 67}{space 3} 3.464873
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9525168{col 26}{space 2} .0141707{col 37}{space 1}   -3.27{col 46}{space 3}0.001{col 54}{space 4} .9251438{col 67}{space 3} .9806998
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .3291386{col 26}{space 2}  .141206{col 37}{space 1}   -2.59{col 46}{space 3}0.010{col 54}{space 4} .1419708{col 67}{space 3} .7630598
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 3.43e-34{col 26}{space 2} 8.84e-33{col 54}{space 4} 4.25e-56{col 67}{space 3} 2.77e-12
+{space 8}Yes  {c |}{col 14}{res}{space 2} 2.442171{col 26}{space 2} 1.798735{col 37}{space 1}    1.21{col 46}{space 3}0.225{col 54}{space 4} .5765537{col 67}{space 3} 10.34457
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9006271{col 26}{space 2} .0172362{col 37}{space 1}   -5.47{col 46}{space 3}0.000{col 54}{space 4} .8674705{col 67}{space 3} .9350511
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0022069{col 26}{space 2} .0029113{col 37}{space 1}   -4.64{col 46}{space 3}0.000{col 54}{space 4} .0001663{col 67}{space 3} .0292874
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0151504{col 26}{space 2} .0138455{col 37}{space 1}   -4.58{col 46}{space 3}0.000{col 54}{space 4} .0025266{col 67}{space 3} .0908472
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0157504{col 26}{space 2} .0123503{col 37}{space 1}   -5.29{col 46}{space 3}0.000{col 54}{space 4} .0033872{col 67}{space 3} .0732384
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0118829{col 26}{space 2} .0113747{col 37}{space 1}   -4.63{col 46}{space 3}0.000{col 54}{space 4} .0018202{col 67}{space 3} .0775749
+{txt}{space 10}6  {c |}{col 14}{res}{space 2} .0134742{col 26}{space 2} .0145545{col 37}{space 1}   -3.99{col 46}{space 3}0.000{col 54}{space 4}  .001622{col 67}{space 3} .1119315
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 3.410585{col 26}{space 2}  2.10948{col 37}{space 1}    1.98{col 46}{space 3}0.047{col 54}{space 4} 1.014735{col 67}{space 3} 11.46318
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.AB i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.AB i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-296.02238}  
-Iteration 1:{space 3}log likelihood = {res:-295.81345}  
-Iteration 2:{space 3}log likelihood = {res:-295.81333}  
-Iteration 3:{space 3}log likelihood = {res:-295.81333}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-301.46484}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-301.46484}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-298.23252}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-296.70695}  (not concave)
-Iteration 3:{space 3}log pseudolikelihood = {res:  -296.097}  (not concave)
-Iteration 4:{space 3}log pseudolikelihood = {res:-295.85357}  (not concave)
-Iteration 5:{space 3}log pseudolikelihood = {res: -295.8414}  (not concave)
-Iteration 6:{space 3}log pseudolikelihood = {res:-295.83167}  (not concave)
-Iteration 7:{space 3}log pseudolikelihood = {res:-295.83143}  (not concave)
-Iteration 8:{space 3}log pseudolikelihood = {res:-295.83133}  (not concave)
-Iteration 9:{space 3}log pseudolikelihood = {res:-295.83133}  (not concave)
-Iteration 10:{space 2}log pseudolikelihood = {res:-295.83133}  (not concave)
-Iteration 11:{space 2}log pseudolikelihood = {res:-295.83133}  (not concave)
-Iteration 12:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 13:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 14:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 15:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 16:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 17:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 18:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-295.83132}  (backed up)
-Iteration 41:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-295.83132}  
-Iteration 44:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-295.83132}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-295.83131}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-295.83131}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-295.83126}  
-Iteration 51:{space 2}log pseudolikelihood = {res:-295.83112}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-295.83109}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-295.83035}  
-Iteration 54:{space 2}log pseudolikelihood = {res:-295.82638}  (not concave)
-Iteration 55:{space 2}log pseudolikelihood = {res:-295.82618}  
-Iteration 56:{space 2}log pseudolikelihood = {res:-295.82318}  (not concave)
-Iteration 57:{space 2}log pseudolikelihood = {res: -295.8231}  
-Iteration 58:{space 2}log pseudolikelihood = {res:-295.81334}  
-Iteration 59:{space 2}log pseudolikelihood = {res:-295.81333}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-192.31653}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-189.92118}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-189.90181}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-189.90181}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       441
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       349
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       441
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
-{col 63}{txt}max{col 67}={res}{col 69}         5
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    19.50
-{txt}Log pseudolikelihood = {res}-295.81333{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0034
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}    81.50
+{txt}Log pseudolikelihood = {res}-189.90181{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:56} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AC {c |}{col 14}{res}{space 2} 1.563184{col 26}{space 2} .3331663{col 37}{space 1}    2.10{col 46}{space 3}0.036{col 54}{space 4} 1.029416{col 67}{space 3}  2.37372
+{space 8}1.AC {c |}{col 14}{res}{space 2} 1.834441{col 26}{space 2} .5799501{col 37}{space 1}    1.92{col 46}{space 3}0.055{col 54}{space 4} .9871888{col 67}{space 3} 3.408845
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.121805{col 26}{space 2} .2615933{col 37}{space 1}    0.49{col 46}{space 3}0.622{col 54}{space 4} .7102741{col 67}{space 3} 1.771776
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}   .86102{col 26}{space 2} .2409617{col 37}{space 1}   -0.53{col 46}{space 3}0.593{col 54}{space 4} .4975071{col 67}{space 3}  1.49014
+{space 10}2  {c |}{col 14}{res}{space 2} 1.328292{col 26}{space 2} .4405543{col 37}{space 1}    0.86{col 46}{space 3}0.392{col 54}{space 4} .6933875{col 67}{space 3} 2.544552
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.658362{col 26}{space 2} .6479798{col 37}{space 1}    1.29{col 46}{space 3}0.195{col 54}{space 4} .7710546{col 67}{space 3} 3.566756
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.579462{col 26}{space 2}  .506465{col 37}{space 1}    1.43{col 46}{space 3}0.154{col 54}{space 4} .8424919{col 67}{space 3} 2.961097
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.619561{col 26}{space 2}  1.02683{col 37}{space 1}    0.76{col 46}{space 3}0.447{col 54}{space 4} .4674342{col 67}{space 3} 5.611435
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .8189826{col 26}{space 2} .2421518{col 37}{space 1}   -0.68{col 46}{space 3}0.499{col 54}{space 4} .4587716{col 67}{space 3} 1.462018
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9629059{col 26}{space 2} .0201102{col 37}{space 1}   -1.81{col 46}{space 3}0.070{col 54}{space 4} .9242866{col 67}{space 3} 1.003139
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .5910035{col 26}{space 2} .1893396{col 37}{space 1}   -1.64{col 46}{space 3}0.101{col 54}{space 4} .3154212{col 67}{space 3} 1.107361
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 2.75e-33{col 26}{space 2} 1.55e-31{col 54}{space 4} 4.14e-81{col 67}{space 3} 1.83e+15
+{space 8}Yes  {c |}{col 14}{res}{space 2} .7900241{col 26}{space 2} .3820027{col 37}{space 1}   -0.49{col 46}{space 3}0.626{col 54}{space 4} .3062361{col 67}{space 3} 2.038095
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9506595{col 26}{space 2} .0315896{col 37}{space 1}   -1.52{col 46}{space 3}0.128{col 54}{space 4} .8907182{col 67}{space 3} 1.014635
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0061632{col 26}{space 2} .0044133{col 37}{space 1}   -7.11{col 46}{space 3}0.000{col 54}{space 4} .0015146{col 67}{space 3} .0250797
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0245253{col 26}{space 2} .0148869{col 37}{space 1}   -6.11{col 46}{space 3}0.000{col 54}{space 4} .0074634{col 67}{space 3} .0805927
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0336375{col 26}{space 2} .0177826{col 37}{space 1}   -6.42{col 46}{space 3}0.000{col 54}{space 4} .0119353{col 67}{space 3} .0948014
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0157665{col 26}{space 2} .0115808{col 37}{space 1}   -5.65{col 46}{space 3}0.000{col 54}{space 4} .0037369{col 67}{space 3} .0665212
+{txt}{space 10}6  {c |}{col 14}{res}{space 2}  .024949{col 26}{space 2} .0167074{col 37}{space 1}   -5.51{col 46}{space 3}0.000{col 54}{space 4} .0067148{col 67}{space 3}  .092698
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  7.08751{col 26}{space 2} 5.165805{col 37}{space 1}    2.69{col 46}{space 3}0.007{col 54}{space 4} 1.698583{col 67}{space 3} 29.57336
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.AC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.AC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-251.35002}  
-Iteration 1:{space 3}log likelihood = {res:-251.05853}  
-Iteration 2:{space 3}log likelihood = {res:-251.05848}  
-Iteration 3:{space 3}log likelihood = {res:-251.05848}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-253.70546}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-253.70546}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-251.16637}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-251.10107}  (backed up)
-Iteration 3:{space 3}log pseudolikelihood = {res:-251.08726}  (backed up)
-Iteration 4:{space 3}log pseudolikelihood = {res: -251.0806}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res:-251.07733}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-251.07571}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-251.07531}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-251.07521}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-251.07516}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-251.07513}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-251.07512}  (backed up)
-Iteration 41:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-251.07512}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-251.07512}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-251.07511}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-251.07511}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-251.07511}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res: -251.0751}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-251.07484}  (backed up)
-Iteration 51:{space 2}log pseudolikelihood = {res:-251.07459}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-251.07454}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-251.07421}  
-Iteration 54:{space 2}log pseudolikelihood = {res:-251.07373}  (backed up)
-Iteration 55:{space 2}log pseudolikelihood = {res:-251.05848}  
-Iteration 56:{space 2}log pseudolikelihood = {res:-251.05848}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-168.16834}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-167.36512}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-167.36001}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-167.36001}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       374
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       292
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       374
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
-{col 63}{txt}max{col 67}={res}{col 69}         5
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}     2.02
-{txt}Log pseudolikelihood = {res}-251.05848{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.9177
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}    70.49
+{txt}Log pseudolikelihood = {res}-167.36001{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:51} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AD {c |}{col 14}{res}{space 2} 1.118809{col 26}{space 2} .2434285{col 37}{space 1}    0.52{col 46}{space 3}0.606{col 54}{space 4} .7303865{col 67}{space 3} 1.713795
+{space 8}1.AD {c |}{col 14}{res}{space 2} 1.433214{col 26}{space 2} .4405201{col 37}{space 1}    1.17{col 46}{space 3}0.242{col 54}{space 4} .7846597{col 67}{space 3} 2.617826
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.141528{col 26}{space 2} .3414228{col 37}{space 1}    0.44{col 46}{space 3}0.658{col 54}{space 4} .6351821{col 67}{space 3} 2.051515
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.085905{col 26}{space 2} .4779147{col 37}{space 1}    0.19{col 46}{space 3}0.851{col 54}{space 4} .4583233{col 67}{space 3} 2.572835
+{space 10}2  {c |}{col 14}{res}{space 2} 1.518431{col 26}{space 2} .5942508{col 37}{space 1}    1.07{col 46}{space 3}0.286{col 54}{space 4} .7051314{col 67}{space 3} 3.269791
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}   1.4126{col 26}{space 2} .8594822{col 37}{space 1}    0.57{col 46}{space 3}0.570{col 54}{space 4} .4286611{col 67}{space 3} 4.655048
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .9570472{col 26}{space 2} .6176079{col 37}{space 1}   -0.07{col 46}{space 3}0.946{col 54}{space 4} .2701659{col 67}{space 3} 3.390285
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.934931{col 26}{space 2} 1.150914{col 37}{space 1}    1.11{col 46}{space 3}0.267{col 54}{space 4} .6030636{col 67}{space 3} 6.208228
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .8168441{col 26}{space 2} .2249333{col 37}{space 1}   -0.73{col 46}{space 3}0.463{col 54}{space 4} .4761513{col 67}{space 3} 1.401307
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9928614{col 26}{space 2} .0226383{col 37}{space 1}   -0.31{col 46}{space 3}0.753{col 54}{space 4}  .949468{col 67}{space 3} 1.038238
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .7593533{col 26}{space 2} .4532728{col 37}{space 1}   -0.46{col 46}{space 3}0.645{col 54}{space 4} .2356921{col 67}{space 3} 2.446485
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 2.71e-32{col 26}{space 2} 1.53e-32{col 54}{space 4} 8.95e-33{col 67}{space 3} 8.18e-32
+{space 8}Yes  {c |}{col 14}{res}{space 2} .8674333{col 26}{space 2} .3760248{col 37}{space 1}   -0.33{col 46}{space 3}0.743{col 54}{space 4} .3708922{col 67}{space 3} 2.028731
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9851079{col 26}{space 2} .0342031{col 37}{space 1}   -0.43{col 46}{space 3}0.666{col 54}{space 4} .9203011{col 67}{space 3} 1.054478
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2}   .01119{col 26}{space 2} .0084655{col 37}{space 1}   -5.94{col 46}{space 3}0.000{col 54}{space 4} .0025403{col 67}{space 3} .0492928
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0300034{col 26}{space 2}  .017422{col 37}{space 1}   -6.04{col 46}{space 3}0.000{col 54}{space 4}  .009614{col 67}{space 3} .0936345
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0280706{col 26}{space 2} .0161954{col 37}{space 1}   -6.19{col 46}{space 3}0.000{col 54}{space 4} .0090604{col 67}{space 3}  .086967
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0197623{col 26}{space 2} .0138326{col 37}{space 1}   -5.61{col 46}{space 3}0.000{col 54}{space 4} .0050123{col 67}{space 3} .0779176
+{txt}{space 10}6  {c |}{col 14}{res}{space 2} .0438928{col 26}{space 2} .0272468{col 37}{space 1}   -5.04{col 46}{space 3}0.000{col 54}{space 4} .0130018{col 67}{space 3} .1481779
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 3.567459{col 26}{space 2} 1.651909{col 37}{space 1}    2.75{col 46}{space 3}0.006{col 54}{space 4} 1.439497{col 67}{space 3} 8.841119
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.AD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.AD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-261.05468}  
-Iteration 1:{space 3}log likelihood = {res:-260.87195}  
-Iteration 2:{space 3}log likelihood = {res:-260.87191}  
-Iteration 3:{space 3}log likelihood = {res:-260.87191}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-265.29406}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-265.29406}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-262.48428}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-261.16495}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-260.92988}  (backed up)
-Iteration 4:{space 3}log pseudolikelihood = {res:-260.90309}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res:-260.89063}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-260.88461}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-260.88312}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-260.88294}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-260.88285}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-260.88284}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-260.88283}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-260.88283}  
-Iteration 36:{space 2}log pseudolikelihood = {res:-260.88283}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-260.88282}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-260.88281}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res: -260.8828}  (backed up)
-Iteration 40:{space 2}log pseudolikelihood = {res:-260.88278}  (backed up)
-Iteration 41:{space 2}log pseudolikelihood = {res:-260.88261}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-260.88261}  
-Iteration 43:{space 2}log pseudolikelihood = {res:-260.88195}  
-Iteration 44:{space 2}log pseudolikelihood = {res:-260.88164}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-260.88151}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-260.88146}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-260.88139}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-260.88132}  
-Iteration 49:{space 2}log pseudolikelihood = {res:-260.87912}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-260.87191}  
-Iteration 51:{space 2}log pseudolikelihood = {res:-260.87191}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-159.18863}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-154.61017}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-154.53615}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-154.53608}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-154.53608}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       384
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       303
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       384
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
-{col 63}{txt}max{col 67}={res}{col 69}         4
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    16.91
-{txt}Log pseudolikelihood = {res}-260.87191{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0096
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}   142.69
+{txt}Log pseudolikelihood = {res}-154.53608{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:55} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BC {c |}{col 14}{res}{space 2} 1.096748{col 26}{space 2} .2333962{col 37}{space 1}    0.43{col 46}{space 3}0.664{col 54}{space 4} .7227114{col 67}{space 3} 1.664366
+{space 8}1.BC {c |}{col 14}{res}{space 2} .9695201{col 26}{space 2}  .434957{col 37}{space 1}   -0.07{col 46}{space 3}0.945{col 54}{space 4} .4024215{col 67}{space 3} 2.335782
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.213428{col 26}{space 2} .2962966{col 37}{space 1}    0.79{col 46}{space 3}0.428{col 54}{space 4} .7519106{col 67}{space 3}  1.95822
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} .8417797{col 26}{space 2} .2682684{col 37}{space 1}   -0.54{col 46}{space 3}0.589{col 54}{space 4} .4507413{col 67}{space 3} 1.572062
+{space 10}2  {c |}{col 14}{res}{space 2} .9579947{col 26}{space 2}  .524162{col 37}{space 1}   -0.08{col 46}{space 3}0.937{col 54}{space 4} .3278177{col 67}{space 3} 2.799586
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.240847{col 26}{space 2} .8570815{col 37}{space 1}    0.31{col 46}{space 3}0.755{col 54}{space 4} .3204597{col 67}{space 3} 4.804661
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2}  1.01758{col 26}{space 2} .3533925{col 37}{space 1}    0.05{col 46}{space 3}0.960{col 54}{space 4} .5151781{col 67}{space 3} 2.009926
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.151318{col 26}{space 2} .6695882{col 37}{space 1}    0.24{col 46}{space 3}0.809{col 54}{space 4}  .368256{col 67}{space 3} 3.599487
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.808117{col 26}{space 2} .5207365{col 37}{space 1}    2.06{col 46}{space 3}0.040{col 54}{space 4} 1.028208{col 67}{space 3} 3.179596
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9820611{col 26}{space 2}  .014756{col 37}{space 1}   -1.20{col 46}{space 3}0.228{col 54}{space 4} .9535616{col 67}{space 3} 1.011412
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .5371139{col 26}{space 2} .1811171{col 37}{space 1}   -1.84{col 46}{space 3}0.065{col 54}{space 4}  .277356{col 67}{space 3} 1.040148
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 5.06e-33{col 26}{space 2} 7.44e-33{col 54}{space 4} 2.84e-34{col 67}{space 3} 9.03e-32
+{space 8}Yes  {c |}{col 14}{res}{space 2} 4.313309{col 26}{space 2} 2.582063{col 37}{space 1}    2.44{col 46}{space 3}0.015{col 54}{space 4} 1.334315{col 67}{space 3} 13.94321
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9561512{col 26}{space 2} .0285801{col 37}{space 1}   -1.50{col 46}{space 3}0.134{col 54}{space 4} .9017445{col 67}{space 3} 1.013841
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0016501{col 26}{space 2} .0016289{col 37}{space 1}   -6.49{col 46}{space 3}0.000{col 54}{space 4} .0002383{col 67}{space 3} .0114231
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0068957{col 26}{space 2} .0050841{col 37}{space 1}   -6.75{col 46}{space 3}0.000{col 54}{space 4} .0016255{col 67}{space 3}  .029252
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0238298{col 26}{space 2} .0118534{col 37}{space 1}   -7.51{col 46}{space 3}0.000{col 54}{space 4} .0089891{col 67}{space 3} .0631719
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0098859{col 26}{space 2} .0054401{col 37}{space 1}   -8.39{col 46}{space 3}0.000{col 54}{space 4} .0033621{col 67}{space 3} .0290688
+{txt}{space 10}6  {c |}{col 14}{res}{space 2} .0108749{col 26}{space 2} .0055733{col 37}{space 1}   -8.82{col 46}{space 3}0.000{col 54}{space 4} .0039828{col 67}{space 3} .0296936
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  9.17271{col 26}{space 2} 4.350741{col 37}{space 1}    4.67{col 46}{space 3}0.000{col 54}{space 4} 3.620438{col 67}{space 3} 23.23989
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.BC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.BC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-214.84295}  
-Iteration 1:{space 3}log likelihood = {res:-214.67387}  
-Iteration 2:{space 3}log likelihood = {res:-214.67383}  
-Iteration 3:{space 3}log likelihood = {res:-214.67383}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-216.01198}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-216.01198}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-214.86593}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-214.74054}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-214.69738}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-214.68687}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-214.68661}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-214.68649}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-214.68646}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-214.68644}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-214.68644}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-214.68643}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-214.68643}  
-Iteration 35:{space 2}log pseudolikelihood = {res:-214.68643}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-214.68643}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-214.68643}  
-Iteration 38:{space 2}log pseudolikelihood = {res:-214.68642}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-214.68641}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-214.68641}  
-Iteration 41:{space 2}log pseudolikelihood = {res:-214.68636}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-214.68636}  
-Iteration 43:{space 2}log pseudolikelihood = {res:-214.68597}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-214.68596}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-214.68596}  (backed up)
-Iteration 46:{space 2}log pseudolikelihood = {res:-214.68522}  
-Iteration 47:{space 2}log pseudolikelihood = {res:-214.68256}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-214.68252}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-214.68242}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-214.68238}  
-Iteration 51:{space 2}log pseudolikelihood = {res:-214.67598}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-214.67594}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-214.67591}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-214.67501}  (not concave)
-Iteration 55:{space 2}log pseudolikelihood = {res:-214.67423}  
-Iteration 56:{space 2}log pseudolikelihood = {res:-214.67418}  (not concave)
-Iteration 57:{space 2}log pseudolikelihood = {res:-214.67414}  (not concave)
-Iteration 58:{space 2}log pseudolikelihood = {res:-214.67413}  
-Iteration 59:{space 2}log pseudolikelihood = {res:-214.67383}  (not concave)
-Iteration 60:{space 2}log pseudolikelihood = {res:-214.67383}  (not concave)
-Iteration 61:{space 2}log pseudolikelihood = {res:-214.67383}  (not concave)
-Iteration 62:{space 2}log pseudolikelihood = {res:-214.67383}  (not concave)
-Iteration 63:{space 2}log pseudolikelihood = {res:-214.67383}  (not concave)
-Iteration 64:{space 2}log pseudolikelihood = {res:-214.67383}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-136.52135}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-134.40019}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-134.36755}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-134.36751}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-134.36751}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       317
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       246
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       317
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
-{col 63}{txt}max{col 67}={res}{col 69}         5
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}     3.63
-{txt}Log pseudolikelihood = {res}-214.67383{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.7268
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}   105.07
+{txt}Log pseudolikelihood = {res}-134.36751{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:50} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BD {c |}{col 14}{res}{space 2} .8666247{col 26}{space 2}  .188679{col 37}{space 1}   -0.66{col 46}{space 3}0.511{col 54}{space 4} .5656008{col 67}{space 3}  1.32786
+{space 8}1.BD {c |}{col 14}{res}{space 2} .9424353{col 26}{space 2} .3311395{col 37}{space 1}   -0.17{col 46}{space 3}0.866{col 54}{space 4} .4733348{col 67}{space 3}  1.87644
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.210313{col 26}{space 2} .3374145{col 37}{space 1}    0.68{col 46}{space 3}0.494{col 54}{space 4} .7008049{col 67}{space 3} 2.090249
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} .9227403{col 26}{space 2} .6446816{col 37}{space 1}   -0.12{col 46}{space 3}0.908{col 54}{space 4} .2346276{col 67}{space 3} 3.628941
+{space 10}2  {c |}{col 14}{res}{space 2} 1.047276{col 26}{space 2}  .517861{col 37}{space 1}    0.09{col 46}{space 3}0.926{col 54}{space 4} .3973344{col 67}{space 3} 2.760365
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .9611673{col 26}{space 2} 1.520908{col 37}{space 1}   -0.03{col 46}{space 3}0.980{col 54}{space 4}  .043241{col 67}{space 3} 21.36498
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .8675241{col 26}{space 2} .3858042{col 37}{space 1}   -0.32{col 46}{space 3}0.749{col 54}{space 4} .3628576{col 67}{space 3} 2.074086
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.367057{col 26}{space 2} .6972375{col 37}{space 1}    0.61{col 46}{space 3}0.540{col 54}{space 4} .5030946{col 67}{space 3} 3.714696
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.570652{col 26}{space 2} .3957016{col 37}{space 1}    1.79{col 46}{space 3}0.073{col 54}{space 4} .9585902{col 67}{space 3} 2.573518
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.006296{col 26}{space 2} .0328858{col 37}{space 1}    0.19{col 46}{space 3}0.848{col 54}{space 4} .9438619{col 67}{space 3}  1.07286
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .5570917{col 26}{space 2} .2482276{col 37}{space 1}   -1.31{col 46}{space 3}0.189{col 54}{space 4} .2326218{col 67}{space 3} 1.334145
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 3.61e-33{col 26}{space 2} 2.49e-33{col 54}{space 4} 9.38e-34{col 67}{space 3} 1.39e-32
+{space 8}Yes  {c |}{col 14}{res}{space 2} 3.068419{col 26}{space 2}  1.39726{col 37}{space 1}    2.46{col 46}{space 3}0.014{col 54}{space 4} 1.256911{col 67}{space 3} 7.490738
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9911685{col 26}{space 2} .0663918{col 37}{space 1}   -0.13{col 46}{space 3}0.895{col 54}{space 4} .8692229{col 67}{space 3} 1.130222
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0047271{col 26}{space 2} .0050076{col 37}{space 1}   -5.05{col 46}{space 3}0.000{col 54}{space 4} .0005928{col 67}{space 3} .0376967
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0071001{col 26}{space 2}  .005157{col 37}{space 1}   -6.81{col 46}{space 3}0.000{col 54}{space 4} .0017101{col 67}{space 3} .0294791
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0236653{col 26}{space 2} .0154477{col 37}{space 1}   -5.74{col 46}{space 3}0.000{col 54}{space 4} .0065839{col 67}{space 3} .0850628
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0157434{col 26}{space 2} .0090339{col 37}{space 1}   -7.23{col 46}{space 3}0.000{col 54}{space 4} .0051128{col 67}{space 3}  .048477
+{txt}{space 10}6  {c |}{col 14}{res}{space 2}  .022308{col 26}{space 2} .0120204{col 37}{space 1}   -7.06{col 46}{space 3}0.000{col 54}{space 4} .0077589{col 67}{space 3} .0641386
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 5.665535{col 26}{space 2} 2.356604{col 37}{space 1}    4.17{col 46}{space 3}0.000{col 54}{space 4} 2.507148{col 67}{space 3} 12.80271
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.BD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.BD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-286.63729}  
-Iteration 1:{space 3}log likelihood = {res:-286.48047}  
-Iteration 2:{space 3}log likelihood = {res:-286.48046}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-290.80768}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-290.80768}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-287.81056}  
-Iteration 2:{space 3}log pseudolikelihood = {res: -286.8739}  (backed up)
-Iteration 3:{space 3}log pseudolikelihood = {res:-286.55169}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-286.52757}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res:-286.51599}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-286.51528}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res: -286.5151}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-286.51506}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-286.51504}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-286.51504}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-286.51503}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-286.51503}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-286.51502}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-286.51502}  
-Iteration 41:{space 2}log pseudolikelihood = {res:-286.51489}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-286.51488}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-286.51484}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-286.51484}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-286.51273}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-286.51251}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-286.51218}  
-Iteration 48:{space 2}log pseudolikelihood = {res:-286.48046}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-286.48046}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-286.48046}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-286.48046}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -199.7593}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-198.24147}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-198.22972}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-198.22972}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       419
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}       313
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       419
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
-{col 63}{txt}max{col 67}={res}{col 69}         5
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    17.80
-{txt}Log pseudolikelihood = {res}-286.48046{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0067
+{col 49}{txt}Wald chi2({res}11{txt}){col 67}={res}{col 70}   246.16
+{txt}Log pseudolikelihood = {res}-198.22972{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:51} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_hyp{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.CD {c |}{col 14}{res}{space 2} .6578945{col 26}{space 2} .0975774{col 37}{space 1}   -2.82{col 46}{space 3}0.005{col 54}{space 4} .4919353{col 67}{space 3} .8798416
+{space 8}1.CD {c |}{col 14}{res}{space 2}  .775272{col 26}{space 2} .1599804{col 37}{space 1}   -1.23{col 46}{space 3}0.217{col 54}{space 4} .5173748{col 67}{space 3} 1.161724
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.222915{col 26}{space 2} .2722984{col 37}{space 1}    0.90{col 46}{space 3}0.366{col 54}{space 4} .7904329{col 67}{space 3} 1.892029
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} .7416451{col 26}{space 2} .1679109{col 37}{space 1}   -1.32{col 46}{space 3}0.187{col 54}{space 4} .4758623{col 67}{space 3} 1.155875
+{space 10}2  {c |}{col 14}{res}{space 2} 1.357685{col 26}{space 2} .5380184{col 37}{space 1}    0.77{col 46}{space 3}0.440{col 54}{space 4} .6244365{col 67}{space 3} 2.951957
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.126922{col 26}{space 2} .4805571{col 37}{space 1}    0.28{col 46}{space 3}0.779{col 54}{space 4} .4885548{col 67}{space 3} 2.599409
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .5647172{col 26}{space 2} .2067538{col 37}{space 1}   -1.56{col 46}{space 3}0.119{col 54}{space 4} .2755433{col 67}{space 3}  1.15737
+{space 8}Yes  {c |}{col 14}{res}{space 2}  .770172{col 26}{space 2} .4652539{col 37}{space 1}   -0.43{col 46}{space 3}0.666{col 54}{space 4} .2357136{col 67}{space 3} 2.516465
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .9577963{col 26}{space 2} .2093089{col 37}{space 1}   -0.20{col 46}{space 3}0.844{col 54}{space 4} .6241063{col 67}{space 3}   1.4699
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.020182{col 26}{space 2} .0118192{col 37}{space 1}    1.72{col 46}{space 3}0.085{col 54}{space 4} .9972777{col 67}{space 3} 1.043612
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.595485{col 26}{space 2} .5235179{col 37}{space 1}    1.42{col 46}{space 3}0.155{col 54}{space 4} .8386723{col 67}{space 3} 3.035239
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.29e-34{col 26}{space 2} 6.26e-33{col 54}{space 4} 2.12e-42{col 67}{space 3} 1.87e-25
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.302885{col 26}{space 2} .4824799{col 37}{space 1}    0.71{col 46}{space 3}0.475{col 54}{space 4} .6305102{col 67}{space 3}  2.69228
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.005662{col 26}{space 2} .0204903{col 37}{space 1}    0.28{col 46}{space 3}0.782{col 54}{space 4}  .966293{col 67}{space 3} 1.046635
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0100005{col 26}{space 2} .0068069{col 37}{space 1}   -6.77{col 46}{space 3}0.000{col 54}{space 4} .0026342{col 67}{space 3} .0379663
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .0184687{col 26}{space 2}  .009415{col 37}{space 1}   -7.83{col 46}{space 3}0.000{col 54}{space 4}    .0068{col 67}{space 3} .0501604
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .0425544{col 26}{space 2} .0174987{col 37}{space 1}   -7.68{col 46}{space 3}0.000{col 54}{space 4} .0190075{col 67}{space 3} .0952718
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .0220668{col 26}{space 2} .0107279{col 37}{space 1}   -7.84{col 46}{space 3}0.000{col 54}{space 4} .0085098{col 67}{space 3} .0572211
+{txt}{space 10}6  {c |}{col 14}{res}{space 2} .0387819{col 26}{space 2} .0127222{col 37}{space 1}   -9.91{col 46}{space 3}0.000{col 54}{space 4}  .020389{col 67}{space 3} .0737669
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 11.35509{col 26}{space 2} 6.644984{col 37}{space 1}    4.15{col 46}{space 3}0.000{col 54}{space 4} 3.606356{col 67}{space 3} 35.75301
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_hyp i.CD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_hyp i.CD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
 {hline}
 {title:Analyzing sucesshyp_qidsms (Hypertension)}
@@ -6712,567 +6295,254 @@ The above estimates were produced using melogit screen_gdm i.CD i.phase_n i.us i
 {hline}
 {hline}
 {title:Analyzing man_gdm (Gestational Diabetes Mellitus)}
-{res}{txt}
-Fitting fixed-effects model:
+{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
+      3.timepoint dropped and 1 obs not used
 
-Iteration 0:{space 3}log likelihood = {res:-174.17115}  
-Iteration 1:{space 3}log likelihood = {res: -94.68171}  
-Iteration 2:{space 3}log likelihood = {res:-92.247265}  
-Iteration 3:{space 3}log likelihood = {res:-92.152218}  
-Iteration 4:{space 3}log likelihood = {res:-92.152051}  
-Iteration 5:{space 3}log likelihood = {res:-92.152051}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-94.439755}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-94.439755}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-92.340051}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-92.276316}  (backed up)
-Iteration 3:{space 3}log pseudolikelihood = {res:-92.232902}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-92.220079}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-92.219723}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-92.219546}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-92.219535}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-92.219532}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-92.219531}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 17:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 18:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 19:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res: -92.21953}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res: -92.21953}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-92.219528}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-92.219527}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-92.219523}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-92.219491}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-92.219491}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-92.219489}  
-Iteration 39:{space 2}log pseudolikelihood = {res:-92.219362}  (backed up)
-Iteration 40:{space 2}log pseudolikelihood = {res:-92.218857}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-92.218855}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res: -92.21884}  
-Iteration 43:{space 2}log pseudolikelihood = {res: -92.21784}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res: -92.21779}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-92.213894}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-92.213506}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-92.213196}  
-Iteration 48:{space 2}log pseudolikelihood = {res:-92.152252}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-92.152252}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res: -92.15225}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-92.152246}  
-Iteration 52:{space 2}log pseudolikelihood = {res:-92.152051}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-92.152051}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-92.152051}  (not concave)
-Iteration 55:{space 2}log pseudolikelihood = {res:-92.152051}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -168.0919}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-77.038014}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-76.073336}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-76.017298}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-76.017118}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-76.017118}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,483
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,472
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,482
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    19.76
-{txt}Log pseudolikelihood = {res}-92.152051{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0031
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}    65.26
+{txt}Log pseudolikelihood = {res}-76.017118{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:64} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AB {c |}{col 14}{res}{space 2} .9911568{col 26}{space 2} .4375515{col 37}{space 1}   -0.02{col 46}{space 3}0.984{col 54}{space 4} .4172294{col 67}{space 3} 2.354561
+{space 8}1.AB {c |}{col 14}{res}{space 2} 1.060924{col 26}{space 2} .5106999{col 37}{space 1}    0.12{col 46}{space 3}0.902{col 54}{space 4} .4129896{col 67}{space 3} 2.725395
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .4876679{col 26}{space 2} .2487089{col 37}{space 1}   -1.41{col 46}{space 3}0.159{col 54}{space 4} .1794793{col 67}{space 3} 1.325055
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 5.465241{col 26}{space 2} 3.483678{col 37}{space 1}    2.66{col 46}{space 3}0.008{col 54}{space 4} 1.566869{col 67}{space 3} 19.06277
+{space 10}2  {c |}{col 14}{res}{space 2} .5800063{col 26}{space 2} .2898424{col 37}{space 1}   -1.09{col 46}{space 3}0.276{col 54}{space 4}  .217805{col 67}{space 3} 1.544534
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 2.304523{col 26}{space 2} 3.509136{col 37}{space 1}    0.55{col 46}{space 3}0.584{col 54}{space 4} .1165312{col 67}{space 3} 45.57429
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .2392869{col 26}{space 2} .1894426{col 37}{space 1}   -1.81{col 46}{space 3}0.071{col 54}{space 4} .0507021{col 67}{space 3} 1.129308
+{space 8}Yes  {c |}{col 14}{res}{space 2} .3142205{col 26}{space 2} .1901929{col 37}{space 1}   -1.91{col 46}{space 3}0.056{col 54}{space 4} .0959434{col 67}{space 3} 1.029092
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 6.660684{col 26}{space 2}  8.42409{col 37}{space 1}    1.50{col 46}{space 3}0.134{col 54}{space 4} .5584226{col 67}{space 3} 79.44649
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9909572{col 26}{space 2} .0447342{col 37}{space 1}   -0.20{col 46}{space 3}0.841{col 54}{space 4} .9070466{col 67}{space 3}  1.08263
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0103335{col 26}{space 2}    .0106{col 37}{space 1}   -4.46{col 46}{space 3}0.000{col 54}{space 4} .0013839{col 67}{space 3} .0771617
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.26e-32{col 26}{space 2} 8.61e-32{col 54}{space 4} 1.90e-38{col 67}{space 3} 8.34e-27
+{space 8}Yes  {c |}{col 14}{res}{space 2} 3.917136{col 26}{space 2} 4.112739{col 37}{space 1}    1.30{col 46}{space 3}0.193{col 54}{space 4} .5003368{col 67}{space 3} 30.66726
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9722108{col 26}{space 2} .0815027{col 37}{space 1}   -0.34{col 46}{space 3}0.737{col 54}{space 4} .8249017{col 67}{space 3} 1.145826
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0277146{col 26}{space 2} .0175478{col 37}{space 1}   -5.66{col 46}{space 3}0.000{col 54}{space 4} .0080123{col 67}{space 3} .0958642
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .2831428{col 26}{space 2} .2924893{col 37}{space 1}   -1.22{col 46}{space 3}0.222{col 54}{space 4} .0373858{col 67}{space 3} 2.144396
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.AB i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.AB i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
-
-Iteration 0:{space 3}log likelihood = {res:-204.11362}  
-Iteration 1:{space 3}log likelihood = {res:-127.08259}  
-Iteration 2:{space 3}log likelihood = {res:-125.99953}  
-Iteration 3:{space 3}log likelihood = {res:-125.98684}  
-Iteration 4:{space 3}log likelihood = {res:-125.98683}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-128.86892}
-
-Fitting full model:
+{res}{txt}note: 3.timepoint identifies no observations in the sample
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-128.86892}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-126.10913}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-125.98362}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-125.96759}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-125.96724}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-125.96724}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-192.88518}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-100.77884}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-99.373319}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-99.293666}  
+Iteration 4:{space 3}log pseudolikelihood = {res: -99.29345}  
+Iteration 5:{space 3}log pseudolikelihood = {res: -99.29345}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,589
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,581
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,589
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    23.36
-{txt}Log pseudolikelihood = {res}-125.96724{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0007
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}    96.14
+{txt}Log pseudolikelihood = {res} -99.29345{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:63} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AC {c |}{col 14}{res}{space 2} 1.941293{col 26}{space 2} .9127909{col 37}{space 1}    1.41{col 46}{space 3}0.158{col 54}{space 4} .7724289{col 67}{space 3} 4.878922
+{space 8}1.AC {c |}{col 14}{res}{space 2} 1.590165{col 26}{space 2} .5657514{col 37}{space 1}    1.30{col 46}{space 3}0.192{col 54}{space 4} .7917728{col 67}{space 3} 3.193626
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.408952{col 26}{space 2} .6830185{col 37}{space 1}    0.71{col 46}{space 3}0.479{col 54}{space 4} .5448269{col 67}{space 3} 3.643625
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}  4.35339{col 26}{space 2} 2.545265{col 37}{space 1}    2.52{col 46}{space 3}0.012{col 54}{space 4} 1.384081{col 67}{space 3} 13.69284
+{space 10}2  {c |}{col 14}{res}{space 2} 1.265689{col 26}{space 2} .4915447{col 37}{space 1}    0.61{col 46}{space 3}0.544{col 54}{space 4} .5912259{col 67}{space 3} 2.709573
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.099422{col 26}{space 2} .9758452{col 37}{space 1}    0.11{col 46}{space 3}0.915{col 54}{space 4} .1930363{col 67}{space 3} 6.261662
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .3164505{col 26}{space 2} .2357349{col 37}{space 1}   -1.54{col 46}{space 3}0.122{col 54}{space 4}  .073488{col 67}{space 3} 1.362684
+{space 8}Yes  {c |}{col 14}{res}{space 2} .4130312{col 26}{space 2} .2545433{col 37}{space 1}   -1.43{col 46}{space 3}0.151{col 54}{space 4} .1234251{col 67}{space 3} 1.382173
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .7459382{col 26}{space 2} .5051381{col 37}{space 1}   -0.43{col 46}{space 3}0.665{col 54}{space 4} .1978253{col 67}{space 3} 2.812702
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2}  1.10684{col 26}{space 2} .0445493{col 37}{space 1}    2.52{col 46}{space 3}0.012{col 54}{space 4}  1.02288{col 67}{space 3} 1.197691
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .014245{col 26}{space 2} .0168822{col 37}{space 1}   -3.59{col 46}{space 3}0.000{col 54}{space 4}  .001396{col 67}{space 3} .1453609
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} .7245383{col 26}{space 2} 1.588984{col 54}{space 4} .0098468{col 67}{space 3} 53.31259
+{space 8}Yes  {c |}{col 14}{res}{space 2} .9382373{col 26}{space 2} .4922871{col 37}{space 1}   -0.12{col 46}{space 3}0.903{col 54}{space 4} .3355002{col 67}{space 3} 2.623812
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.101906{col 26}{space 2} .0448271{col 37}{space 1}    2.39{col 46}{space 3}0.017{col 54}{space 4} 1.017458{col 67}{space 3} 1.193364
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0237168{col 26}{space 2} .0117469{col 37}{space 1}   -7.55{col 46}{space 3}0.000{col 54}{space 4} .0089838{col 67}{space 3} .0626114
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .3792189{col 26}{space 2} .2544226{col 37}{space 1}   -1.45{col 46}{space 3}0.148{col 54}{space 4} .1018142{col 67}{space 3} 1.412445
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.AC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.AC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
+{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
+      3.timepoint dropped and 2 obs not used
 
-Iteration 0:{space 3}log likelihood = {res:-159.16158}  
-Iteration 1:{space 3}log likelihood = {res:-97.569387}  
-Iteration 2:{space 3}log likelihood = {res:-96.714365}  
-Iteration 3:{space 3}log likelihood = {res:-96.697858}  
-Iteration 4:{space 3}log likelihood = {res:-96.697826}  
-Iteration 5:{space 3}log likelihood = {res:-96.697826}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-99.014925}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-99.014925}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-96.822853}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res: -96.78211}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-96.719184}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-96.708591}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-96.704934}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-96.704533}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-96.704337}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-96.704312}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-96.704311}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res: -96.70431}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res: -96.70431}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res: -96.70431}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-96.702299}  
-Iteration 23:{space 2}log pseudolikelihood = {res:-96.701617}  
-Iteration 24:{space 2}log pseudolikelihood = {res:-96.701452}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-96.701369}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-96.701349}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-96.701339}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 40:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 41:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 42:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 45:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 47:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 48:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-96.701338}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-96.701338}  (backed up)
-Iteration 51:{space 2}log pseudolikelihood = {res:-96.701337}  (backed up)
-Iteration 52:{space 2}log pseudolikelihood = {res:-96.701337}  (backed up)
-Iteration 53:{space 2}log pseudolikelihood = {res:-96.701335}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-96.701335}  
-Iteration 55:{space 2}log pseudolikelihood = {res:-96.701334}  (backed up)
-Iteration 56:{space 2}log pseudolikelihood = {res:-96.701331}  (not concave)
-Iteration 57:{space 2}log pseudolikelihood = {res: -96.70133}  (not concave)
-Iteration 58:{space 2}log pseudolikelihood = {res:-96.701322}  (not concave)
-Iteration 59:{space 2}log pseudolikelihood = {res: -96.70132}  (not concave)
-Iteration 60:{space 2}log pseudolikelihood = {res:-96.701305}  
-Iteration 61:{space 2}log pseudolikelihood = {res:-96.697827}  (not concave)
-Iteration 62:{space 2}log pseudolikelihood = {res:-96.697827}  (not concave)
-Iteration 63:{space 2}log pseudolikelihood = {res:-96.697827}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-151.31791}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-76.127502}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-75.248766}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-75.211058}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-75.210984}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-75.210984}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,269
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,261
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,267
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}     7.50
-{txt}Log pseudolikelihood = {res}-96.697827{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.2767
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}    98.76
+{txt}Log pseudolikelihood = {res}-75.210984{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:62} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AD {c |}{col 14}{res}{space 2} 1.767065{col 26}{space 2} .7185685{col 37}{space 1}    1.40{col 46}{space 3}0.162{col 54}{space 4} .7963707{col 67}{space 3} 3.920934
+{space 8}1.AD {c |}{col 14}{res}{space 2} 1.339837{col 26}{space 2}  .536031{col 37}{space 1}    0.73{col 46}{space 3}0.465{col 54}{space 4} .6116605{col 67}{space 3} 2.934903
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .7723695{col 26}{space 2}  .429904{col 37}{space 1}   -0.46{col 46}{space 3}0.643{col 54}{space 4} .2594435{col 67}{space 3} 2.299362
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}   2.2601{col 26}{space 2} 2.345107{col 37}{space 1}    0.79{col 46}{space 3}0.432{col 54}{space 4} .2957405{col 67}{space 3} 17.27208
+{space 10}2  {c |}{col 14}{res}{space 2} 1.175716{col 26}{space 2} .5189554{col 37}{space 1}    0.37{col 46}{space 3}0.714{col 54}{space 4} .4949785{col 67}{space 3} 2.792664
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} .7410956{col 26}{space 2} .8598687{col 37}{space 1}   -0.26{col 46}{space 3}0.796{col 54}{space 4} .0762523{col 67}{space 3} 7.202699
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .5257866{col 26}{space 2} .6470278{col 37}{space 1}   -0.52{col 46}{space 3}0.601{col 54}{space 4} .0471335{col 67}{space 3} 5.865291
+{space 8}Yes  {c |}{col 14}{res}{space 2} .3599282{col 26}{space 2} .2749905{col 37}{space 1}   -1.34{col 46}{space 3}0.181{col 54}{space 4} .0805166{col 67}{space 3} 1.608964
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 2.548411{col 26}{space 2} 1.896976{col 37}{space 1}    1.26{col 46}{space 3}0.209{col 54}{space 4}  .592455{col 67}{space 3} 10.96184
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.011338{col 26}{space 2} .0483613{col 37}{space 1}    0.24{col 46}{space 3}0.814{col 54}{space 4}  .920858{col 67}{space 3} 1.110709
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0100954{col 26}{space 2} .0084699{col 37}{space 1}   -5.48{col 46}{space 3}0.000{col 54}{space 4} .0019497{col 67}{space 3} .0522723
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 2.06e-29{col 26}{space 2} 7.97e-29{col 54}{space 4} 1.06e-32{col 67}{space 3} 4.02e-26
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.845117{col 26}{space 2} 1.094457{col 37}{space 1}    1.03{col 46}{space 3}0.302{col 54}{space 4}  .576928{col 67}{space 3} 5.901005
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2}  1.05651{col 26}{space 2}  .055426{col 37}{space 1}    1.05{col 46}{space 3}0.295{col 54}{space 4} .9532753{col 67}{space 3} 1.170924
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0235805{col 26}{space 2} .0126101{col 37}{space 1}   -7.01{col 46}{space 3}0.000{col 54}{space 4} .0082672{col 67}{space 3} .0672585
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .3050561{col 26}{space 2} .2672777{col 37}{space 1}   -1.36{col 46}{space 3}0.175{col 54}{space 4} .0547762{col 67}{space 3}   1.6989
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.AD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.AD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
+{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
+      3.timepoint dropped and 1 obs not used
 
-Iteration 0:{space 3}log likelihood = {res:-205.15795}  
-Iteration 1:{space 3}log likelihood = {res:-128.39414}  
-Iteration 2:{space 3}log likelihood = {res:-127.74276}  
-Iteration 3:{space 3}log likelihood = {res:-127.74089}  
-Iteration 4:{space 3}log likelihood = {res:-127.74089}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-130.69997}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-130.69997}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res: -127.8769}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-127.79953}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-127.77096}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-127.75561}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-127.75316}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-127.75261}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-127.75254}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 19:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res: -127.7525}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res: -127.7525}  
-Iteration 37:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res: -127.7525}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-127.75249}  
-Iteration 40:{space 2}log pseudolikelihood = {res:-127.75247}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-127.75247}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-127.75247}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-127.75246}  
-Iteration 44:{space 2}log pseudolikelihood = {res:-127.75211}  (backed up)
-Iteration 45:{space 2}log pseudolikelihood = {res: -127.7409}  
-Iteration 46:{space 2}log pseudolikelihood = {res:-127.74089}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-127.74089}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-196.76249}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-109.33289}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-107.39238}  
+Iteration 3:{space 3}log pseudolikelihood = {res: -107.3732}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-107.37319}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,600
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,593
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,599
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    39.68
-{txt}Log pseudolikelihood = {res}-127.74089{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}    69.11
+{txt}Log pseudolikelihood = {res}-107.37319{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:63} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BC {c |}{col 14}{res}{space 2} 1.721412{col 26}{space 2} .6677153{col 37}{space 1}    1.40{col 46}{space 3}0.161{col 54}{space 4} .8048478{col 67}{space 3} 3.681763
+{space 8}1.BC {c |}{col 14}{res}{space 2} 1.440855{col 26}{space 2} .5448647{col 37}{space 1}    0.97{col 46}{space 3}0.334{col 54}{space 4} .6866501{col 67}{space 3} 3.023468
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .8764485{col 26}{space 2} .3511109{col 37}{space 1}   -0.33{col 46}{space 3}0.742{col 54}{space 4} .3996958{col 67}{space 3} 1.921866
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 13.12343{col 26}{space 2}  11.5779{col 37}{space 1}    2.92{col 46}{space 3}0.004{col 54}{space 4} 2.328577{col 67}{space 3} 73.96123
+{space 10}2  {c |}{col 14}{res}{space 2} 1.013382{col 26}{space 2} .3331097{col 37}{space 1}    0.04{col 46}{space 3}0.968{col 54}{space 4}  .532076{col 67}{space 3} 1.930067
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 4.552641{col 26}{space 2} 11.19781{col 37}{space 1}    0.62{col 46}{space 3}0.538{col 54}{space 4} .0366964{col 67}{space 3} 564.8109
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .7110015{col 26}{space 2} .4157817{col 37}{space 1}   -0.58{col 46}{space 3}0.560{col 54}{space 4} .2259967{col 67}{space 3}  2.23686
+{space 8}Yes  {c |}{col 14}{res}{space 2} .7620921{col 26}{space 2} .3946936{col 37}{space 1}   -0.52{col 46}{space 3}0.600{col 54}{space 4} .2761616{col 67}{space 3}  2.10306
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.156094{col 26}{space 2} .9148886{col 37}{space 1}    0.18{col 46}{space 3}0.855{col 54}{space 4} .2451234{col 67}{space 3} 5.452573
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2}  .982816{col 26}{space 2} .0475843{col 37}{space 1}   -0.36{col 46}{space 3}0.720{col 54}{space 4} .8938409{col 67}{space 3} 1.080648
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0144658{col 26}{space 2} .0121617{col 37}{space 1}   -5.04{col 46}{space 3}0.000{col 54}{space 4} .0027843{col 67}{space 3} .0751563
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.35e-30{col 26}{space 2} 2.13e-30{col 54}{space 4} 6.17e-32{col 67}{space 3} 2.96e-29
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.774721{col 26}{space 2} 1.142002{col 37}{space 1}    0.89{col 46}{space 3}0.373{col 54}{space 4}  .502802{col 67}{space 3} 6.264168
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9494334{col 26}{space 2}  .095953{col 37}{space 1}   -0.51{col 46}{space 3}0.608{col 54}{space 4} .7788237{col 67}{space 3} 1.157417
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2}  .030207{col 26}{space 2} .0157808{col 37}{space 1}   -6.70{col 46}{space 3}0.000{col 54}{space 4} .0108498{col 67}{space 3} .0840995
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  .217142{col 26}{space 2} .1570996{col 37}{space 1}   -2.11{col 46}{space 3}0.035{col 54}{space 4} .0525908{col 67}{space 3} .8965569
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.BC i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.BC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
+{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
+      3.timepoint dropped and 3 obs not used
 
-Iteration 0:{space 3}log likelihood = {res:-159.78668}  
-Iteration 1:{space 3}log likelihood = {res:-96.201419}  
-Iteration 2:{space 3}log likelihood = {res:-94.359716}  
-Iteration 3:{space 3}log likelihood = {res:-94.221105}  
-Iteration 4:{space 3}log likelihood = {res:-94.220503}  
-Iteration 5:{space 3}log likelihood = {res:-94.220502}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res:-96.411748}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-96.411748}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-94.313109}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-94.260077}  
-Iteration 3:{space 3}log pseudolikelihood = {res: -94.23804}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-94.235676}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-94.234559}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-94.234018}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-94.233885}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-94.233852}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-94.233836}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-94.233827}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-94.233823}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-94.233821}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-94.233821}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-94.233821}  
-Iteration 42:{space 2}log pseudolikelihood = {res:-94.233795}  (backed up)
-Iteration 43:{space 2}log pseudolikelihood = {res:-94.233793}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-94.233791}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-94.233789}  
-Iteration 46:{space 2}log pseudolikelihood = {res:-94.232976}  
-Iteration 47:{space 2}log pseudolikelihood = {res:-94.223664}  
-Iteration 48:{space 2}log pseudolikelihood = {res:-94.223615}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-94.223605}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-94.220503}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-94.220503}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-154.25568}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-79.731246}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-77.964417}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-77.447246}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-77.440969}  
+Iteration 5:{space 3}log pseudolikelihood = {res: -77.44095}  
+Iteration 6:{space 3}log pseudolikelihood = {res: -77.44095}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,280
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,273
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,277
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    52.16
-{txt}Log pseudolikelihood = {res}-94.220503{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}   106.29
+{txt}Log pseudolikelihood = {res} -77.44095{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:62} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BD {c |}{col 14}{res}{space 2} 2.054455{col 26}{space 2} .8885521{col 37}{space 1}    1.66{col 46}{space 3}0.096{col 54}{space 4} .8801402{col 67}{space 3} 4.795583
+{space 8}1.BD {c |}{col 14}{res}{space 2} 1.464013{col 26}{space 2} .6017779{col 37}{space 1}    0.93{col 46}{space 3}0.354{col 54}{space 4} .6541258{col 67}{space 3} 3.276639
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .6057507{col 26}{space 2} .2794855{col 37}{space 1}   -1.09{col 46}{space 3}0.277{col 54}{space 4} .2452226{col 67}{space 3}  1.49633
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 52.92669{col 26}{space 2}  53.3082{col 37}{space 1}    3.94{col 46}{space 3}0.000{col 54}{space 4} 7.350847{col 67}{space 3} 381.0764
+{space 10}2  {c |}{col 14}{res}{space 2} .9075207{col 26}{space 2} .3490651{col 37}{space 1}   -0.25{col 46}{space 3}0.801{col 54}{space 4} .4270255{col 67}{space 3} 1.928676
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 183.8956{col 26}{space 2} 148.8849{col 37}{space 1}    6.44{col 46}{space 3}0.000{col 54}{space 4}  37.6205{col 67}{space 3} 898.9139
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.672772{col 26}{space 2} 1.640115{col 37}{space 1}    0.52{col 46}{space 3}0.600{col 54}{space 4} .2448233{col 67}{space 3} 11.42932
+{space 8}Yes  {c |}{col 14}{res}{space 2}  1.10878{col 26}{space 2} .7332953{col 37}{space 1}    0.16{col 46}{space 3}0.876{col 54}{space 4} .3033195{col 67}{space 3} 4.053128
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2}  3.77698{col 26}{space 2} 3.052926{col 37}{space 1}    1.64{col 46}{space 3}0.100{col 54}{space 4} .7746755{col 67}{space 3}  18.4149
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .7760746{col 26}{space 2}  .097252{col 37}{space 1}   -2.02{col 46}{space 3}0.043{col 54}{space 4} .6070677{col 67}{space 3} .9921329
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0045328{col 26}{space 2}  .004549{col 37}{space 1}   -5.38{col 46}{space 3}0.000{col 54}{space 4}  .000634{col 67}{space 3} .0324056
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 5.95e-29{col 26}{space 2} 9.87e-29{col 54}{space 4} 2.31e-30{col 67}{space 3} 1.54e-27
+{space 8}Yes  {c |}{col 14}{res}{space 2} 4.731057{col 26}{space 2} 3.885652{col 37}{space 1}    1.89{col 46}{space 3}0.058{col 54}{space 4} .9459324{col 67}{space 3} 23.66227
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .6978166{col 26}{space 2} .0604012{col 37}{space 1}   -4.16{col 46}{space 3}0.000{col 54}{space 4} .5889297{col 67}{space 3} .8268355
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0271567{col 26}{space 2} .0134524{col 37}{space 1}   -7.28{col 46}{space 3}0.000{col 54}{space 4} .0102855{col 67}{space 3} .0717015
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .1278732{col 26}{space 2}  .115912{col 37}{space 1}   -2.27{col 46}{space 3}0.023{col 54}{space 4} .0216371{col 67}{space 3}  .755718
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.BD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.BD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}
-Fitting fixed-effects model:
+{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
+      3.timepoint dropped and 2 obs not used
 
-Iteration 0:{space 3}log likelihood = {res:-190.32114}  
-Iteration 1:{space 3}log likelihood = {res:-131.07887}  
-Iteration 2:{space 3}log likelihood = {res:-131.04356}  
-Iteration 3:{space 3}log likelihood = {res:-131.04347}  
-Iteration 4:{space 3}log likelihood = {res:-131.04347}  
-
-Refining starting values:
-
-Grid node 0:{space 3}log likelihood = {res: -134.1026}
-
-Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -134.1026}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-131.16442}  (not concave)
-Iteration 2:{space 3}log pseudolikelihood = {res:-131.15964}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-131.04304}  (not concave)
-Iteration 4:{space 3}log pseudolikelihood = {res:-131.04304}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-131.04253}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-131.03951}  
-Iteration 7:{space 3}log pseudolikelihood = {res:-131.03906}  
-Iteration 8:{space 3}log pseudolikelihood = {res:-131.03906}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-180.10205}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-107.31833}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-106.02428}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-106.01657}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-106.01656}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,386
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     1,382
+{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     1,384
 
-{col 49}{txt}Obs per group:
-{col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.0
-{col 63}{txt}max{col 67}={res}{col 69}         2
-
-{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    10.00
-{txt}Log pseudolikelihood = {res}-131.03906{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.1249
+{col 49}{txt}Wald chi2({res}7{txt}){col 67}={res}{col 70}    94.58
+{txt}Log pseudolikelihood = {res}-106.01656{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 78:(Std. Err. adjusted for {res:61} clusters in str_TRIAL_2_Cluster)}
 {hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}{col 26}    Robust
 {col 1}     man_gdm{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.CD {c |}{col 14}{res}{space 2} .9720212{col 26}{space 2} .3643614{col 37}{space 1}   -0.08{col 46}{space 3}0.940{col 54}{space 4} .4662335{col 67}{space 3} 2.026506
+{space 8}1.CD {c |}{col 14}{res}{space 2} .8304485{col 26}{space 2} .2640301{col 37}{space 1}   -0.58{col 46}{space 3}0.559{col 54}{space 4} .4453325{col 67}{space 3} 1.548606
 {txt}{space 12} {c |}
 {space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.061635{col 26}{space 2} .5147785{col 37}{space 1}    0.12{col 46}{space 3}0.902{col 54}{space 4} .4104253{col 67}{space 3} 2.746099
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 6.630105{col 26}{space 2} 8.647073{col 37}{space 1}    1.45{col 46}{space 3}0.147{col 54}{space 4}  .514484{col 67}{space 3} 85.44152
+{space 10}2  {c |}{col 14}{res}{space 2} 1.282872{col 26}{space 2} .3929269{col 37}{space 1}    0.81{col 46}{space 3}0.416{col 54}{space 4} .7038357{col 67}{space 3} 2.338273
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 1.347891{col 26}{space 2} 2.031146{col 37}{space 1}    0.20{col 46}{space 3}0.843{col 54}{space 4} .0703029{col 67}{space 3}  25.8426
 {txt}{space 12} {c |}
 {space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .8821617{col 26}{space 2}  .673533{col 37}{space 1}   -0.16{col 46}{space 3}0.870{col 54}{space 4} .1975392{col 67}{space 3} 3.939517
+{space 8}Yes  {c |}{col 14}{res}{space 2} .8170294{col 26}{space 2} .4746446{col 37}{space 1}   -0.35{col 46}{space 3}0.728{col 54}{space 4} .2616623{col 67}{space 3} 2.551139
 {txt}{space 12} {c |}
 {space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.182742{col 26}{space 2} .7001523{col 37}{space 1}    0.28{col 46}{space 3}0.777{col 54}{space 4} .3706818{col 67}{space 3} 3.773801
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.015598{col 26}{space 2} .0642581{col 37}{space 1}    0.24{col 46}{space 3}0.807{col 54}{space 4} .8971506{col 67}{space 3} 1.149684
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0071973{col 26}{space 2} .0088405{col 37}{space 1}   -4.02{col 46}{space 3}0.000{col 54}{space 4} .0006481{col 67}{space 3} .0799295
-{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 1}{res}uniqueid    {col 14}{txt}{c |}
-{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.845751{col 26}{space 2} 1.168517{col 54}{space 4}  .533692{col 67}{space 3} 6.383454
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.443908{col 26}{space 2} .6723339{col 37}{space 1}    0.79{col 46}{space 3}0.430{col 54}{space 4} .5796825{col 67}{space 3} 3.596571
+{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.021761{col 26}{space 2} .0561618{col 37}{space 1}    0.39{col 46}{space 3}0.695{col 54}{space 4} .9174079{col 67}{space 3} 1.137984
+{txt}{space 12} {c |}
+{space 3}timepoint {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} .0307436{col 26}{space 2} .0135375{col 37}{space 1}   -7.91{col 46}{space 3}0.000{col 54}{space 4} .0129701{col 67}{space 3} .0728732
+{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  .251077{col 26}{space 2} .1642418{col 37}{space 1}   -2.11{col 46}{space 3}0.035{col 54}{space 4} .0696617{col 67}{space 3} .9049398
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit man_gdm i.CD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
+The above estimates were produced using melogit man_gdm i.CD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
 {hline}
 {title:Analyzing sucgdm_qidsms (Gestational Diabetes Mellitus)}
@@ -7840,199 +7110,6 @@ Iteration 58:{space 2}log pseudolikelihood = {res:-389.81859}  (backed up)
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit sucgdm_qidsms i.CD i.phase_n i.us i.lab clussize  || uniqueid:, or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{hline}
-{title:Analyzing scgdm_qidsms (Gestational Diabetes Mellitus)}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -494.5437}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-493.90118}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-493.90099}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-493.90099}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       743
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    35.69
-{txt}Log pseudolikelihood = {res}-493.90099{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
-{txt}{ralign 78:(Std. Err. adjusted for {res:45} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AB {c |}{col 14}{res}{space 2} .8208442{col 26}{space 2} .2899364{col 37}{space 1}   -0.56{col 46}{space 3}0.576{col 54}{space 4} .4107728{col 67}{space 3} 1.640287
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 1.310916{col 26}{space 2} .4968389{col 37}{space 1}    0.71{col 46}{space 3}0.475{col 54}{space 4} .6236892{col 67}{space 3} 2.755379
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}  3.40559{col 26}{space 2} 1.412585{col 37}{space 1}    2.95{col 46}{space 3}0.003{col 54}{space 4} 1.510523{col 67}{space 3} 7.678164
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .2659009{col 26}{space 2} .0970225{col 37}{space 1}   -3.63{col 46}{space 3}0.000{col 54}{space 4} .1300564{col 67}{space 3} .5436358
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.528198{col 26}{space 2} .5995725{col 37}{space 1}    1.08{col 46}{space 3}0.280{col 54}{space 4}  .708304{col 67}{space 3} 3.297157
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9969032{col 26}{space 2} .0157243{col 37}{space 1}   -0.20{col 46}{space 3}0.844{col 54}{space 4} .9665557{col 67}{space 3} 1.028204
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.548435{col 26}{space 2} .8962915{col 37}{space 1}    0.76{col 46}{space 3}0.450{col 54}{space 4} .4979504{col 67}{space 3} 4.815041
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.AB i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-370.41093}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-369.89326}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-369.89209}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-369.89209}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       648
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    71.33
-{txt}Log pseudolikelihood = {res}-369.89209{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
-{txt}{ralign 78:(Std. Err. adjusted for {res:41} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AC {c |}{col 14}{res}{space 2} 3.168212{col 26}{space 2} 1.242295{col 37}{space 1}    2.94{col 46}{space 3}0.003{col 54}{space 4} 1.469087{col 67}{space 3}  6.83252
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .4423356{col 26}{space 2} .2597065{col 37}{space 1}   -1.39{col 46}{space 3}0.165{col 54}{space 4} .1399555{col 67}{space 3} 1.398022
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} .6527357{col 26}{space 2} .3789074{col 37}{space 1}   -0.73{col 46}{space 3}0.462{col 54}{space 4} .2092292{col 67}{space 3}  2.03635
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 1.046628{col 26}{space 2} .6718424{col 37}{space 1}    0.07{col 46}{space 3}0.943{col 54}{space 4} .2974379{col 67}{space 3} 3.682886
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 23.03223{col 26}{space 2} 11.23479{col 37}{space 1}    6.43{col 46}{space 3}0.000{col 54}{space 4} 8.853854{col 67}{space 3} 59.91556
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.030019{col 26}{space 2} .0405171{col 37}{space 1}    0.75{col 46}{space 3}0.452{col 54}{space 4} .9535907{col 67}{space 3} 1.112572
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0761212{col 26}{space 2} .0613288{col 37}{space 1}   -3.20{col 46}{space 3}0.001{col 54}{space 4} .0156933{col 67}{space 3} .3692291
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.AC i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-297.14889}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-297.09312}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-297.09311}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       484
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    44.35
-{txt}Log pseudolikelihood = {res}-297.09311{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
-{txt}{ralign 78:(Std. Err. adjusted for {res:36} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.AD {c |}{col 14}{res}{space 2} 4.853005{col 26}{space 2} 1.987613{col 37}{space 1}    3.86{col 46}{space 3}0.000{col 54}{space 4} 2.174652{col 67}{space 3} 10.83008
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .6662923{col 26}{space 2}  .938104{col 37}{space 1}   -0.29{col 46}{space 3}0.773{col 54}{space 4} .0421909{col 67}{space 3} 10.52231
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.319686{col 26}{space 2} 4.913813{col 37}{space 1}    0.81{col 46}{space 3}0.418{col 54}{space 4} .1824505{col 67}{space 3} 60.40167
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 3.354444{col 26}{space 2} 4.106653{col 37}{space 1}    0.99{col 46}{space 3}0.323{col 54}{space 4} .3044694{col 67}{space 3} 36.95707
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 7.223949{col 26}{space 2} 2.499266{col 37}{space 1}    5.72{col 46}{space 3}0.000{col 54}{space 4} 3.666781{col 67}{space 3} 14.23195
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .8788328{col 26}{space 2} .0271073{col 37}{space 1}   -4.19{col 46}{space 3}0.000{col 54}{space 4} .8272775{col 67}{space 3}  .933601
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0778698{col 26}{space 2} .0415117{col 37}{space 1}   -4.79{col 46}{space 3}0.000{col 54}{space 4} .0273906{col 67}{space 3} .2213793
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.AD i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-570.05582}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-569.36893}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-569.36863}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-569.36863}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       921
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    25.48
-{txt}Log pseudolikelihood = {res}-569.36863{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0003
-{txt}{ralign 78:(Std. Err. adjusted for {res:50} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BC {c |}{col 14}{res}{space 2} 3.690284{col 26}{space 2} 1.440442{col 37}{space 1}    3.35{col 46}{space 3}0.001{col 54}{space 4} 1.717146{col 67}{space 3} 7.930715
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .9296951{col 26}{space 2}  .427191{col 37}{space 1}   -0.16{col 46}{space 3}0.874{col 54}{space 4} .3777609{col 67}{space 3} 2.288043
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}  1.56681{col 26}{space 2} .8162789{col 37}{space 1}    0.86{col 46}{space 3}0.389{col 54}{space 4} .5643596{col 67}{space 3} 4.349872
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2}  .310799{col 26}{space 2} .2383307{col 37}{space 1}   -1.52{col 46}{space 3}0.128{col 54}{space 4} .0691434{col 67}{space 3} 1.397038
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2}  4.25088{col 26}{space 2} 2.281158{col 37}{space 1}    2.70{col 46}{space 3}0.007{col 54}{space 4} 1.484899{col 67}{space 3} 12.16916
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} 1.018416{col 26}{space 2} .0164733{col 37}{space 1}    1.13{col 46}{space 3}0.259{col 54}{space 4} .9866356{col 67}{space 3} 1.051221
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .551582{col 26}{space 2} .4999951{col 37}{space 1}   -0.66{col 46}{space 3}0.512{col 54}{space 4} .0933292{col 67}{space 3} 3.259888
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.BC i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-497.71449}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-497.22917}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-497.22889}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-497.22889}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       757
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    35.88
-{txt}Log pseudolikelihood = {res}-497.22889{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
-{txt}{ralign 78:(Std. Err. adjusted for {res:45} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.BD {c |}{col 14}{res}{space 2} 2.151517{col 26}{space 2} 1.039243{col 37}{space 1}    1.59{col 46}{space 3}0.113{col 54}{space 4} .8348159{col 67}{space 3} 5.544967
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} 2.128624{col 26}{space 2} .7835517{col 37}{space 1}    2.05{col 46}{space 3}0.040{col 54}{space 4} 1.034593{col 67}{space 3} 4.379538
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} 8.532614{col 26}{space 2} 4.563073{col 37}{space 1}    4.01{col 46}{space 3}0.000{col 54}{space 4} 2.991413{col 67}{space 3} 24.33816
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} .2804017{col 26}{space 2} .0985633{col 37}{space 1}   -3.62{col 46}{space 3}0.000{col 54}{space 4} .1407916{col 67}{space 3} .5584502
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 2.273303{col 26}{space 2} .7873873{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4}  1.15301{col 67}{space 3} 4.482102
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2} .9381357{col 26}{space 2} .0331011{col 37}{space 1}   -1.81{col 46}{space 3}0.070{col 54}{space 4} .8754512{col 67}{space 3} 1.005309
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .887902{col 26}{space 2} .3617035{col 37}{space 1}   -0.29{col 46}{space 3}0.770{col 54}{space 4} .3995877{col 67}{space 3} 1.972959
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.BD i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
-{hline}
-{res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-355.12023}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-354.65232}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-354.65192}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-354.65192}  
-{res}
-{txt}Logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       662
-
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    77.56
-{txt}Log pseudolikelihood = {res}-354.65192{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
-{txt}{ralign 78:(Std. Err. adjusted for {res:41} clusters in str_TRIAL_2_Cluster)}
-{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}scgdm_qidsms{col 14}{c |} Odds Ratio{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}1.CD {c |}{col 14}{res}{space 2} 1.819535{col 26}{space 2} .7769775{col 37}{space 1}    1.40{col 46}{space 3}0.161{col 54}{space 4} .7879173{col 67}{space 3} 4.201848
-{txt}{space 12} {c |}
-{space 5}phase_n {c |}
-{space 10}2  {c |}{col 14}{res}{space 2} .5535259{col 26}{space 2} .3387448{col 37}{space 1}   -0.97{col 46}{space 3}0.334{col 54}{space 4} .1668102{col 67}{space 3} 1.836764
-{txt}{space 10}3  {c |}{col 14}{res}{space 2} .6289495{col 26}{space 2} .3767875{col 37}{space 1}   -0.77{col 46}{space 3}0.439{col 54}{space 4}  .194394{col 67}{space 3} 2.034926
-{txt}{space 12} {c |}
-{space 10}us {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2}   1.3632{col 26}{space 2} .9203304{col 37}{space 1}    0.46{col 46}{space 3}0.646{col 54}{space 4} .3629881{col 67}{space 3} 5.119493
-{txt}{space 12} {c |}
-{space 9}lab {c |}
-{space 8}Yes  {c |}{col 14}{res}{space 2} 12.98804{col 26}{space 2} 5.109544{col 37}{space 1}    6.52{col 46}{space 3}0.000{col 54}{space 4} 6.007281{col 67}{space 3}  28.0808
-{txt}{space 4}clussize {c |}{col 14}{res}{space 2}  .920288{col 26}{space 2} .0192618{col 37}{space 1}   -3.97{col 46}{space 3}0.000{col 54}{space 4} .8832994{col 67}{space 3} .9588256
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .3650935{col 26}{space 2} .2215276{col 37}{space 1}   -1.66{col 46}{space 3}0.097{col 54}{space 4} .1111529{col 67}{space 3} 1.199188
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
-The above estimates were produced using melogit scgdm_qidsms i.CD i.phase_n i.us i.lab clussize  , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
 {hline}
 {title:Analyzing scgdm_qidsms (Gestational Diabetes Mellitus)}
