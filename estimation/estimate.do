@@ -13,7 +13,7 @@ local comparisons   AB AC AD BC BD CD
 local attendance_outcomes                     att
 local anemia_outcomes                         success_anemia_  screen_anemia
 local anemia_outcomes       `anemia_outcomes' man_anemia       scmananem_qidsms
-local anemia_outcomes       `anemia_outcomes' scmananem_qidsms
+local anemia_outcomes       `anemia_outcomes' scmananem_qidsms scanem_qidsms
 local hypertension_outcomes                   success_htn_     screen_hyp
 local gdm_outcomes                            success_gdm      screen_gdm
 
