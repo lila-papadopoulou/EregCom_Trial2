@@ -10,20 +10,24 @@ local model melogit \`y' i.\`comparison' `fe' \`fixed' \`random', or `vce'
 local comparisons   AB AC AD BC BD CD
 
 // Specify the data frames and their outcomes.
-local attendance_outcomes                     att
-local anemia_outcomes                         success_anemia_  screen_anemia
-local anemia_outcomes       `anemia_outcomes' man_anemia       scmananem_qidsms
-local anemia_outcomes       `anemia_outcomes' scmananem_qidsms scanem_qidsms
-local anemia_outcomes       `anemia_outcomes' mananem_qidsms
-local hypertension_outcomes                   success_htn_     screen_hyp
-local gdm_outcomes                            success_gdm      screen_gdm
+local attendance_outcomes                            att
+local anemia_outcomes                                success_anemia_  screen_anemia
+local anemia_outcomes       `anemia_outcomes'        man_anemia       scmananem_qidsms
+local anemia_outcomes       `anemia_outcomes'        scmananem_qidsms scanem_qidsms
+local anemia_outcomes       `anemia_outcomes'        mananem_qidsms
+local hypertension_outcomes                          success_htn_     screen_hyp man_hyp
+local hypertension_outcomes `hypertension_outcomes'  sucesshyp_qidsms schyp_qidsms
+local hypertension_outcomes `hypertension_outcomes'  manhyp_qidsms
+local gdm_outcomes                                   success_gdm      screen_gdm
 
 // Specify outcomes that do not require a random effect for uniqueid.
-local no_random man_anemia mananem_qidsms
+local no_random man_anemia mananem_qidsms manhyp_qidsms
 
-// Specify *additional* fixed effects for certain outcomes.
-local man_anemia_fixed     i.timepoint
-local mananem_qidsms_fixed i.timepoint
+// Specify the outcomes that should be modelled using an *additional* fixed
+// effect for timepoint.
+foreach x in man_anemia mananem_qidsms manhyp_qidsms {
+  local `x'_fixed i.timepoint
+}
 
 // Run the analyses.
 foreach frame of global frames {
