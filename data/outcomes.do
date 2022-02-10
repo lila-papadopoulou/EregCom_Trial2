@@ -282,3 +282,15 @@ frame gdm {
   gen CD=0 if b_TrialArm=="C"
   replace CD=1 if b_TrialArm=="D"
 }
+
+// Encode the us and lab variables.
+local to_encode us lab
+foreach frame of global frames {
+  frame `frame' {
+    tempvar `to_encode'
+    foreach x of local to_encode {
+      rename `x' ``x''
+      encode ``x'', generate(`x')
+    }
+  }
+}
