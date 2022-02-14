@@ -22,7 +22,7 @@ local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qid
 local gdm_outcomes          `gdm_outcomes'           scgdm_qidsms
 
 // Specify outcomes that do not require a random effect for uniqueid.
-local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms
+local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms sucgdm_qidsms
 
 // Specify the outcomes that should be modelled using an *additional* fixed
 // effect for timepoint.
