@@ -3,7 +3,7 @@
       name:  {res}eRegCom
        {txt}log:  {res}/Users/cjr/Repos/eReg-analysis-Lila/log.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}10 Feb 2022, 16:12:37
+ {txt}opened on:  {res}14 Feb 2022, 16:45:37
 {txt}
 {com}. 
 . // Set the random seed.
@@ -466,78 +466,74 @@ The above estimates were produced using melogit att i.CD i.phase_n i.us i.lab cl
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-6720.2369}  
-Iteration 1:{space 3}log likelihood = {res:-6718.5044}  
-Iteration 2:{space 3}log likelihood = {res:-6718.5043}  
+Iteration 0:{space 3}log likelihood = {res:-6641.4102}  
+Iteration 1:{space 3}log likelihood = {res:-6639.6867}  
+Iteration 2:{space 3}log likelihood = {res:-6639.6866}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-6811.8381}
+Grid node 0:{space 3}log likelihood = {res:-6733.1245}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6811.8381}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-6745.3083}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-6723.9768}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6721.3849}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6719.4472}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-6719.2553}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-6719.1618}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-6719.1157}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:  -6719.11}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6719.1072}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-6719.1068}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-6719.1066}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-6719.1065}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-6719.1065}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-6719.1065}  
-Iteration 43:{space 2}log pseudolikelihood = {res:-6719.1064}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-6719.1064}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-6719.1064}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-6719.1064}  
-Iteration 47:{space 2}log pseudolikelihood = {res:-6719.1062}  (backed up)
-Iteration 48:{space 2}log pseudolikelihood = {res:-6719.1056}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-6719.1055}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-6719.1054}  
-Iteration 51:{space 2}log pseudolikelihood = {res:-6719.0868}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-6719.0849}  
-Iteration 53:{space 2}log pseudolikelihood = {res:-6718.9488}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-6718.9454}  
-Iteration 55:{space 2}log pseudolikelihood = {res:-6718.9317}  (not concave)
-Iteration 56:{space 2}log pseudolikelihood = {res:-6718.6656}  
-Iteration 57:{space 2}log pseudolikelihood = {res:-6718.5043}  
-Iteration 58:{space 2}log pseudolikelihood = {res:-6718.5043}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6733.1245}  (not concave)
+Iteration 1:{space 3}log pseudolikelihood = {res: -6667.179}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-6644.3623}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-6641.8449}  
+Iteration 4:{space 3}log pseudolikelihood = {res: -6640.886}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-6640.4602}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res:-6640.3594}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-6640.3096}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-6640.2849}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-6640.2726}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-6640.2711}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-6640.2703}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 20:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 21:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 22:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 24:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 25:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 27:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 28:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 29:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 30:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 31:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 33:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 34:{space 2}log pseudolikelihood = {res:-6640.2701}  (not concave)
+Iteration 35:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 36:{space 2}log pseudolikelihood = {res:-6640.2701}  (backed up)
+Iteration 37:{space 2}log pseudolikelihood = {res:  -6640.27}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:  -6640.27}  (not concave)
+Iteration 39:{space 2}log pseudolikelihood = {res:  -6640.27}  (not concave)
+Iteration 40:{space 2}log pseudolikelihood = {res:  -6640.27}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:  -6640.27}  (not concave)
+Iteration 42:{space 2}log pseudolikelihood = {res:-6640.2699}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-6640.2698}  (not concave)
+Iteration 44:{space 2}log pseudolikelihood = {res:-6640.2697}  
+Iteration 45:{space 2}log pseudolikelihood = {res:-6640.2674}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-6640.2665}  
+Iteration 47:{space 2}log pseudolikelihood = {res:-6640.2659}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-6640.2617}  
+Iteration 49:{space 2}log pseudolikelihood = {res:  -6640.01}  (not concave)
+Iteration 50:{space 2}log pseudolikelihood = {res:-6639.9976}  (not concave)
+Iteration 51:{space 2}log pseudolikelihood = {res:-6639.9926}  
+Iteration 52:{space 2}log pseudolikelihood = {res:-6639.6866}  
+Iteration 53:{space 2}log pseudolikelihood = {res:-6639.6866}  (not concave)
+Iteration 54:{space 2}log pseudolikelihood = {res:-6639.6866}  (backed up)
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,756
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,150
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,642
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,051
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -546,29 +542,29 @@ Iteration 58:{space 2}log pseudolikelihood = {res:-6718.5043}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    36.60
-{txt}Log pseudolikelihood = {res}-6718.5043{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    36.39
+{txt}Log pseudolikelihood = {res}-6639.6866{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 81:(Std. Err. adjusted for {res:68} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.AB {c |}{col 17}{res}{space 2} 1.026855{col 29}{space 2} .1200571{col 40}{space 1}    0.23{col 49}{space 3}0.821{col 57}{space 4} .8165611{col 70}{space 3} 1.291306
+{space 11}1.AB {c |}{col 17}{res}{space 2} 1.019179{col 29}{space 2} .1178421{col 40}{space 1}    0.16{col 49}{space 3}0.869{col 57}{space 4} .8125139{col 70}{space 3}  1.27841
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2} .9587649{col 29}{space 2} .1511192{col 40}{space 1}   -0.27{col 49}{space 3}0.789{col 57}{space 4} .7039582{col 70}{space 3} 1.305802
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} .5691525{col 29}{space 2} .0758939{col 40}{space 1}   -4.23{col 49}{space 3}0.000{col 57}{space 4} .4382529{col 70}{space 3} .7391499
+{space 13}2  {c |}{col 17}{res}{space 2} .9543242{col 29}{space 2} .1500953{col 40}{space 1}   -0.30{col 49}{space 3}0.766{col 57}{space 4} .7011641{col 70}{space 3}  1.29889
+{txt}{space 13}3  {c |}{col 17}{res}{space 2} .5727417{col 29}{space 2} .0754832{col 40}{space 1}   -4.23{col 49}{space 3}0.000{col 57}{space 4} .4423608{col 70}{space 3} .7415511
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} .9759959{col 29}{space 2} .3522058{col 40}{space 1}   -0.07{col 49}{space 3}0.946{col 57}{space 4} .4811456{col 70}{space 3} 1.979792
+{space 11}Yes  {c |}{col 17}{res}{space 2}  .969264{col 29}{space 2} .3476514{col 40}{space 1}   -0.09{col 49}{space 3}0.931{col 57}{space 4} .4798846{col 70}{space 3} 1.957706
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.222937{col 29}{space 2} .3284302{col 40}{space 1}    0.75{col 49}{space 3}0.454{col 57}{space 4} .7224481{col 70}{space 3} 2.070149
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.034369{col 29}{space 2}  .008167{col 40}{space 1}    4.28{col 49}{space 3}0.000{col 57}{space 4} 1.018486{col 70}{space 3} 1.050501
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .8663666{col 29}{space 2} .3040356{col 40}{space 1}   -0.41{col 49}{space 3}0.683{col 57}{space 4} .4354998{col 70}{space 3} 1.723516
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.211171{col 29}{space 2} .3228524{col 40}{space 1}    0.72{col 49}{space 3}0.472{col 57}{space 4} .7183025{col 70}{space 3} 2.042225
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.033548{col 29}{space 2} .0079679{col 40}{space 1}    4.28{col 49}{space 3}0.000{col 57}{space 4} 1.018048{col 70}{space 3} 1.049283
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .8960359{col 29}{space 2} .3126643{col 40}{space 1}   -0.31{col 49}{space 3}0.753{col 57}{space 4} .4521741{col 70}{space 3}   1.7756
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 3.02e-33{col 29}{space 2} 1.75e-32{col 57}{space 4} 3.63e-38{col 70}{space 3} 2.51e-28
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 1.36e-33{col 29}{space 2} 4.81e-33{col 57}{space 4} 1.31e-36{col 70}{space 3} 1.41e-30
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -577,78 +573,74 @@ The above estimates were produced using melogit success_anemia_ i.AB i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-6623.5841}  
-Iteration 1:{space 3}log likelihood = {res:-6620.6037}  
-Iteration 2:{space 3}log likelihood = {res:-6620.6036}  
+Iteration 0:{space 3}log likelihood = {res:-6535.2749}  
+Iteration 1:{space 3}log likelihood = {res:-6532.1665}  
+Iteration 2:{space 3}log likelihood = {res:-6532.1664}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-6671.1769}
+Grid node 0:{space 3}log likelihood = {res:-6584.5239}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6671.1769}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-6622.7637}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-6620.8802}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6620.7226}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6620.6775}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-6620.6686}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-6620.6644}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-6620.6623}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-6620.6613}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6620.6611}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 42:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 43:{space 2}log pseudolikelihood = {res: -6620.661}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res: -6620.661}  (backed up)
-Iteration 45:{space 2}log pseudolikelihood = {res:-6620.6608}  (backed up)
-Iteration 46:{space 2}log pseudolikelihood = {res:-6620.6607}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-6620.6607}  (backed up)
-Iteration 48:{space 2}log pseudolikelihood = {res:-6620.6606}  (backed up)
-Iteration 49:{space 2}log pseudolikelihood = {res:-6620.6602}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-6620.6601}  
-Iteration 51:{space 2}log pseudolikelihood = {res:-6620.6597}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-6620.6596}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res: -6620.659}  (not concave)
-Iteration 54:{space 2}log pseudolikelihood = {res:-6620.6299}  
-Iteration 55:{space 2}log pseudolikelihood = {res:-6620.6184}  (not concave)
-Iteration 56:{space 2}log pseudolikelihood = {res:-6620.6183}  
-Iteration 57:{space 2}log pseudolikelihood = {res:-6620.6036}  
-Iteration 58:{space 2}log pseudolikelihood = {res:-6620.6036}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6584.5239}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-6552.4779}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-6535.5728}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-6532.3432}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-6532.2935}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-6532.2716}  
+Iteration 6:{space 3}log pseudolikelihood = {res:-6532.2613}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-6532.2588}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-6532.2582}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 19:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 20:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 21:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 24:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 25:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 27:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 29:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 31:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 33:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 34:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 35:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 36:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 37:{space 2}log pseudolikelihood = {res:-6532.2581}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 39:{space 2}log pseudolikelihood = {res:-6532.2581}  (not concave)
+Iteration 40:{space 2}log pseudolikelihood = {res: -6532.258}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:-6532.2579}  (not concave)
+Iteration 42:{space 2}log pseudolikelihood = {res:-6532.2579}  
+Iteration 43:{space 2}log pseudolikelihood = {res:-6532.2364}  
+Iteration 44:{space 2}log pseudolikelihood = {res:-6532.2343}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res:-6532.1988}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-6532.1986}  (not concave)
+Iteration 47:{space 2}log pseudolikelihood = {res: -6532.198}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-6532.1979}  
+Iteration 49:{space 2}log pseudolikelihood = {res:-6532.1664}  (not concave)
+Iteration 50:{space 2}log pseudolikelihood = {res:-6532.1664}  (not concave)
+Iteration 51:{space 2}log pseudolikelihood = {res:-6532.1664}  (not concave)
+Iteration 52:{space 2}log pseudolikelihood = {res:-6532.1664}  (not concave)
+Iteration 53:{space 2}log pseudolikelihood = {res:-6532.1664}  (not concave)
+Iteration 54:{space 2}log pseudolikelihood = {res:-6532.1664}  (backed up)
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,655
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,144
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,532
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,033
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -657,29 +649,29 @@ Iteration 58:{space 2}log pseudolikelihood = {res:-6620.6036}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    15.77
-{txt}Log pseudolikelihood = {res}-6620.6036{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0150
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    16.99
+{txt}Log pseudolikelihood = {res}-6532.1664{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0093
 {txt}{ralign 81:(Std. Err. adjusted for {res:67} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.AC {c |}{col 17}{res}{space 2} 1.170336{col 29}{space 2} .1677076{col 40}{space 1}    1.10{col 49}{space 3}0.272{col 57}{space 4} .8837605{col 70}{space 3} 1.549839
+{space 11}1.AC {c |}{col 17}{res}{space 2}  1.16808{col 29}{space 2}  .165271{col 40}{space 1}    1.10{col 49}{space 3}0.272{col 57}{space 4} .8851899{col 70}{space 3} 1.541376
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2}  .977227{col 29}{space 2} .1524631{col 40}{space 1}   -0.15{col 49}{space 3}0.883{col 57}{space 4}  .719771{col 70}{space 3} 1.326773
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} .7575993{col 29}{space 2} .1449108{col 40}{space 1}   -1.45{col 49}{space 3}0.147{col 57}{space 4} .5207448{col 70}{space 3} 1.102184
+{space 13}2  {c |}{col 17}{res}{space 2} .9762872{col 29}{space 2}  .151056{col 40}{space 1}   -0.16{col 49}{space 3}0.877{col 57}{space 4} .7209008{col 70}{space 3} 1.322147
+{txt}{space 13}3  {c |}{col 17}{res}{space 2} .7634199{col 29}{space 2} .1435089{col 40}{space 1}   -1.44{col 49}{space 3}0.151{col 57}{space 4} .5281451{col 70}{space 3} 1.103504
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.471422{col 29}{space 2} .2804747{col 40}{space 1}    2.03{col 49}{space 3}0.043{col 57}{space 4} 1.012711{col 70}{space 3} 2.137906
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.460257{col 29}{space 2} .2704319{col 40}{space 1}    2.04{col 49}{space 3}0.041{col 57}{space 4} 1.015761{col 70}{space 3} 2.099266
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.339801{col 29}{space 2} .3248515{col 40}{space 1}    1.21{col 49}{space 3}0.228{col 57}{space 4} .8330212{col 70}{space 3} 2.154888
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2}  1.00932{col 29}{space 2} .0099402{col 40}{space 1}    0.94{col 49}{space 3}0.346{col 57}{space 4} .9900244{col 70}{space 3} 1.028992
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .5943489{col 29}{space 2} .1252455{col 40}{space 1}   -2.47{col 49}{space 3}0.014{col 57}{space 4} .3932513{col 70}{space 3} .8982821
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.346772{col 29}{space 2} .3275459{col 40}{space 1}    1.22{col 49}{space 3}0.221{col 57}{space 4}  .836132{col 70}{space 3} 2.169268
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.008469{col 29}{space 2} .0096607{col 40}{space 1}    0.88{col 49}{space 3}0.379{col 57}{space 4} .9897115{col 70}{space 3} 1.027583
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .6057789{col 29}{space 2} .1239855{col 40}{space 1}   -2.45{col 49}{space 3}0.014{col 57}{space 4} .4055998{col 70}{space 3}  .904754
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 2.29e-30{col 29}{space 2} 2.63e-29{col 57}{space 4} 3.71e-40{col 70}{space 3} 1.41e-20
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 6.85e-33{col 29}{space 2} 6.13e-33{col 57}{space 4} 1.19e-33{col 70}{space 3} 3.95e-32
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -688,101 +680,106 @@ The above estimates were produced using melogit success_anemia_ i.AC i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-5844.8396}  
-Iteration 1:{space 3}log likelihood = {res:-5842.7977}  
-Iteration 2:{space 3}log likelihood = {res:-5842.7975}  
+Iteration 0:{space 3}log likelihood = {res:-5771.8251}  
+Iteration 1:{space 3}log likelihood = {res: -5769.784}  
+Iteration 2:{space 3}log likelihood = {res:-5769.7838}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-5900.5312}
+Grid node 0:{space 3}log likelihood = {res:-5827.1518}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5900.5312}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-5847.8345}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-5844.7949}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-5843.5761}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-5843.2669}  
-Iteration 5:{space 3}log pseudolikelihood = {res: -5843.237}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-5843.2225}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-5843.2216}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-5843.2216}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-5843.2215}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-5843.2215}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-5843.2215}  
-Iteration 38:{space 2}log pseudolikelihood = {res:-5843.2214}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-5843.2214}  
-Iteration 40:{space 2}log pseudolikelihood = {res:-5843.2212}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-5843.2212}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-5843.2211}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-5843.2206}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-5843.2197}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-5843.2078}  
-Iteration 46:{space 2}log pseudolikelihood = {res:-5843.1951}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-5843.1851}  
-Iteration 48:{space 2}log pseudolikelihood = {res:-5843.0158}  
-Iteration 49:{space 2}log pseudolikelihood = {res:-5842.7975}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-5842.7975}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5827.1518}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-5774.2553}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-5771.5326}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-5770.4171}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-5770.2697}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-5770.2534}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res:-5770.2454}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-5770.2414}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-5770.2404}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 20:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 21:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 22:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 23:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 24:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 25:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 26:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 27:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 29:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 30:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 31:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 33:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 34:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 35:{space 2}log pseudolikelihood = {res:-5770.2399}  (backed up)
+Iteration 36:{space 2}log pseudolikelihood = {res:-5770.2399}  (not concave)
+Iteration 37:{space 2}log pseudolikelihood = {res:-5770.2399}  
+Iteration 38:{space 2}log pseudolikelihood = {res:-5770.2398}  (not concave)
+Iteration 39:{space 2}log pseudolikelihood = {res:-5770.2397}  
+Iteration 40:{space 2}log pseudolikelihood = {res: -5770.238}  (backed up)
+Iteration 41:{space 2}log pseudolikelihood = {res:-5770.2378}  (backed up)
+Iteration 42:{space 2}log pseudolikelihood = {res: -5770.237}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-5770.2362}  (not concave)
+Iteration 44:{space 2}log pseudolikelihood = {res:-5770.2357}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res:-5770.2338}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-5770.2309}  
+Iteration 47:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-5769.7838}  (backed up)
+Iteration 49:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 50:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 51:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 52:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 53:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 54:{space 2}log pseudolikelihood = {res:-5769.7838}  (not concave)
+Iteration 55:{space 2}log pseudolikelihood = {res:-5769.7838}  (backed up)
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     8,506
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,312
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     8,399
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,215
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
+{col 63}{txt}avg{col 67}={res}{col 69}       1.4
 {col 63}{txt}max{col 67}={res}{col 69}         3
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    18.32
-{txt}Log pseudolikelihood = {res}-5842.7975{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0055
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    19.91
+{txt}Log pseudolikelihood = {res}-5769.7838{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0029
 {txt}{ralign 81:(Std. Err. adjusted for {res:67} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.AD {c |}{col 17}{res}{space 2} .9759055{col 29}{space 2} .1656869{col 40}{space 1}   -0.14{col 49}{space 3}0.886{col 57}{space 4} .6996693{col 70}{space 3} 1.361202
+{space 11}1.AD {c |}{col 17}{res}{space 2} .9705095{col 29}{space 2} .1645091{col 40}{space 1}   -0.18{col 49}{space 3}0.860{col 57}{space 4} .6961685{col 70}{space 3} 1.352961
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2} .9517159{col 29}{space 2} .1772063{col 40}{space 1}   -0.27{col 49}{space 3}0.790{col 57}{space 4} .6607185{col 70}{space 3} 1.370876
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} .8237483{col 29}{space 2} .2474488{col 40}{space 1}   -0.65{col 49}{space 3}0.519{col 57}{space 4} .4571924{col 70}{space 3} 1.484192
+{space 13}2  {c |}{col 17}{res}{space 2}  .950932{col 29}{space 2} .1767319{col 40}{space 1}   -0.27{col 49}{space 3}0.787{col 57}{space 4} .6606214{col 70}{space 3}  1.36882
+{txt}{space 13}3  {c |}{col 17}{res}{space 2} .8353901{col 29}{space 2} .2516074{col 40}{space 1}   -0.60{col 49}{space 3}0.550{col 57}{space 4} .4629347{col 70}{space 3} 1.507506
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.626329{col 29}{space 2} .3874667{col 40}{space 1}    2.04{col 49}{space 3}0.041{col 57}{space 4}  1.01956{col 70}{space 3} 2.594203
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.619066{col 29}{space 2} .3673457{col 40}{space 1}    2.12{col 49}{space 3}0.034{col 57}{space 4} 1.037857{col 70}{space 3} 2.525756
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.561041{col 29}{space 2} .4088363{col 40}{space 1}    1.70{col 49}{space 3}0.089{col 57}{space 4} .9342966{col 70}{space 3} 2.608218
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2}  .997126{col 29}{space 2} .0158286{col 40}{space 1}   -0.18{col 49}{space 3}0.856{col 57}{space 4} .9665802{col 70}{space 3} 1.028637
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .5086759{col 29}{space 2} .1190394{col 40}{space 1}   -2.89{col 49}{space 3}0.004{col 57}{space 4} .3215471{col 70}{space 3} .8047069
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.546262{col 29}{space 2} .4026228{col 40}{space 1}    1.67{col 49}{space 3}0.094{col 57}{space 4} .9282033{col 70}{space 3} 2.575863
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2}  .996188{col 29}{space 2} .0158814{col 40}{space 1}   -0.24{col 49}{space 3}0.811{col 57}{space 4} .9655423{col 70}{space 3} 1.027806
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .5233238{col 29}{space 2} .1168538{col 40}{space 1}   -2.90{col 49}{space 3}0.004{col 57}{space 4} .3378348{col 70}{space 3} .8106559
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 8.66e-32{col 29}{space 2} 1.67e-31{col 57}{space 4} 1.97e-33{col 70}{space 3} 3.81e-30
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 8.06e-32{col 29}{space 2} 2.03e-31{col 57}{space 4} 5.73e-34{col 70}{space 3} 1.13e-29
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -791,68 +788,71 @@ The above estimates were produced using melogit success_anemia_ i.AD i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-7214.2571}  
-Iteration 1:{space 3}log likelihood = {res:-7210.4698}  
-Iteration 2:{space 3}log likelihood = {res:-7210.4696}  
+Iteration 0:{space 3}log likelihood = {res:-7132.7565}  
+Iteration 1:{space 3}log likelihood = {res: -7128.857}  
+Iteration 2:{space 3}log likelihood = {res:-7128.8568}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-7296.7143}
+Grid node 0:{space 3}log likelihood = {res:-7216.4162}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-7296.7143}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-7212.1235}  (backed up)
-Iteration 2:{space 3}log pseudolikelihood = {res:-7211.5357}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-7211.5315}  (backed up)
-Iteration 4:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 16:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 17:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-7211.5304}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-7211.5304}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-7211.5303}  
-Iteration 36:{space 2}log pseudolikelihood = {res:-7211.5301}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-7211.5301}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:  -7211.53}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-7211.5299}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-7211.5297}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-7211.5291}  
-Iteration 42:{space 2}log pseudolikelihood = {res:-7210.7355}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-7210.7331}  
-Iteration 44:{space 2}log pseudolikelihood = {res:-7210.6714}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-7210.4696}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-7210.4696}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-7210.4696}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-7210.4696}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-7216.4162}  (not concave)
+Iteration 1:{space 3}log pseudolikelihood = {res:-7147.5001}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-7135.3046}  
+Iteration 3:{space 3}log pseudolikelihood = {res: -7130.593}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-7129.9091}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-7129.2979}  
+Iteration 6:{space 3}log pseudolikelihood = {res:-7129.2805}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-7129.2719}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-7129.2708}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-7129.2702}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 19:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 20:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 21:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 23:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 24:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 25:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 27:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 28:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 29:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 31:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 32:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 33:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 34:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 35:{space 2}log pseudolikelihood = {res:-7129.2701}  (not concave)
+Iteration 36:{space 2}log pseudolikelihood = {res:-7129.2701}  (backed up)
+Iteration 37:{space 2}log pseudolikelihood = {res:  -7129.27}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:  -7129.27}  (not concave)
+Iteration 39:{space 2}log pseudolikelihood = {res:  -7129.27}  
+Iteration 40:{space 2}log pseudolikelihood = {res:-7129.2696}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:-7129.2696}  (not concave)
+Iteration 42:{space 2}log pseudolikelihood = {res:-7129.2695}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-7129.2694}  (not concave)
+Iteration 44:{space 2}log pseudolikelihood = {res:-7129.2689}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res:-7129.2666}  
+Iteration 46:{space 2}log pseudolikelihood = {res:-7129.2414}  
+Iteration 47:{space 2}log pseudolikelihood = {res:-7129.2295}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-7129.2247}  
+Iteration 49:{space 2}log pseudolikelihood = {res:-7129.0638}  
+Iteration 50:{space 2}log pseudolikelihood = {res:-7128.8568}  
+Iteration 51:{space 2}log pseudolikelihood = {res:-7128.8568}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}    10,537
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,716
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}    10,424
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,620
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -861,29 +861,29 @@ Iteration 48:{space 2}log pseudolikelihood = {res:-7210.4696}  (backed up)
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    15.27
-{txt}Log pseudolikelihood = {res}-7210.4696{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0182
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    15.49
+{txt}Log pseudolikelihood = {res}-7128.8568{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0168
 {txt}{ralign 81:(Std. Err. adjusted for {res:69} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.BC {c |}{col 17}{res}{space 2}  1.13398{col 29}{space 2} .1412628{col 40}{space 1}    1.01{col 49}{space 3}0.313{col 57}{space 4} .8883194{col 70}{space 3} 1.447577
+{space 11}1.BC {c |}{col 17}{res}{space 2} 1.139595{col 29}{space 2} .1412571{col 40}{space 1}    1.05{col 49}{space 3}0.292{col 57}{space 4} .8938008{col 70}{space 3} 1.452981
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2} 1.344862{col 29}{space 2} .2022378{col 40}{space 1}    1.97{col 49}{space 3}0.049{col 57}{space 4} 1.001557{col 70}{space 3} 1.805842
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} .9571661{col 29}{space 2} .2127559{col 40}{space 1}   -0.20{col 49}{space 3}0.844{col 57}{space 4} .6191342{col 70}{space 3} 1.479755
+{space 13}2  {c |}{col 17}{res}{space 2} 1.347259{col 29}{space 2} .2041071{col 40}{space 1}    1.97{col 49}{space 3}0.049{col 57}{space 4} 1.001142{col 70}{space 3} 1.813036
+{txt}{space 13}3  {c |}{col 17}{res}{space 2}  .961333{col 29}{space 2} .2139578{col 40}{space 1}   -0.18{col 49}{space 3}0.859{col 57}{space 4} .6214803{col 70}{space 3} 1.487032
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} .7886808{col 29}{space 2} .2201568{col 40}{space 1}   -0.85{col 49}{space 3}0.395{col 57}{space 4} .4563437{col 70}{space 3} 1.363046
+{space 11}Yes  {c |}{col 17}{res}{space 2} .7862128{col 29}{space 2} .2205211{col 40}{space 1}   -0.86{col 49}{space 3}0.391{col 57}{space 4} .4537228{col 70}{space 3} 1.362353
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.504641{col 29}{space 2} .2458971{col 40}{space 1}    2.50{col 49}{space 3}0.012{col 57}{space 4} 1.092256{col 70}{space 3} 2.072722
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.011191{col 29}{space 2} .0099379{col 40}{space 1}    1.13{col 49}{space 3}0.257{col 57}{space 4} .9918993{col 70}{space 3} 1.030857
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .7855901{col 29}{space 2}  .249686{col 40}{space 1}   -0.76{col 49}{space 3}0.448{col 57}{space 4} .4213632{col 70}{space 3} 1.464655
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.508776{col 29}{space 2} .2471756{col 40}{space 1}    2.51{col 49}{space 3}0.012{col 57}{space 4} 1.094401{col 70}{space 3} 2.080047
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.010969{col 29}{space 2}  .009889{col 40}{space 1}    1.12{col 49}{space 3}0.265{col 57}{space 4} .9917717{col 70}{space 3} 1.030538
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .7897982{col 29}{space 2} .2519714{col 40}{space 1}   -0.74{col 49}{space 3}0.460{col 57}{space 4}  .422625{col 70}{space 3} 1.475969
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 1.28e-32{col 29}{space 2} 6.62e-33{col 57}{space 4} 4.67e-33{col 70}{space 3} 3.53e-32
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 8.32e-34{col 29}{space 2} 1.25e-33{col 57}{space 4} 4.39e-35{col 70}{space 3} 1.58e-32
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -892,71 +892,73 @@ The above estimates were produced using melogit success_anemia_ i.BC i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-6426.3229}  
-Iteration 1:{space 3}log likelihood = {res: -6423.084}  
-Iteration 2:{space 3}log likelihood = {res:-6423.0837}  
+Iteration 0:{space 3}log likelihood = {res:-6360.5668}  
+Iteration 1:{space 3}log likelihood = {res: -6357.364}  
+Iteration 2:{space 3}log likelihood = {res:-6357.3637}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-6519.0737}
+Grid node 0:{space 3}log likelihood = {res:-6452.4851}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6519.0737}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res:-6454.8499}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-6425.0373}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6424.0198}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6424.0194}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res:-6424.0193}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 15:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 19:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 25:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-6424.0192}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-6424.0192}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-6424.0155}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-6424.0154}  
-Iteration 41:{space 2}log pseudolikelihood = {res:-6424.0117}  (backed up)
-Iteration 42:{space 2}log pseudolikelihood = {res: -6423.983}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-6423.9823}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-6423.9777}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-6423.7685}  
-Iteration 46:{space 2}log pseudolikelihood = {res:-6423.4693}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-6423.4656}  
-Iteration 48:{space 2}log pseudolikelihood = {res:-6423.0837}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-6423.0837}  (not concave)
-Iteration 50:{space 2}log pseudolikelihood = {res:-6423.0837}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-6423.0837}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6452.4851}  (not concave)
+Iteration 1:{space 3}log pseudolikelihood = {res:-6388.9047}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-6359.2092}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-6358.7022}  (backed up)
+Iteration 4:{space 3}log pseudolikelihood = {res:-6358.4634}  (backed up)
+Iteration 5:{space 3}log pseudolikelihood = {res:-6358.3475}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res:-6358.2903}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-6358.2762}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-6358.2691}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-6358.2682}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res: -6358.268}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 20:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 21:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 24:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 25:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 26:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 27:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 28:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 29:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 31:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 33:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 34:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 35:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 36:{space 2}log pseudolikelihood = {res:-6358.2679}  (not concave)
+Iteration 37:{space 2}log pseudolikelihood = {res:-6358.2679}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:-6358.2678}  (backed up)
+Iteration 39:{space 2}log pseudolikelihood = {res:-6358.2677}  (not concave)
+Iteration 40:{space 2}log pseudolikelihood = {res:-6358.2677}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:-6358.2676}  
+Iteration 42:{space 2}log pseudolikelihood = {res:-6358.2658}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-6358.2655}  
+Iteration 44:{space 2}log pseudolikelihood = {res: -6358.265}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res: -6358.265}  
+Iteration 46:{space 2}log pseudolikelihood = {res:-6358.0541}  (not concave)
+Iteration 47:{space 2}log pseudolikelihood = {res:-6358.0332}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-6358.0003}  (not concave)
+Iteration 49:{space 2}log pseudolikelihood = {res:-6357.9744}  (not concave)
+Iteration 50:{space 2}log pseudolikelihood = {res:-6357.9539}  
+Iteration 51:{space 2}log pseudolikelihood = {res:-6357.3637}  (not concave)
+Iteration 52:{space 2}log pseudolikelihood = {res:-6357.3637}  (not concave)
+Iteration 53:{space 2}log pseudolikelihood = {res:-6357.3637}  (backed up)
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,388
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,884
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,291
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,802
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -965,29 +967,29 @@ Iteration 51:{space 2}log pseudolikelihood = {res:-6423.0837}  (backed up)
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    21.20
-{txt}Log pseudolikelihood = {res}-6423.0837{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0017
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    20.68
+{txt}Log pseudolikelihood = {res}-6357.3637{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0021
 {txt}{ralign 81:(Std. Err. adjusted for {res:69} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.BD {c |}{col 17}{res}{space 2} .9335287{col 29}{space 2} .1331746{col 40}{space 1}   -0.48{col 49}{space 3}0.630{col 57}{space 4}  .705826{col 70}{space 3} 1.234689
+{space 11}1.BD {c |}{col 17}{res}{space 2} .9340332{col 29}{space 2} .1336782{col 40}{space 1}   -0.48{col 49}{space 3}0.633{col 57}{space 4}  .705568{col 70}{space 3} 1.236476
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2}  1.49773{col 29}{space 2} .2558311{col 40}{space 1}    2.36{col 49}{space 3}0.018{col 57}{space 4} 1.071612{col 70}{space 3}  2.09329
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} .8997394{col 29}{space 2} .2653293{col 40}{space 1}   -0.36{col 49}{space 3}0.720{col 57}{space 4} .5047788{col 70}{space 3} 1.603734
+{space 13}2  {c |}{col 17}{res}{space 2} 1.500381{col 29}{space 2} .2595103{col 40}{space 1}    2.35{col 49}{space 3}0.019{col 57}{space 4} 1.068994{col 70}{space 3} 2.105852
+{txt}{space 13}3  {c |}{col 17}{res}{space 2} .9118678{col 29}{space 2} .2757182{col 40}{space 1}   -0.31{col 49}{space 3}0.760{col 57}{space 4} .5041469{col 70}{space 3} 1.649327
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} .7026872{col 29}{space 2}    .2247{col 40}{space 1}   -1.10{col 49}{space 3}0.270{col 57}{space 4} .3754665{col 70}{space 3} 1.315082
+{space 11}Yes  {c |}{col 17}{res}{space 2} .6998271{col 29}{space 2} .2237978{col 40}{space 1}   -1.12{col 49}{space 3}0.264{col 57}{space 4} .3739253{col 70}{space 3} 1.309775
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.768044{col 29}{space 2} .3221767{col 40}{space 1}    3.13{col 49}{space 3}0.002{col 57}{space 4} 1.237044{col 70}{space 3} 2.526974
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.012588{col 29}{space 2} .0128284{col 40}{space 1}    0.99{col 49}{space 3}0.323{col 57}{space 4} .9877547{col 70}{space 3} 1.038046
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  .725591{col 29}{space 2} .2309138{col 40}{space 1}   -1.01{col 49}{space 3}0.313{col 57}{space 4} .3888691{col 70}{space 3}  1.35388
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.751384{col 29}{space 2} .3196994{col 40}{space 1}    3.07{col 49}{space 3}0.002{col 57}{space 4} 1.224622{col 70}{space 3} 2.504728
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2} 1.011991{col 29}{space 2} .0130363{col 40}{space 1}    0.93{col 49}{space 3}0.355{col 57}{space 4} .9867602{col 70}{space 3} 1.037867
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .7380816{col 29}{space 2} .2347134{col 40}{space 1}   -0.96{col 49}{space 3}0.340{col 57}{space 4} .3957476{col 70}{space 3} 1.376545
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 7.74e-32{col 29}{space 2} 5.98e-32{col 57}{space 4} 1.70e-32{col 70}{space 3} 3.51e-31
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 4.21e-33{col 29}{space 2} 6.73e-33{col 57}{space 4} 1.84e-34{col 70}{space 3} 9.64e-32
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -996,69 +998,71 @@ The above estimates were produced using melogit success_anemia_ i.BD i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-6289.2901}  
-Iteration 1:{space 3}log likelihood = {res:-6284.0001}  
-Iteration 2:{space 3}log likelihood = {res:-6283.9991}  
-Iteration 3:{space 3}log likelihood = {res:-6283.9991}  
+Iteration 0:{space 3}log likelihood = {res:-6212.7231}  
+Iteration 1:{space 3}log likelihood = {res:-6207.3634}  
+Iteration 2:{space 3}log likelihood = {res:-6207.3623}  
+Iteration 3:{space 3}log likelihood = {res:-6207.3623}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res: -6344.368}
+Grid node 0:{space 3}log likelihood = {res:-6268.5972}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -6344.368}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-6308.9414}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-6294.8183}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6286.6039}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6285.4922}  
-Iteration 5:{space 3}log pseudolikelihood = {res: -6284.738}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-6284.5999}  
-Iteration 7:{space 3}log pseudolikelihood = {res:-6284.5918}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-6284.5878}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 24:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-6284.5877}  (not concave)
-Iteration 27:{space 2}log pseudolikelihood = {res:-6284.5877}  (backed up)
-Iteration 28:{space 2}log pseudolikelihood = {res:-6284.5876}  (not concave)
-Iteration 29:{space 2}log pseudolikelihood = {res:-6284.5876}  (backed up)
-Iteration 30:{space 2}log pseudolikelihood = {res:-6284.5876}  (not concave)
-Iteration 31:{space 2}log pseudolikelihood = {res:-6284.5876}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-6284.5876}  
-Iteration 33:{space 2}log pseudolikelihood = {res:-6284.5876}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-6284.5871}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res: -6284.587}  
-Iteration 36:{space 2}log pseudolikelihood = {res:-6284.5865}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-6284.5819}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-6284.5774}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-6284.5729}  (backed up)
-Iteration 40:{space 2}log pseudolikelihood = {res:-6284.5726}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-6284.5725}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-6284.5645}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-6284.5394}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-6284.5197}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-6284.1303}  
-Iteration 46:{space 2}log pseudolikelihood = {res:-6283.9991}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-6283.9991}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-6283.9991}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6268.5972}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-6228.2663}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-6209.0392}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-6208.5809}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-6208.3854}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-6208.2947}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res: -6208.251}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-6208.2403}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-6208.2376}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-6208.2363}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 20:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 21:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 24:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 25:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 27:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 29:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 31:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 33:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 34:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 35:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 36:{space 2}log pseudolikelihood = {res:-6208.2362}  (backed up)
+Iteration 37:{space 2}log pseudolikelihood = {res:-6208.2362}  (not concave)
+Iteration 38:{space 2}log pseudolikelihood = {res:-6208.2361}  
+Iteration 39:{space 2}log pseudolikelihood = {res:-6208.2353}  (backed up)
+Iteration 40:{space 2}log pseudolikelihood = {res:-6208.2285}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:-6208.2283}  (not concave)
+Iteration 42:{space 2}log pseudolikelihood = {res:-6208.2278}  
+Iteration 43:{space 2}log pseudolikelihood = {res:-6208.2011}  (backed up)
+Iteration 44:{space 2}log pseudolikelihood = {res:-6207.8355}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res: -6207.831}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-6207.8166}  
+Iteration 47:{space 2}log pseudolikelihood = {res:-6207.3623}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-6207.3623}  (backed up)
+Iteration 49:{space 2}log pseudolikelihood = {res:-6207.3623}  
+Iteration 50:{space 2}log pseudolikelihood = {res:-6207.3623}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,287
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,878
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,181
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,784
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1067,29 +1071,29 @@ Iteration 48:{space 2}log pseudolikelihood = {res:-6283.9991}  (backed up)
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    39.66
-{txt}Log pseudolikelihood = {res}-6283.9991{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    40.67
+{txt}Log pseudolikelihood = {res}-6207.3623{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 81:(Std. Err. adjusted for {res:68} clusters in str_TRIAL_2_Cluster)}
 {hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 17}{c |}{col 29}    Robust
 {col 1}success_anemia_{col 17}{c |} Odds Ratio{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
 {hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 11}1.CD {c |}{col 17}{res}{space 2} .8828835{col 29}{space 2} .1389891{col 40}{space 1}   -0.79{col 49}{space 3}0.429{col 57}{space 4} .6484878{col 70}{space 3} 1.202001
+{space 11}1.CD {c |}{col 17}{res}{space 2}  .878903{col 29}{space 2}  .137788{col 40}{space 1}   -0.82{col 49}{space 3}0.410{col 57}{space 4} .6463917{col 70}{space 3}  1.19505
 {txt}{space 15} {c |}
 {space 8}phase_n {c |}
-{space 13}2  {c |}{col 17}{res}{space 2} 1.548916{col 29}{space 2} .2210563{col 40}{space 1}    3.07{col 49}{space 3}0.002{col 57}{space 4} 1.170974{col 70}{space 3} 2.048843
-{txt}{space 13}3  {c |}{col 17}{res}{space 2} 1.153139{col 29}{space 2} .2491115{col 40}{space 1}    0.66{col 49}{space 3}0.510{col 57}{space 4} .7550877{col 70}{space 3} 1.761027
+{space 13}2  {c |}{col 17}{res}{space 2} 1.562826{col 29}{space 2} .2256125{col 40}{space 1}    3.09{col 49}{space 3}0.002{col 57}{space 4} 1.177686{col 70}{space 3} 2.073918
+{txt}{space 13}3  {c |}{col 17}{res}{space 2} 1.170416{col 29}{space 2} .2536066{col 40}{space 1}    0.73{col 49}{space 3}0.468{col 57}{space 4} .7654226{col 70}{space 3} 1.789696
 {txt}{space 15} {c |}
 {space 13}us {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.106828{col 29}{space 2} .1898317{col 40}{space 1}    0.59{col 49}{space 3}0.554{col 57}{space 4} .7908443{col 70}{space 3} 1.549065
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.101766{col 29}{space 2} .1854595{col 40}{space 1}    0.58{col 49}{space 3}0.565{col 57}{space 4} .7921495{col 70}{space 3} 1.532398
 {txt}{space 15} {c |}
 {space 12}lab {c |}
-{space 11}Yes  {c |}{col 17}{res}{space 2} 1.743751{col 29}{space 2} .2770016{col 40}{space 1}    3.50{col 49}{space 3}0.000{col 57}{space 4} 1.277226{col 70}{space 3} 2.380681
-{txt}{space 7}clussize {c |}{col 17}{res}{space 2} .9908438{col 29}{space 2} .0086926{col 40}{space 1}   -1.05{col 49}{space 3}0.294{col 57}{space 4} .9739522{col 70}{space 3} 1.008028
-{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .5570868{col 29}{space 2} .0988213{col 40}{space 1}   -3.30{col 49}{space 3}0.001{col 57}{space 4} .3934855{col 70}{space 3} .7887094
+{space 11}Yes  {c |}{col 17}{res}{space 2} 1.744929{col 29}{space 2} .2769208{col 40}{space 1}    3.51{col 49}{space 3}0.000{col 57}{space 4} 1.278474{col 70}{space 3} 2.381572
+{txt}{space 7}clussize {c |}{col 17}{res}{space 2} .9905457{col 29}{space 2}  .008641{col 40}{space 1}   -1.09{col 49}{space 3}0.276{col 57}{space 4} .9737536{col 70}{space 3} 1.007627
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  .561459{col 29}{space 2}  .098323{col 40}{space 1}   -3.30{col 49}{space 3}0.001{col 57}{space 4} .3983412{col 70}{space 3} .7913723
 {txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid       {col 17}{txt}{c |}
-{space 6}var(_cons){c |}{col 17}{res}{space 2} 2.92e-32{col 29}{space 2} 5.30e-32{col 57}{space 4} 8.24e-34{col 70}{space 3} 1.03e-30
+{space 6}var(_cons){c |}{col 17}{res}{space 2} 3.25e-32{col 29}{space 2} 2.80e-30{col 57}{space 4} 1.4e-105{col 70}{space 3} 7.75e+41
 {txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1100,73 +1104,80 @@ The above estimates were produced using melogit success_anemia_ i.CD i.phase_n i
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-6043.5138}  
-Iteration 1:{space 3}log likelihood = {res:-6032.6852}  
-Iteration 2:{space 3}log likelihood = {res:-6032.6808}  
-Iteration 3:{space 3}log likelihood = {res:-6032.6808}  
+Iteration 0:{space 3}log likelihood = {res:-5971.5368}  
+Iteration 1:{space 3}log likelihood = {res:-5960.8012}  
+Iteration 2:{space 3}log likelihood = {res:-5960.7969}  
+Iteration 3:{space 3}log likelihood = {res:-5960.7969}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-6082.8088}
+Grid node 0:{space 3}log likelihood = {res:-6009.4411}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6082.8088}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-6055.3033}  (backed up)
-Iteration 2:{space 3}log pseudolikelihood = {res:-6039.2875}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6035.5866}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6035.0302}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-6034.9984}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res:-6034.9905}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-6034.9866}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-6034.9861}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 18:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 19:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 20:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 23:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 33:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 34:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-6034.9859}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-6034.9859}  (not concave)
-Iteration 38:{space 2}log pseudolikelihood = {res:-6034.9857}  (not concave)
-Iteration 39:{space 2}log pseudolikelihood = {res:-6034.9856}  
-Iteration 40:{space 2}log pseudolikelihood = {res:-6034.9812}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res:-6034.9776}  
-Iteration 42:{space 2}log pseudolikelihood = {res:-6034.9732}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-6034.9661}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-6034.9436}  (not concave)
-Iteration 45:{space 2}log pseudolikelihood = {res:-6034.8721}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-6034.7592}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-6034.7479}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-6034.6064}  
-Iteration 49:{space 2}log pseudolikelihood = {res:-6032.6818}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-6032.6808}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-6032.6808}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-6032.6808}  (backed up)
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6009.4411}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-5968.8979}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-5964.7205}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-5963.5132}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-5963.2647}  (backed up)
+Iteration 5:{space 3}log pseudolikelihood = {res:-5963.2349}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res:-5963.2312}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-5963.2303}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-5963.2301}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:  -5963.23}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 20:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 21:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 24:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 25:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 26:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 27:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 29:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 31:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 33:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 34:{space 2}log pseudolikelihood = {res:-5963.2299}  (not concave)
+Iteration 35:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 36:{space 2}log pseudolikelihood = {res:-5963.2299}  (backed up)
+Iteration 37:{space 2}log pseudolikelihood = {res:-5963.2298}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:-5963.2298}  (backed up)
+Iteration 39:{space 2}log pseudolikelihood = {res:-5963.2297}  (not concave)
+Iteration 40:{space 2}log pseudolikelihood = {res:-5963.2297}  (not concave)
+Iteration 41:{space 2}log pseudolikelihood = {res:-5963.2297}  (not concave)
+Iteration 42:{space 2}log pseudolikelihood = {res:-5963.2297}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-5963.2296}  (not concave)
+Iteration 44:{space 2}log pseudolikelihood = {res:-5963.2294}  
+Iteration 45:{space 2}log pseudolikelihood = {res:-5963.2271}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-5963.2262}  
+Iteration 47:{space 2}log pseudolikelihood = {res:-5963.2168}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-5963.2094}  (not concave)
+Iteration 49:{space 2}log pseudolikelihood = {res:-5963.2064}  (not concave)
+Iteration 50:{space 2}log pseudolikelihood = {res:-5963.1873}  (not concave)
+Iteration 51:{space 2}log pseudolikelihood = {res:-5963.1267}  
+Iteration 52:{space 2}log pseudolikelihood = {res:-5962.1217}  (not concave)
+Iteration 53:{space 2}log pseudolikelihood = {res: -5962.072}  (not concave)
+Iteration 54:{space 2}log pseudolikelihood = {res:-5962.0522}  (not concave)
+Iteration 55:{space 2}log pseudolikelihood = {res:-5960.8835}  (not concave)
+Iteration 56:{space 2}log pseudolikelihood = {res:-5960.8579}  (not concave)
+Iteration 57:{space 2}log pseudolikelihood = {res:-5960.8566}  
+Iteration 58:{space 2}log pseudolikelihood = {res:-5960.7969}  
+Iteration 59:{space 2}log pseudolikelihood = {res:-5960.7969}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,756
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,150
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,642
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,051
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1175,29 +1186,29 @@ Iteration 52:{space 2}log pseudolikelihood = {res:-6032.6808}  (backed up)
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    22.05
-{txt}Log pseudolikelihood = {res}-6032.6808{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0012
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    22.47
+{txt}Log pseudolikelihood = {res}-5960.7969{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0010
 {txt}{ralign 79:(Std. Err. adjusted for {res:68} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.AB {c |}{col 15}{res}{space 2} .9997427{col 27}{space 2}  .170273{col 38}{space 1}   -0.00{col 47}{space 3}0.999{col 55}{space 4} .7160021{col 68}{space 3} 1.395925
+{space 9}1.AB {c |}{col 15}{res}{space 2} .9929341{col 27}{space 2} .1681778{col 38}{space 1}   -0.04{col 47}{space 3}0.967{col 55}{space 4} .7124404{col 68}{space 3}  1.38386
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2} .9881351{col 27}{space 2} .1981127{col 38}{space 1}   -0.06{col 47}{space 3}0.953{col 55}{space 4} .6670489{col 68}{space 3} 1.463777
-{txt}{space 11}3  {c |}{col 15}{res}{space 2} .9959405{col 27}{space 2} .2951039{col 38}{space 1}   -0.01{col 47}{space 3}0.989{col 55}{space 4}  .557207{col 68}{space 3} 1.780124
+{space 11}2  {c |}{col 15}{res}{space 2} .9814611{col 27}{space 2} .1966008{col 38}{space 1}   -0.09{col 47}{space 3}0.926{col 55}{space 4} .6627736{col 68}{space 3} 1.453386
+{txt}{space 11}3  {c |}{col 15}{res}{space 2} 1.018503{col 27}{space 2} .2981133{col 38}{space 1}    0.06{col 47}{space 3}0.950{col 55}{space 4} .5738758{col 68}{space 3} 1.807619
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.044225{col 27}{space 2} .4673895{col 38}{space 1}    0.10{col 47}{space 3}0.923{col 55}{space 4} .4343109{col 68}{space 3} 2.510657
+{space 9}Yes  {c |}{col 15}{res}{space 2}  1.05104{col 27}{space 2} .4684221{col 38}{space 1}    0.11{col 47}{space 3}0.911{col 55}{space 4} .4387934{col 68}{space 3} 2.517551
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.334478{col 27}{space 2} .4406143{col 38}{space 1}    0.87{col 47}{space 3}0.382{col 55}{space 4} .6986569{col 68}{space 3} 2.548935
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} 1.036321{col 27}{space 2} .0171894{col 38}{space 1}    2.15{col 47}{space 3}0.031{col 55}{space 4} 1.003172{col 68}{space 3} 1.070565
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 1.261357{col 27}{space 2} .5361233{col 38}{space 1}    0.55{col 47}{space 3}0.585{col 55}{space 4} .5483346{col 68}{space 3}  2.90155
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.312538{col 27}{space 2} .4294405{col 38}{space 1}    0.83{col 47}{space 3}0.406{col 55}{space 4} .6912145{col 68}{space 3}  2.49236
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2} 1.034953{col 27}{space 2} .0168145{col 38}{space 1}    2.11{col 47}{space 3}0.034{col 55}{space 4} 1.002516{col 68}{space 3} 1.068439
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2}  1.28602{col 27}{space 2} .5467702{col 38}{space 1}    0.59{col 47}{space 3}0.554{col 55}{space 4} .5589164{col 68}{space 3} 2.959024
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} 5.84e-32{col 27}{space 2} 2.13e-31{col 55}{space 4} 4.67e-35{col 68}{space 3} 7.31e-29
+{space 4}var(_cons){c |}{col 15}{res}{space 2} 2.66e-32{col 27}{space 2} 2.33e-32{col 55}{space 4} 4.81e-33{col 68}{space 3} 1.48e-31
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1206,25 +1217,25 @@ The above estimates were produced using melogit screen_anemia i.AB i.phase_n i.u
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-5960.3595}  
-Iteration 1:{space 3}log likelihood = {res:-5947.9228}  
-Iteration 2:{space 3}log likelihood = {res: -5947.915}  
-Iteration 3:{space 3}log likelihood = {res: -5947.915}  
+Iteration 0:{space 3}log likelihood = {res:-5876.3096}  
+Iteration 1:{space 3}log likelihood = {res:-5864.0059}  
+Iteration 2:{space 3}log likelihood = {res: -5863.998}  
+Iteration 3:{space 3}log likelihood = {res: -5863.998}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-5955.9866}
+Grid node 0:{space 3}log likelihood = {res:-5872.2163}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5955.9866}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-5944.0651}  
-Iteration 2:{space 3}log pseudolikelihood = {res: -5943.354}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-5943.3524}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-5943.3524}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5872.2163}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-5860.2577}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-5859.5506}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-5859.5489}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-5859.5489}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,655
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,144
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,532
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,033
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1233,29 +1244,29 @@ Iteration 4:{space 3}log pseudolikelihood = {res:-5943.3524}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    29.61
-{txt}Log pseudolikelihood = {res}-5943.3524{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    32.22
+{txt}Log pseudolikelihood = {res}-5859.5489{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 79:(Std. Err. adjusted for {res:67} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.AC {c |}{col 15}{res}{space 2} 1.051148{col 27}{space 2} .2346125{col 38}{space 1}    0.22{col 47}{space 3}0.823{col 55}{space 4} .6787011{col 68}{space 3}  1.62798
+{space 9}1.AC {c |}{col 15}{res}{space 2} 1.052505{col 27}{space 2} .2347478{col 38}{space 1}    0.23{col 47}{space 3}0.819{col 55}{space 4}   .67979{col 68}{space 3} 1.629573
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2} 1.025305{col 27}{space 2} .2598683{col 38}{space 1}    0.10{col 47}{space 3}0.921{col 55}{space 4} .6238962{col 68}{space 3} 1.684977
-{txt}{space 11}3  {c |}{col 15}{res}{space 2} 1.482313{col 27}{space 2} .5565278{col 38}{space 1}    1.05{col 47}{space 3}0.294{col 55}{space 4} .7101661{col 68}{space 3} 3.093996
+{space 11}2  {c |}{col 15}{res}{space 2} 1.021517{col 27}{space 2} .2589991{col 38}{space 1}    0.08{col 47}{space 3}0.933{col 55}{space 4} .6214826{col 68}{space 3} 1.679045
+{txt}{space 11}3  {c |}{col 15}{res}{space 2} 1.497134{col 27}{space 2} .5548306{col 38}{space 1}    1.09{col 47}{space 3}0.276{col 55}{space 4} .7241181{col 68}{space 3} 3.095364
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.686831{col 27}{space 2} .4623223{col 38}{space 1}    1.91{col 47}{space 3}0.056{col 55}{space 4}  .985772{col 68}{space 3} 2.886468
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.691539{col 27}{space 2} .4556399{col 38}{space 1}    1.95{col 47}{space 3}0.051{col 55}{space 4} .9976972{col 68}{space 3} 2.867907
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.541668{col 27}{space 2} .5115274{col 38}{space 1}    1.30{col 47}{space 3}0.192{col 55}{space 4} .8045647{col 68}{space 3} 2.954069
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} 1.011402{col 27}{space 2} .0230273{col 38}{space 1}    0.50{col 47}{space 3}0.618{col 55}{space 4}  .967262{col 68}{space 3} 1.057557
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .7750075{col 27}{space 2} .2202883{col 38}{space 1}   -0.90{col 47}{space 3}0.370{col 55}{space 4} .4439768{col 68}{space 3} 1.352856
+{space 9}Yes  {c |}{col 15}{res}{space 2}  1.55971{col 27}{space 2} .5172812{col 38}{space 1}    1.34{col 47}{space 3}0.180{col 55}{space 4} .8142183{col 68}{space 3} 2.987767
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2} 1.010026{col 27}{space 2} .0225729{col 38}{space 1}    0.45{col 47}{space 3}0.655{col 55}{space 4} .9667384{col 68}{space 3} 1.055251
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .7735633{col 27}{space 2} .2168131{col 38}{space 1}   -0.92{col 47}{space 3}0.360{col 55}{space 4} .4466038{col 68}{space 3} 1.339891
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} .4030277{col 27}{space 2} .3754353{col 55}{space 4} .0649245{col 68}{space 3} 2.501848
+{space 4}var(_cons){c |}{col 15}{res}{space 2} .3995247{col 27}{space 2} .3793247{col 55}{space 4} .0621411{col 68}{space 3}  2.56867
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1264,56 +1275,56 @@ The above estimates were produced using melogit screen_anemia i.AC i.phase_n i.u
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-5391.1992}  
-Iteration 1:{space 3}log likelihood = {res:-5381.0305}  
-Iteration 2:{space 3}log likelihood = {res:-5381.0243}  
-Iteration 3:{space 3}log likelihood = {res:-5381.0243}  
+Iteration 0:{space 3}log likelihood = {res:-5322.0905}  
+Iteration 1:{space 3}log likelihood = {res:-5312.0551}  
+Iteration 2:{space 3}log likelihood = {res: -5312.049}  
+Iteration 3:{space 3}log likelihood = {res: -5312.049}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-5406.6306}
+Grid node 0:{space 3}log likelihood = {res:-5336.0824}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5406.6306}  
-Iteration 1:{space 3}log pseudolikelihood = {res: -5390.011}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-5381.2666}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-5380.9445}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-5380.9443}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5336.0824}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-5312.9144}  
+Iteration 2:{space 3}log pseudolikelihood = {res: -5311.885}  
+Iteration 3:{space 3}log pseudolikelihood = {res: -5311.883}  
+Iteration 4:{space 3}log pseudolikelihood = {res: -5311.883}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     8,506
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,312
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     8,399
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,215
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
-{col 63}{txt}avg{col 67}={res}{col 69}       1.3
+{col 63}{txt}avg{col 67}={res}{col 69}       1.4
 {col 63}{txt}max{col 67}={res}{col 69}         3
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    23.28
-{txt}Log pseudolikelihood = {res}-5380.9443{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0007
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    24.35
+{txt}Log pseudolikelihood = {res} -5311.883{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0004
 {txt}{ralign 79:(Std. Err. adjusted for {res:67} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.AD {c |}{col 15}{res}{space 2} .8775743{col 27}{space 2} .1923157{col 38}{space 1}   -0.60{col 47}{space 3}0.551{col 55}{space 4} .5711466{col 68}{space 3} 1.348404
+{space 9}1.AD {c |}{col 15}{res}{space 2} .8720645{col 27}{space 2} .1925005{col 38}{space 1}   -0.62{col 47}{space 3}0.535{col 55}{space 4} .5657876{col 68}{space 3} 1.344138
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2}  .822917{col 27}{space 2} .1985878{col 38}{space 1}   -0.81{col 47}{space 3}0.419{col 55}{space 4} .5127936{col 68}{space 3} 1.320594
-{txt}{space 11}3  {c |}{col 15}{res}{space 2}   1.5228{col 27}{space 2} .6997644{col 38}{space 1}    0.92{col 47}{space 3}0.360{col 55}{space 4} .6187206{col 68}{space 3} 3.747927
+{space 11}2  {c |}{col 15}{res}{space 2} .8284304{col 27}{space 2} .2006009{col 38}{space 1}   -0.78{col 47}{space 3}0.437{col 55}{space 4} .5153961{col 68}{space 3} 1.331591
+{txt}{space 11}3  {c |}{col 15}{res}{space 2} 1.570532{col 27}{space 2} .7339429{col 38}{space 1}    0.97{col 47}{space 3}0.334{col 55}{space 4} .6284378{col 68}{space 3} 3.924924
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.827705{col 27}{space 2} .5141686{col 38}{space 1}    2.14{col 47}{space 3}0.032{col 55}{space 4} 1.053045{col 68}{space 3} 3.172236
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.852488{col 27}{space 2} .5047587{col 38}{space 1}    2.26{col 47}{space 3}0.024{col 55}{space 4} 1.085984{col 68}{space 3} 3.160003
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.724709{col 27}{space 2} .5203714{col 38}{space 1}    1.81{col 47}{space 3}0.071{col 55}{space 4} .9547622{col 68}{space 3} 3.115563
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9873946{col 27}{space 2} .0221509{col 38}{space 1}   -0.57{col 47}{space 3}0.572{col 55}{space 4} .9449203{col 68}{space 3} 1.031778
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .8138681{col 27}{space 2}  .221232{col 38}{space 1}   -0.76{col 47}{space 3}0.449{col 55}{space 4} .4777204{col 68}{space 3} 1.386546
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.701973{col 27}{space 2} .5146542{col 38}{space 1}    1.76{col 47}{space 3}0.079{col 55}{space 4} .9409366{col 68}{space 3}  3.07854
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9861514{col 27}{space 2}  .022372{col 38}{space 1}   -0.61{col 47}{space 3}0.539{col 55}{space 4} .9432637{col 68}{space 3} 1.030989
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .8160029{col 27}{space 2} .2154185{col 38}{space 1}   -0.77{col 47}{space 3}0.441{col 55}{space 4} .4863859{col 68}{space 3} 1.368997
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} .0432726{col 27}{space 2} .3160468{col 55}{space 4} 2.63e-08{col 68}{space 3} 71296.08
+{space 4}var(_cons){c |}{col 15}{res}{space 2} .0633564{col 27}{space 2} .3266172{col 55}{space 4} 2.59e-06{col 68}{space 3} 1548.595
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1322,75 +1333,86 @@ The above estimates were produced using melogit screen_anemia i.AD i.phase_n i.u
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res: -6455.608}  
-Iteration 1:{space 3}log likelihood = {res:-6442.9365}  
-Iteration 2:{space 3}log likelihood = {res:-6442.9261}  
-Iteration 3:{space 3}log likelihood = {res:-6442.9261}  
+Iteration 0:{space 3}log likelihood = {res:-6384.1942}  
+Iteration 1:{space 3}log likelihood = {res:-6371.6267}  
+Iteration 2:{space 3}log likelihood = {res:-6371.6164}  
+Iteration 3:{space 3}log likelihood = {res:-6371.6164}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-6480.7896}
+Grid node 0:{space 3}log likelihood = {res: -6408.997}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-6480.7896}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-6448.7088}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-6445.5766}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-6444.2089}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-6443.8438}  
-Iteration 5:{space 3}log pseudolikelihood = {res:-6443.5729}  
-Iteration 6:{space 3}log pseudolikelihood = {res:-6443.5462}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-6443.5429}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res:-6443.5427}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-6443.5427}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res:-6443.5427}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 21:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 22:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 26:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 32:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 35:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 36:{space 2}log pseudolikelihood = {res:-6443.5426}  (not concave)
-Iteration 37:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-6443.5426}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-6443.5424}  (not concave)
-Iteration 40:{space 2}log pseudolikelihood = {res:-6443.5424}  
-Iteration 41:{space 2}log pseudolikelihood = {res:-6443.5421}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res: -6443.542}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res: -6443.542}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res:-6443.5419}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-6443.5324}  (backed up)
-Iteration 46:{space 2}log pseudolikelihood = {res:-6443.5137}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res:-6443.5062}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-6443.5003}  (not concave)
-Iteration 49:{space 2}log pseudolikelihood = {res:-6443.4908}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-6442.9262}  (not concave)
-Iteration 51:{space 2}log pseudolikelihood = {res:-6442.9262}  (not concave)
-Iteration 52:{space 2}log pseudolikelihood = {res:-6442.9262}  (not concave)
-Iteration 53:{space 2}log pseudolikelihood = {res:-6442.9262}  
-Iteration 54:{space 2}log pseudolikelihood = {res:-6442.9261}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res: -6408.997}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-6377.5982}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-6374.3328}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-6372.9319}  
+Iteration 4:{space 3}log pseudolikelihood = {res:  -6372.24}  
+Iteration 5:{space 3}log pseudolikelihood = {res:-6372.1891}  
+Iteration 6:{space 3}log pseudolikelihood = {res:-6372.1831}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-6372.1801}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-6372.1786}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-6372.1779}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 13:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 18:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 19:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 20:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 21:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 22:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 23:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 24:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 25:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 27:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 29:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 30:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 31:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 32:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 33:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 34:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 35:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 36:{space 2}log pseudolikelihood = {res:-6372.1778}  (not concave)
+Iteration 37:{space 2}log pseudolikelihood = {res:-6372.1778}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:-6372.1777}  (backed up)
+Iteration 39:{space 2}log pseudolikelihood = {res:-6372.1776}  (not concave)
+Iteration 40:{space 2}log pseudolikelihood = {res:-6372.1776}  
+Iteration 41:{space 2}log pseudolikelihood = {res:-6372.1775}  (backed up)
+Iteration 42:{space 2}log pseudolikelihood = {res:-6372.1772}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res: -6372.177}  
+Iteration 44:{space 2}log pseudolikelihood = {res:-6372.1597}  (backed up)
+Iteration 45:{space 2}log pseudolikelihood = {res:-6372.1555}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-6372.1546}  
+Iteration 47:{space 2}log pseudolikelihood = {res: -6372.138}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-6372.1376}  
+Iteration 49:{space 2}log pseudolikelihood = {res:-6371.7483}  
+Iteration 50:{space 2}log pseudolikelihood = {res:-6371.7324}  (not concave)
+Iteration 51:{space 2}log pseudolikelihood = {res:-6371.7308}  (not concave)
+Iteration 52:{space 2}log pseudolikelihood = {res:-6371.7295}  (not concave)
+Iteration 53:{space 2}log pseudolikelihood = {res:-6371.7275}  (not concave)
+Iteration 54:{space 2}log pseudolikelihood = {res:-6371.6442}  (not concave)
+Iteration 55:{space 2}log pseudolikelihood = {res:-6371.6432}  (not concave)
+Iteration 56:{space 2}log pseudolikelihood = {res:-6371.6428}  (not concave)
+Iteration 57:{space 2}log pseudolikelihood = {res:-6371.6391}  (not concave)
+Iteration 58:{space 2}log pseudolikelihood = {res:-6371.6389}  
+Iteration 59:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 60:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 61:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 62:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 63:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 64:{space 2}log pseudolikelihood = {res:-6371.6164}  (not concave)
+Iteration 65:{space 2}log pseudolikelihood = {res:-6371.6164}  (backed up)
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}    10,537
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,716
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}    10,424
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     7,620
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1399,29 +1421,29 @@ Iteration 54:{space 2}log pseudolikelihood = {res:-6442.9261}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    42.35
-{txt}Log pseudolikelihood = {res}-6442.9261{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    42.15
+{txt}Log pseudolikelihood = {res}-6371.6164{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 79:(Std. Err. adjusted for {res:69} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.BC {c |}{col 15}{res}{space 2} 1.015447{col 27}{space 2} .1585175{col 38}{space 1}    0.10{col 47}{space 3}0.922{col 55}{space 4} .7477898{col 68}{space 3} 1.378907
+{space 9}1.BC {c |}{col 15}{res}{space 2} 1.022289{col 27}{space 2} .1601428{col 38}{space 1}    0.14{col 47}{space 3}0.888{col 55}{space 4} .7520242{col 68}{space 3} 1.389682
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2} 1.740324{col 27}{space 2} .3111561{col 38}{space 1}    3.10{col 47}{space 3}0.002{col 55}{space 4} 1.225863{col 68}{space 3} 2.470689
-{txt}{space 11}3  {c |}{col 15}{res}{space 2} 2.661328{col 27}{space 2} .6795757{col 38}{space 1}    3.83{col 47}{space 3}0.000{col 55}{space 4} 1.613401{col 68}{space 3} 4.389899
+{space 11}2  {c |}{col 15}{res}{space 2} 1.724629{col 27}{space 2} .3107885{col 38}{space 1}    3.02{col 47}{space 3}0.002{col 55}{space 4} 1.211446{col 68}{space 3} 2.455202
+{txt}{space 11}3  {c |}{col 15}{res}{space 2}  2.64723{col 27}{space 2} .6784411{col 38}{space 1}    3.80{col 47}{space 3}0.000{col 55}{space 4} 1.601928{col 68}{space 3} 4.374622
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} .7965055{col 27}{space 2} .2708062{col 38}{space 1}   -0.67{col 47}{space 3}0.503{col 55}{space 4} .4090593{col 68}{space 3} 1.550927
+{space 9}Yes  {c |}{col 15}{res}{space 2} .7906574{col 27}{space 2} .2685007{col 38}{space 1}   -0.69{col 47}{space 3}0.489{col 55}{space 4} .4063754{col 68}{space 3} 1.538329
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.726367{col 27}{space 2} .3333779{col 38}{space 1}    2.83{col 47}{space 3}0.005{col 55}{space 4} 1.182383{col 68}{space 3} 2.520625
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9871487{col 27}{space 2} .0111811{col 38}{space 1}   -1.14{col 47}{space 3}0.253{col 55}{space 4} .9654756{col 68}{space 3} 1.009308
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 1.063763{col 27}{space 2} .4101012{col 38}{space 1}    0.16{col 47}{space 3}0.873{col 55}{space 4} .4996781{col 68}{space 3} 2.264642
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.738925{col 27}{space 2} .3340323{col 38}{space 1}    2.88{col 47}{space 3}0.004{col 55}{space 4} 1.193363{col 68}{space 3} 2.533899
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9871401{col 27}{space 2} .0112615{col 38}{space 1}   -1.13{col 47}{space 3}0.257{col 55}{space 4}  .965313{col 68}{space 3} 1.009461
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 1.068495{col 27}{space 2} .4122917{col 38}{space 1}    0.17{col 47}{space 3}0.864{col 55}{space 4} .5015634{col 68}{space 3} 2.276244
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} 2.50e-33{col 27}{space 2} 3.73e-33{col 55}{space 4} 1.34e-34{col 68}{space 3} 4.65e-32
+{space 4}var(_cons){c |}{col 15}{res}{space 2} 9.43e-33{col 27}{space 2} 7.83e-33{col 55}{space 4} 1.85e-33{col 68}{space 3} 4.80e-32
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1430,71 +1452,72 @@ The above estimates were produced using melogit screen_anemia i.BC i.phase_n i.u
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-5895.0412}  
-Iteration 1:{space 3}log likelihood = {res:-5883.7209}  
-Iteration 2:{space 3}log likelihood = {res:-5883.7121}  
-Iteration 3:{space 3}log likelihood = {res:-5883.7121}  
+Iteration 0:{space 3}log likelihood = {res:-5837.1614}  
+Iteration 1:{space 3}log likelihood = {res:-5825.9414}  
+Iteration 2:{space 3}log likelihood = {res:-5825.9328}  
+Iteration 3:{space 3}log likelihood = {res:-5825.9328}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-5941.9941}
+Grid node 0:{space 3}log likelihood = {res:-5881.9466}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5941.9941}  (not concave)
-Iteration 1:{space 3}log pseudolikelihood = {res: -5887.397}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-5885.4113}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-5885.0307}  (backed up)
-Iteration 4:{space 3}log pseudolikelihood = {res:-5884.8513}  (backed up)
-Iteration 5:{space 3}log pseudolikelihood = {res: -5884.764}  (backed up)
-Iteration 6:{space 3}log pseudolikelihood = {res: -5884.721}  (backed up)
-Iteration 7:{space 3}log pseudolikelihood = {res:-5884.7183}  (backed up)
-Iteration 8:{space 3}log pseudolikelihood = {res: -5884.717}  (backed up)
-Iteration 9:{space 3}log pseudolikelihood = {res:-5884.7163}  (backed up)
-Iteration 10:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 11:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 12:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 13:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 14:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 15:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 16:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 17:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 18:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 19:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 20:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 21:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 22:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 23:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 24:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 25:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 26:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 27:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 28:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 29:{space 2}log pseudolikelihood = {res: -5884.716}  (not concave)
-Iteration 30:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 31:{space 2}log pseudolikelihood = {res: -5884.716}  (backed up)
-Iteration 32:{space 2}log pseudolikelihood = {res:-5884.7159}  (not concave)
-Iteration 33:{space 2}log pseudolikelihood = {res:-5884.7159}  (backed up)
-Iteration 34:{space 2}log pseudolikelihood = {res:-5884.7159}  (not concave)
-Iteration 35:{space 2}log pseudolikelihood = {res:-5884.7159}  (not concave)
-Iteration 36:{space 2}log pseudolikelihood = {res:-5884.7159}  (backed up)
-Iteration 37:{space 2}log pseudolikelihood = {res:-5884.7159}  (backed up)
-Iteration 38:{space 2}log pseudolikelihood = {res:-5884.7158}  (backed up)
-Iteration 39:{space 2}log pseudolikelihood = {res:-5884.7157}  (backed up)
-Iteration 40:{space 2}log pseudolikelihood = {res:-5884.7138}  (not concave)
-Iteration 41:{space 2}log pseudolikelihood = {res: -5884.713}  (not concave)
-Iteration 42:{space 2}log pseudolikelihood = {res:-5884.7124}  (not concave)
-Iteration 43:{space 2}log pseudolikelihood = {res:-5884.7104}  (not concave)
-Iteration 44:{space 2}log pseudolikelihood = {res: -5884.704}  
-Iteration 45:{space 2}log pseudolikelihood = {res:-5884.6433}  (not concave)
-Iteration 46:{space 2}log pseudolikelihood = {res:-5884.6312}  (not concave)
-Iteration 47:{space 2}log pseudolikelihood = {res: -5884.593}  (not concave)
-Iteration 48:{space 2}log pseudolikelihood = {res:-5884.5778}  
-Iteration 49:{space 2}log pseudolikelihood = {res:-5883.7122}  
-Iteration 50:{space 2}log pseudolikelihood = {res:-5883.7121}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5881.9466}  (not concave)
+Iteration 1:{space 3}log pseudolikelihood = {res:-5828.6896}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-5827.1554}  
+Iteration 3:{space 3}log pseudolikelihood = {res: -5826.853}  (backed up)
+Iteration 4:{space 3}log pseudolikelihood = {res: -5826.817}  (backed up)
+Iteration 5:{space 3}log pseudolikelihood = {res:-5826.8159}  (backed up)
+Iteration 6:{space 3}log pseudolikelihood = {res:-5826.8159}  (backed up)
+Iteration 7:{space 3}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 8:{space 3}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 9:{space 3}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 10:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 11:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 12:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 13:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 14:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 15:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 16:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 17:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 18:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 19:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 20:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 21:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 22:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 23:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 24:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 25:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 26:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 27:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 28:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 29:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 30:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 31:{space 2}log pseudolikelihood = {res:-5826.8158}  (backed up)
+Iteration 32:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 33:{space 2}log pseudolikelihood = {res:-5826.8158}  (not concave)
+Iteration 34:{space 2}log pseudolikelihood = {res:-5826.8158}  
+Iteration 35:{space 2}log pseudolikelihood = {res:-5826.8157}  (not concave)
+Iteration 36:{space 2}log pseudolikelihood = {res:-5826.8157}  
+Iteration 37:{space 2}log pseudolikelihood = {res:-5826.8155}  (backed up)
+Iteration 38:{space 2}log pseudolikelihood = {res:-5826.8138}  (not concave)
+Iteration 39:{space 2}log pseudolikelihood = {res:-5826.8124}  
+Iteration 40:{space 2}log pseudolikelihood = {res:-5826.7988}  (backed up)
+Iteration 41:{space 2}log pseudolikelihood = {res:-5826.6945}  
+Iteration 42:{space 2}log pseudolikelihood = {res:-5826.6028}  (not concave)
+Iteration 43:{space 2}log pseudolikelihood = {res:-5826.5982}  (not concave)
+Iteration 44:{space 2}log pseudolikelihood = {res:-5826.5909}  (not concave)
+Iteration 45:{space 2}log pseudolikelihood = {res: -5826.545}  (not concave)
+Iteration 46:{space 2}log pseudolikelihood = {res:-5826.5359}  (not concave)
+Iteration 47:{space 2}log pseudolikelihood = {res:-5825.9838}  (not concave)
+Iteration 48:{space 2}log pseudolikelihood = {res:-5825.9837}  (not concave)
+Iteration 49:{space 2}log pseudolikelihood = {res:-5825.9819}  
+Iteration 50:{space 2}log pseudolikelihood = {res:-5825.9328}  
+Iteration 51:{space 2}log pseudolikelihood = {res:-5825.9328}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,388
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,884
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,291
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,802
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1503,29 +1526,29 @@ Iteration 50:{space 2}log pseudolikelihood = {res:-5883.7121}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    57.80
-{txt}Log pseudolikelihood = {res}-5883.7121{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    55.45
+{txt}Log pseudolikelihood = {res}-5825.9328{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 79:(Std. Err. adjusted for {res:69} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.BD {c |}{col 15}{res}{space 2} .8718432{col 27}{space 2} .1464758{col 38}{space 1}   -0.82{col 47}{space 3}0.414{col 55}{space 4} .6272354{col 68}{space 3} 1.211843
+{space 9}1.BD {c |}{col 15}{res}{space 2} .8727462{col 27}{space 2} .1471602{col 38}{space 1}   -0.81{col 47}{space 3}0.420{col 55}{space 4} .6271344{col 68}{space 3}  1.21455
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2} 1.663828{col 27}{space 2} .3196631{col 38}{space 1}    2.65{col 47}{space 3}0.008{col 55}{space 4} 1.141751{col 68}{space 3} 2.424631
-{txt}{space 11}3  {c |}{col 15}{res}{space 2} 2.085654{col 27}{space 2} .5606187{col 38}{space 1}    2.73{col 47}{space 3}0.006{col 55}{space 4}  1.23152{col 68}{space 3} 3.532183
+{space 11}2  {c |}{col 15}{res}{space 2} 1.663202{col 27}{space 2}  .320631{col 38}{space 1}    2.64{col 47}{space 3}0.008{col 55}{space 4} 1.139858{col 68}{space 3} 2.426828
+{txt}{space 11}3  {c |}{col 15}{res}{space 2} 2.146357{col 27}{space 2} .5877765{col 38}{space 1}    2.79{col 47}{space 3}0.005{col 55}{space 4} 1.254879{col 68}{space 3} 3.671151
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2}  .699039{col 27}{space 2} .2622737{col 38}{space 1}   -0.95{col 47}{space 3}0.340{col 55}{space 4} .3350716{col 68}{space 3} 1.458362
+{space 9}Yes  {c |}{col 15}{res}{space 2} .6971296{col 27}{space 2} .2604941{col 38}{space 1}   -0.97{col 47}{space 3}0.334{col 55}{space 4} .3351566{col 68}{space 3} 1.450037
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.921823{col 27}{space 2} .3799043{col 38}{space 1}    3.30{col 47}{space 3}0.001{col 55}{space 4} 1.304514{col 68}{space 3}  2.83125
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9947135{col 27}{space 2} .0105982{col 38}{space 1}   -0.50{col 47}{space 3}0.619{col 55}{space 4} .9741569{col 68}{space 3} 1.015704
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 1.127408{col 27}{space 2} .4311566{col 38}{space 1}    0.31{col 47}{space 3}0.754{col 55}{space 4} .5327886{col 68}{space 3} 2.385655
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.892132{col 27}{space 2} .3734051{col 38}{space 1}    3.23{col 47}{space 3}0.001{col 55}{space 4} 1.285198{col 68}{space 3}  2.78569
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9935515{col 27}{space 2} .0107405{col 38}{space 1}   -0.60{col 47}{space 3}0.550{col 55}{space 4} .9727219{col 68}{space 3} 1.014827
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 1.144107{col 27}{space 2} .4361193{col 38}{space 1}    0.35{col 47}{space 3}0.724{col 55}{space 4} .5419998{col 68}{space 3} 2.415094
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} 3.68e-33{col 27}{space 2} 1.01e-32{col 55}{space 4} 1.70e-35{col 68}{space 3} 8.00e-31
+{space 4}var(_cons){c |}{col 15}{res}{space 2} 1.01e-32{col 27}{space 2} 2.06e-32{col 55}{space 4} 1.84e-34{col 68}{space 3} 5.54e-31
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1534,25 +1557,25 @@ The above estimates were produced using melogit screen_anemia i.BD i.phase_n i.u
 {res}{txt}
 Fitting fixed-effects model:
 
-Iteration 0:{space 3}log likelihood = {res:-5756.9335}  
-Iteration 1:{space 3}log likelihood = {res:-5746.2241}  
-Iteration 2:{space 3}log likelihood = {res:-5746.2152}  
-Iteration 3:{space 3}log likelihood = {res:-5746.2152}  
+Iteration 0:{space 3}log likelihood = {res:-5684.6472}  
+Iteration 1:{space 3}log likelihood = {res:-5674.1054}  
+Iteration 2:{space 3}log likelihood = {res:-5674.0966}  
+Iteration 3:{space 3}log likelihood = {res:-5674.0966}  
 
 Refining starting values:
 
-Grid node 0:{space 3}log likelihood = {res:-5769.3279}
+Grid node 0:{space 3}log likelihood = {res:-5696.7743}
 
 Fitting full model:
 {res}
-{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5769.3279}  
-Iteration 1:{space 3}log pseudolikelihood = {res:-5747.7427}  
-Iteration 2:{space 3}log pseudolikelihood = {res:-5745.9358}  
-Iteration 3:{space 3}log pseudolikelihood = {res:-5745.9195}  
-Iteration 4:{space 3}log pseudolikelihood = {res:-5745.9195}  
+{txt}Iteration 0:{space 3}log pseudolikelihood = {res:-5696.7743}  
+Iteration 1:{space 3}log pseudolikelihood = {res:-5675.6746}  
+Iteration 2:{space 3}log pseudolikelihood = {res:-5673.7807}  
+Iteration 3:{space 3}log pseudolikelihood = {res:-5673.7594}  
+Iteration 4:{space 3}log pseudolikelihood = {res:-5673.7594}  
 {res}
-{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,287
-{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,878
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}     9,181
+{txt}Group variable: {col 24}{res}uniqueid{col 49}{txt}Number of groups{col 67}={res}{col 69}     6,784
 
 {col 49}{txt}Obs per group:
 {col 63}{txt}min{col 67}={res}{col 69}         1
@@ -1561,29 +1584,29 @@ Iteration 4:{space 3}log pseudolikelihood = {res:-5745.9195}
 
 {txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
 
-{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    42.03
-{txt}Log pseudolikelihood = {res}-5745.9195{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    42.91
+{txt}Log pseudolikelihood = {res}-5673.7594{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
 {txt}{ralign 79:(Std. Err. adjusted for {res:68} clusters in str_TRIAL_2_Cluster)}
 {hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}{col 27}    Robust
 {col 1}screen_anemia{col 15}{c |} Odds Ratio{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}1.CD {c |}{col 15}{res}{space 2} .8987824{col 27}{space 2} .1752616{col 38}{space 1}   -0.55{col 47}{space 3}0.584{col 55}{space 4} .6132975{col 68}{space 3} 1.317158
+{space 9}1.CD {c |}{col 15}{res}{space 2}  .893383{col 27}{space 2} .1747633{col 38}{space 1}   -0.58{col 47}{space 3}0.564{col 55}{space 4} .6088719{col 68}{space 3} 1.310839
 {txt}{space 13} {c |}
 {space 6}phase_n {c |}
-{space 11}2  {c |}{col 15}{res}{space 2} 1.779414{col 27}{space 2} .3846511{col 38}{space 1}    2.67{col 47}{space 3}0.008{col 55}{space 4} 1.164863{col 68}{space 3} 2.718185
-{txt}{space 11}3  {c |}{col 15}{res}{space 2} 2.578377{col 27}{space 2} .8367101{col 38}{space 1}    2.92{col 47}{space 3}0.004{col 55}{space 4} 1.364969{col 68}{space 3} 4.870462
+{space 11}2  {c |}{col 15}{res}{space 2} 1.800312{col 27}{space 2} .3931431{col 38}{space 1}    2.69{col 47}{space 3}0.007{col 55}{space 4} 1.173456{col 68}{space 3} 2.762034
+{txt}{space 11}3  {c |}{col 15}{res}{space 2}   2.6107{col 27}{space 2} .8500476{col 38}{space 1}    2.95{col 47}{space 3}0.003{col 55}{space 4} 1.379128{col 68}{space 3} 4.942076
 {txt}{space 13} {c |}
 {space 11}us {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.115086{col 27}{space 2} .2656464{col 38}{space 1}    0.46{col 47}{space 3}0.647{col 55}{space 4} .6990798{col 68}{space 3} 1.778646
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.103688{col 27}{space 2} .2628101{col 38}{space 1}    0.41{col 47}{space 3}0.679{col 55}{space 4} .6920834{col 68}{space 3} 1.760088
 {txt}{space 13} {c |}
 {space 10}lab {c |}
-{space 9}Yes  {c |}{col 15}{res}{space 2} 1.953686{col 27}{space 2} .3775862{col 38}{space 1}    3.47{col 47}{space 3}0.001{col 55}{space 4} 1.337655{col 68}{space 3} 2.853417
-{txt}{space 5}clussize {c |}{col 15}{res}{space 2} .9756455{col 27}{space 2} .0103839{col 38}{space 1}   -2.32{col 47}{space 3}0.021{col 55}{space 4} .9555042{col 68}{space 3} .9962113
-{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .7476596{col 27}{space 2} .1905981{col 38}{space 1}   -1.14{col 47}{space 3}0.254{col 55}{space 4} .4536388{col 68}{space 3} 1.232246
+{space 9}Yes  {c |}{col 15}{res}{space 2} 1.960598{col 27}{space 2} .3796022{col 38}{space 1}    3.48{col 47}{space 3}0.001{col 55}{space 4} 1.341475{col 68}{space 3}  2.86546
+{txt}{space 5}clussize {c |}{col 15}{res}{space 2}  .975258{col 27}{space 2} .0104801{col 38}{space 1}   -2.33{col 47}{space 3}0.020{col 55}{space 4} .9549322{col 68}{space 3} .9960165
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} .7512308{col 27}{space 2} .1915529{col 38}{space 1}   -1.12{col 47}{space 3}0.262{col 55}{space 4} .4557528{col 68}{space 3} 1.238276
 {txt}{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 1}{res}uniqueid     {col 15}{txt}{c |}
-{space 4}var(_cons){c |}{col 15}{res}{space 2} .0910999{col 27}{space 2} .4354035{col 55}{space 4} 7.79e-06{col 68}{space 3} 1066.001
+{space 4}var(_cons){c |}{col 15}{res}{space 2} .0978969{col 27}{space 2}  .438558{col 55}{space 4} .0000151{col 68}{space 3} 636.7624
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
@@ -1591,10 +1614,7 @@ The above estimates were produced using melogit screen_anemia i.CD i.phase_n i.u
 {hline}
 {hline}
 {title:Analyzing man_anemia (Anemia)}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 34 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 320 obs not used
 
 {res}
@@ -1628,18 +1648,14 @@ Iteration 4:{space 3}log pseudolikelihood = {res:-654.59453}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2} .3599535{col 26}{space 2} .0560119{col 37}{space 1}   -6.57{col 46}{space 3}0.000{col 54}{space 4} .2653335{col 67}{space 3} .4883157
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2} .1304595{col 26}{space 2} .0573692{col 37}{space 1}   -4.63{col 46}{space 3}0.000{col 54}{space 4} .0551013{col 67}{space 3} .3088797
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit man_anemia i.AB i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 34 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 349 obs not used
 
 {res}
@@ -1672,18 +1688,14 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-627.69674}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2}  .352087{col 26}{space 2} .0597972{col 37}{space 1}   -6.15{col 46}{space 3}0.000{col 54}{space 4} .2523975{col 67}{space 3} .4911509
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2} .1419836{col 26}{space 2} .0798902{col 37}{space 1}   -3.47{col 46}{space 3}0.001{col 54}{space 4} .0471293{col 67}{space 3} .4277457
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit man_anemia i.AC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 30 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 287 obs not used
 
 {res}
@@ -1716,18 +1728,14 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-528.88028}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2} .5988819{col 26}{space 2}  .146236{col 37}{space 1}   -2.10{col 46}{space 3}0.036{col 54}{space 4} .3711021{col 67}{space 3} .9664714
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2} .1072756{col 26}{space 2} .0635253{col 37}{space 1}   -3.77{col 46}{space 3}0.000{col 54}{space 4} .0336082{col 67}{space 3}  .342418
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit man_anemia i.AD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 32 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 375 obs not used
 
 {res}
@@ -1760,18 +1768,14 @@ Iteration 3:{space 3}log pseudolikelihood = {res: -692.9854}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2} .3623004{col 26}{space 2} .0553572{col 37}{space 1}   -6.64{col 46}{space 3}0.000{col 54}{space 4}  .268541{col 67}{space 3} .4887953
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2} .1491225{col 26}{space 2} .0729337{col 37}{space 1}   -3.89{col 46}{space 3}0.000{col 54}{space 4} .0571785{col 67}{space 3}  .388914
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit man_anemia i.BC i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 28 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 313 obs not used
 
 {res}
@@ -1804,18 +1808,14 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-611.23396}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2} .5404803{col 26}{space 2} .1210709{col 37}{space 1}   -2.75{col 46}{space 3}0.006{col 54}{space 4}  .348422{col 67}{space 3} .8384057
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2} .1022725{col 26}{space 2} .0623422{col 37}{space 1}   -3.74{col 46}{space 3}0.000{col 54}{space 4} .0309665{col 67}{space 3} .3377736
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
 The above estimates were produced using melogit man_anemia i.BD i.phase_n i.us i.lab clussize i.timepoint , or vce(cluster str_TRIAL_2_Cluster)
 {hline}
-{res}{txt}note: 3.timepoint != 0 predicts failure perfectly
-      3.timepoint dropped and 28 obs not used
-
-note: 4.timepoint != 0 predicts failure perfectly
+{res}{txt}note: 4.timepoint != 0 predicts failure perfectly
       4.timepoint dropped and 342 obs not used
 
 {res}
@@ -1848,8 +1848,7 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-587.32165}
 {txt}{space 12} {c |}
 {space 3}timepoint {c |}
 {space 10}2  {c |}{col 14}{res}{space 2} .5440284{col 26}{space 2} .1170816{col 37}{space 1}   -2.83{col 46}{space 3}0.005{col 54}{space 4} .3568063{col 67}{space 3}  .829489
-{txt}{space 10}3  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
-{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
+{txt}{space 10}4  {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (empty)
 {space 12} {c |}
 {space 7}_cons {c |}{col 14}{res}{space 2}  .109045{col 26}{space 2} .0658057{col 37}{space 1}   -3.67{col 46}{space 3}0.000{col 54}{space 4} .0334141{col 67}{space 3} .3558627
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -2924,7 +2923,6 @@ note: 2.timepoint != 1 predicts failure perfectly
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res:-64.150557}  
@@ -2960,7 +2958,6 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-63.384428}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2}  .068496{col 28}{space 2} .0918998{col 39}{space 1}   -2.00{col 48}{space 3}0.046{col 56}{space 4} .0049388{col 69}{space 3} .9499624
@@ -2980,7 +2977,6 @@ note: 2.timepoint != 1 predicts failure perfectly
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res:-37.167192}  
@@ -3017,7 +3013,6 @@ Iteration 4:{space 3}log pseudolikelihood = {res:-33.566678}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2} .4584398{col 28}{space 2} .3516732{col 39}{space 1}   -1.02{col 48}{space 3}0.309{col 56}{space 4} .1019338{col 69}{space 3}   2.0618
@@ -3039,7 +3034,6 @@ note: 1.us identifies no observations in the sample
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res: -43.52871}  
@@ -3076,7 +3070,6 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-42.606224}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2} .7333392{col 28}{space 2} .3696894{col 39}{space 1}   -0.62{col 48}{space 3}0.538{col 56}{space 4} .2730228{col 69}{space 3} 1.969749
@@ -3096,7 +3089,6 @@ note: 2.timepoint != 1 predicts failure perfectly
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res:-69.358857}  
@@ -3132,7 +3124,6 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-66.746839}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2} .1347222{col 28}{space 2} .1329333{col 39}{space 1}   -2.03{col 48}{space 3}0.042{col 56}{space 4} .0194778{col 69}{space 3} .9318336
@@ -3152,7 +3143,6 @@ note: 2.timepoint != 1 predicts failure perfectly
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res:-76.001466}  
@@ -3188,7 +3178,6 @@ Iteration 3:{space 3}log pseudolikelihood = {res:-75.363439}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2} .0580985{col 28}{space 2} .0796464{col 39}{space 1}   -2.08{col 48}{space 3}0.038{col 56}{space 4} .0039561{col 69}{space 3} .8532284
@@ -3208,7 +3197,6 @@ note: 2.timepoint != 1 predicts failure perfectly
 note: 2.us omitted because of collinearity
 note: 2.lab omitted because of collinearity
 note: 1.timepoint identifies no observations in the sample
-note: 3.timepoint identifies no observations in the sample
 note: 4.timepoint omitted because of collinearity
 {res}
 {txt}Iteration 0:{space 3}log pseudolikelihood = {res:-48.965476}  
@@ -3245,7 +3233,6 @@ Iteration 4:{space 3}log pseudolikelihood = {res:-46.041212}
 {space 5}timepoint {c |}
 {space 12}1  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}2  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (omitted)
-{space 12}3  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 12}4  {c |}{col 16}{res}{space 2}        1{col 28}{txt}  (empty)
 {space 14} {c |}
 {space 9}_cons {c |}{col 16}{res}{space 2}  .215876{col 28}{space 2} .1325786{col 39}{space 1}   -2.50{col 48}{space 3}0.013{col 56}{space 4} .0647807{col 69}{space 3} .7193881
