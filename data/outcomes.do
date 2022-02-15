@@ -120,8 +120,8 @@ frame anemia {
   success_anemia_1 success_anemia_2 success_anemia_3 success_anemia_4 scanem_qidsms2  scanem_qidsms4 mananem_qidsms2 mananem_qidsms4 ///
   scmananem_qidsms2 scmananem_qidsms4
 
-  keep uniqueid b_TrialArm screen_anemia1 screen_anemia2 screen_anemia3 screen_anemia4 man_anemia1 man_anemia2 man_anemia3 man_anemia4 ///
-  success_anemia_1 success_anemia_2 success_anemia_3 success_anemia_4 scanem_qidsms2  scanem_qidsms4 mananem_qidsms2 mananem_qidsms4 ///
+  keep uniqueid b_TrialArm screen_anemia1 screen_anemia2 screen_anemia4 man_anemia1 man_anemia2 man_anemia4 ///
+  success_anemia_1 success_anemia_2 success_anemia_4 scanem_qidsms2  scanem_qidsms4 mananem_qidsms2 mananem_qidsms4 ///
   scmananem_qidsms2 scmananem_qidsms4  phase_n  str_TRIAL_2_Cluster clussize lab us
 
   reshape long screen_anemia man_anemia success_anemia_ scanem_qidsms mananem_qidsms scmananem_qidsms, i(uniqueid) j(timepoint)
