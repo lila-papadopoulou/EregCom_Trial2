@@ -13,8 +13,7 @@ local comparisons   AB AC AD BC BD CD
 local attendance_outcomes                            att
 local anemia_outcomes                                success_anemia_  screen_anemia
 local anemia_outcomes       `anemia_outcomes'        man_anemia       scmananem_qidsms
-local anemia_outcomes       `anemia_outcomes'        scmananem_qidsms scanem_qidsms
-local anemia_outcomes       `anemia_outcomes'        mananem_qidsms
+local anemia_outcomes       `anemia_outcomes'        scanem_qidsms    mananem_qidsms
 local hypertension_outcomes                          success_htn_     screen_hyp man_hyp
 local hypertension_outcomes `hypertension_outcomes'  sucesshyp_qidsms schyp_qidsms
 local hypertension_outcomes `hypertension_outcomes'  manhyp_qidsms
@@ -23,7 +22,7 @@ local gdm_outcomes          `gdm_outcomes'           man_gdm          sucgdm_qid
 local gdm_outcomes          `gdm_outcomes'           scgdm_qidsms
 
 // Specify outcomes that do not require a random effect for uniqueid.
-local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms
+local no_random man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm scgdm_qidsms sucgdm_qidsms
 
 // Specify the outcomes that should be modelled using an *additional* fixed
 // effect for timepoint.
