@@ -1,11 +1,11 @@
 version 16.1
 
 // Load the data.
-use outcomes_04112021_nodup.dta
+use T2_data_nodup.dta
 
 // Check the data signature is as expected.
 datasignature
-assert r(datasignature) == "15237:408(57578):3640196584:4282140441"
+assert r(datasignature) == "15238:272(83133):1018865108:580817079"
 
 // Define data labels for the outcomes.
 local attendance_data_lbl   "Attendance"
