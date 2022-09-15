@@ -1,11 +1,11 @@
 version 16.1
 
 // Load the data.
-use T2_data_nodup.dta
+use T2_data_nodupbl.dta
 
 // Check the data signature is as expected.
 datasignature
-assert r(datasignature) == "15238:272(83133):1018865108:580817079"
+assert r(datasignature) == "15238:271(23792):268962573:1173636628"
 
 // Define data labels for the outcomes.
 local attendance_data_lbl   "Attendance"
@@ -48,10 +48,6 @@ frame attendance {
   label var att5 "attendance 35-37 weeks (numerator)"
   codebook att1-att5
 
-  gen lab=labavailability_y
-  label var lab "lab availability"
-  gen us=usavailability_y
-  label var us "ultrasound availability"
 
   codebook uniqueid b_TrialArm  att1-att5  phase_n  str_TRIAL_2_Cluster clussize lab us
 
@@ -100,13 +96,6 @@ frame anemia {
   replace phase_n=3 if phase_x=="2 Gaza"
   label var phase_n "phase"
   codebook phase_n
-
-  gen lab=labavailability_y
-  label var lab "lab availability"
-  gen us=usavailability_y
-  label var us "ultrasound availability"
-  label var agecat "participant's age at baseline-years"
-  label var parity "participant's parity- nulli(0)/multi(1)"
 
   *rename anemmia vars for reshaping*
   rename screen_anemia2xtra scanem_qidsms2
@@ -166,11 +155,6 @@ frame hypertension {
   replace phase_n=3 if phase_x=="2 Gaza"
   label var phase_n "phase"
   codebook phase_n
-
-  gen lab=labavailability_y
-  label var lab "lab availability"
-  gen us=usavailability_y
-  label var us "ultrasound availability"
 
   *rename vars for reshaping*
   rename screen_hyp2xtra schyp_qidsms2
@@ -241,11 +225,6 @@ frame gdm {
   replace phase_n=3 if phase_x=="2 Gaza"
   label var phase_n "phase"
   codebook phase_n
-
-  gen lab=labavailability_y
-  label var lab "lab availability"
-  gen us=usavailability_y
-  label var us "ultrasound availability"
 
   *rename vars for reshaping*
   rename screen_gdm2xtra scgdm_qidsms2
