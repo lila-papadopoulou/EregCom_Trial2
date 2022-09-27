@@ -7,6 +7,8 @@ use T2_data_nodupbl.dta
 datasignature
 assert r(datasignature) == "15238:271(23792):268962573:1173636628"
 
+quietly do data/screenandmanage
+
 // Define data labels for the outcomes.
 local attendance_data_lbl   "Attendance"
 local anemia_data_lbl       "Anemia"
@@ -262,14 +264,3 @@ frame gdm {
   replace CD=1 if b_TrialArm=="D"
 }
 
-// Encode the us and lab variables.
-local to_encode us lab
-foreach frame of global frames {
-  frame `frame' {
-    tempvar `to_encode'
-    foreach x of local to_encode {
-      rename `x' ``x''
-      encode ``x'', generate(`x')
-    }
-  }
-}
