@@ -57,29 +57,18 @@ frame attendance {
 
   reshape long att, i(uniqueid) j(timepoint)
 
-  *A (0) vs. B (1)*
-  gen AB=0 if b_TrialArm=="A"
-  replace AB=1 if b_TrialArm=="B"
+  *D (0) vs. A (1)*
+  gen DA=0 if b_TrialArm=="D"
+  replace DA=1 if b_TrialArm=="A"
 
-  *A (0) vs. C (1)*
-  gen AC=0 if b_TrialArm=="A"
-  replace AC=1 if b_TrialArm=="C"
+  *D (0) vs. B (1)*
+  gen DB=0 if b_TrialArm=="D"
+  replace DB=1 if b_TrialArm=="B"
 
-  *A (0) vs. D (1)*
-  gen AD=0 if b_TrialArm=="A"
-  replace AD=1 if b_TrialArm=="D"
+  *D (0) vs. C (1)*
+  gen DC=0 if b_TrialArm=="D"
+  replace DC=1 if b_TrialArm=="C"
 
-  *B (0) vs. C (1)*
-  gen BC=0 if b_TrialArm=="B"
-  replace BC=1 if b_TrialArm=="C"
-
-  *B (0) vs. D (1)*
-  gen BD=0 if b_TrialArm=="B"
-  replace BD=1 if b_TrialArm=="D"
-
-  *C (0) vs. D (1)*
-  gen CD=0 if b_TrialArm=="C"
-  replace CD=1 if b_TrialArm=="D"
 }
 
 
@@ -117,29 +106,17 @@ frame anemia {
 
   reshape long screen_anemia man_anemia success_anemia_ scanem_qidsms mananem_qidsms scmananem_qidsms, i(uniqueid) j(timepoint)
 
-  *A (0) vs. B (1)*
-  gen AB=0 if b_TrialArm=="A"
-  replace AB=1 if b_TrialArm=="B"
+  *D (0) vs. A (1)*
+  gen DA=0 if b_TrialArm=="D"
+  replace DA=1 if b_TrialArm=="A"
 
-  *A (0) vs. C (1)*
-  gen AC=0 if b_TrialArm=="A"
-  replace AC=1 if b_TrialArm=="C"
+  *D (0) vs. B (1)*
+  gen DB=0 if b_TrialArm=="D"
+  replace DB=1 if b_TrialArm=="B"
 
-  *A (0) vs. D (1)*
-  gen AD=0 if b_TrialArm=="A"
-  replace AD=1 if b_TrialArm=="D"
-
-  *B (0) vs. C (1)*
-  gen BC=0 if b_TrialArm=="B"
-  replace BC=1 if b_TrialArm=="C"
-
-  *B (0) vs. D (1)*
-  gen BD=0 if b_TrialArm=="B"
-  replace BD=1 if b_TrialArm=="D"
-
-  *C (0) vs. D (1)*
-  gen CD=0 if b_TrialArm=="C"
-  replace CD=1 if b_TrialArm=="D"
+  *D (0) vs. C (1)*
+  gen DC=0 if b_TrialArm=="D"
+  replace DC=1 if b_TrialArm=="C"
 }
 
  **********************************************************************************************************
@@ -187,29 +164,17 @@ frame hypertension {
 
   reshape long screen_hyp man_hyp success_htn_ schyp_qidsms manhyp_qidsms sucesshyp_qidsms, i(uniqueid) j(timepoint)
 
-  *A (0) vs. B (1)*
-  gen AB=0 if b_TrialArm=="A"
-  replace AB=1 if b_TrialArm=="B"
+  *D (0) vs. A (1)*
+  gen DA=0 if b_TrialArm=="D"
+  replace DA=1 if b_TrialArm=="A"
 
-  *A (0) vs. C (1)*
-  gen AC=0 if b_TrialArm=="A"
-  replace AC=1 if b_TrialArm=="C"
+  *D (0) vs. B (1)*
+  gen DB=0 if b_TrialArm=="D"
+  replace DB=1 if b_TrialArm=="B"
 
-  *A (0) vs. D (1)*
-  gen AD=0 if b_TrialArm=="A"
-  replace AD=1 if b_TrialArm=="D"
-
-  *B (0) vs. C (1)*
-  gen BC=0 if b_TrialArm=="B"
-  replace BC=1 if b_TrialArm=="C"
-
-  *B (0) vs. D (1)*
-  gen BD=0 if b_TrialArm=="B"
-  replace BD=1 if b_TrialArm=="D"
-
-  *C (0) vs. D (1)*
-  gen CD=0 if b_TrialArm=="C"
-  replace CD=1 if b_TrialArm=="D"
+  *D (0) vs. C (1)*
+  gen DC=0 if b_TrialArm=="D"
+  replace DC=1 if b_TrialArm=="C"
 }
 
 ***********************************************************************************************************
@@ -239,28 +204,16 @@ frame gdm {
 
   reshape long screen_gdm man_gdm success_gdm scgdm_qidsms mangdm_qidsms sucgdm_qidsms, i(uniqueid) j(timepoint)
 
-  *A (0) vs. B (1)*
-  gen AB=0 if b_TrialArm=="A"
-  replace AB=1 if b_TrialArm=="B"
+   *D (0) vs. A (1)*
+  gen DA=0 if b_TrialArm=="D"
+  replace DA=1 if b_TrialArm=="A"
 
-  *A (0) vs. C (1)*
-  gen AC=0 if b_TrialArm=="A"
-  replace AC=1 if b_TrialArm=="C"
+  *D (0) vs. B (1)*
+  gen DB=0 if b_TrialArm=="D"
+  replace DB=1 if b_TrialArm=="B"
 
-  *A (0) vs. D (1)*
-  gen AD=0 if b_TrialArm=="A"
-  replace AD=1 if b_TrialArm=="D"
-
-  *B (0) vs. C (1)*
-  gen BC=0 if b_TrialArm=="B"
-  replace BC=1 if b_TrialArm=="C"
-
-  *B (0) vs. D (1)*
-  gen BD=0 if b_TrialArm=="B"
-  replace BD=1 if b_TrialArm=="D"
-
-  *C (0) vs. D (1)*
-  gen CD=0 if b_TrialArm=="C"
-  replace CD=1 if b_TrialArm=="D"
+  *D (0) vs. C (1)*
+  gen DC=0 if b_TrialArm=="D"
+  replace DC=1 if b_TrialArm=="C"
 }
 
