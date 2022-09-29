@@ -31,25 +31,29 @@ foreach x in man_anemia mananem_qidsms man_hyp manhyp_qidsms man_gdm {
 }
 
 // Run the analyses.
-foreach frame of global frames {
-  frame `frame' {
-    foreach y of local `frame'_outcomes {
-      disp "{hline}"
-      disp "{title:Analyzing `y' (`: data label')}" // Log the outcome.
-
-      // Get the additional fixed effects for this outcome, if there are any.
-      local fixed "" // Ensure that the macro is initially empty!
-      local fixed ``y'_fixed'
-
-      // Specify the random effect variable for this outcome.
-      local random || uniqueid: // Model clustering within woman...
-      if strpos("`no_random'", "`y'") local random "" // ... unless we should not.
-
-      foreach comparison of local comparisons {
-        `model' // Run the analysis.
-        assert e(converged)
-        disp "The above estimates were produced using `e(cmdline)'"
+foreach adjustment in "included" "excluded" {
+  disp "Fixed effects are `adjustment' in the following analysis:"
+  foreach frame of global frames {
+    frame `frame' {
+      foreach y of local `frame'_outcomes {
         disp "{hline}"
+        disp "{title:Analyzing `y' (`: data label')}" // Log the outcome.
+
+        // Get the additional fixed effects for this outcome, if there are any.
+        local fixed "" // Ensure that the macro is initially empty!
+        if "`adjustment'" == "included" local fixed ``y'_fixed'
+        if "`adjustment'" == "excluded" local fixed ""
+
+        // Specify the random effect variable for this outcome.
+        local random || uniqueid: // Model clustering within woman...
+        if strpos("`no_random'", "`y'") local random "" // ... unless we should not.
+
+        foreach comparison of local comparisons {
+          `model' // Run the analysis.
+          assert e(converged)
+          disp "The above estimates were produced using `e(cmdline)'"
+          disp "{hline}"
+        }
       }
     }
   }
