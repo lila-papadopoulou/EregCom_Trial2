@@ -7,7 +7,7 @@ local vce   vce(cluster str_TRIAL_2_Cluster)
 local model melogit \`y' i.\`comparison' \`adj_vars' \`fixed' \`random', or `vce'
 
 // Specify the comparisons.
-local comparisons   AB AC AD BC BD CD
+local comparisons   DA DB DC
 
 // Specify the data frames and their outcomes.
 local attendance_outcomes                            att
