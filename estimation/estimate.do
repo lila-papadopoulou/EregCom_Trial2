@@ -4,7 +4,7 @@ version 16.1
 // comparison, any additional fixed effects (fixed), and random effects (random).
 local fe    i.phase_n i.us i.lab clussize
 local vce   vce(cluster str_TRIAL_2_Cluster)
-local model melogit \`y' i.\`comparison' `fe' \`fixed' \`random', or `vce'
+local model melogit \`y' i.\`comparison' \`adj_vars' \`fixed' \`random', or `vce'
 
 // Specify the comparisons.
 local comparisons   AB AC AD BC BD CD
@@ -41,8 +41,12 @@ foreach adjustment in "included" "excluded" {
 
         // Get the additional fixed effects for this outcome, if there are any.
         local fixed "" // Ensure that the macro is initially empty!
-        if "`adjustment'" == "included" local fixed ``y'_fixed'
-        if "`adjustment'" == "excluded" local fixed ""
+        local fixed ``y'_fixed'
+
+        // Set the adj_vars variable to include or exclude any non-timepoint
+        // fixed effects.
+        if "`adjustment'" == "included" local adj_vars `fe'
+        if "`adjustment'" == "excluded" local adj_vars ""
 
         // Specify the random effect variable for this outcome.
         local random || uniqueid: // Model clustering within woman...
