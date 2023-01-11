@@ -7,4 +7,4 @@ SETUP:
 The data are not included in this repository. The analysis is implemented using Stata 16.
 
 RUNNING THE ANALYSIS:
-run the "global" do file.
+run the "analysis.do" do file.
